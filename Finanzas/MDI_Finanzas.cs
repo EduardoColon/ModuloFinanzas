@@ -14,6 +14,7 @@ namespace Finanzas
     public partial class MDI_Finanzas : Form
     {
         logica logic = new logica();
+        string sUsuario = "miusuario";
         private int childFormNumber = 0;
 
         public MDI_Finanzas()
@@ -109,6 +110,18 @@ namespace Finanzas
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tipoDeCuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_tipoCuentaContable tipocuenta = new frm_tipoCuentaContable(sUsuario);
+            tipocuenta.ShowDialog();
+        }
+
+        private void cuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
+            cuentas_contables.ShowDialog();
         }
     }
 }
