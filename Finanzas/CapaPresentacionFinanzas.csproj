@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDeDiseno">
-      <HintPath>..\..\OctavoSemestre\Analisis De Sistemas II\Capacitaciones\Navegador\Código\CAPACITACION NAV\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+      <HintPath>..\..\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_conciliacionBancaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_conciliacionBancaria.Designer.cs">
+      <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_cuentasContables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_conciliacionBancaria.resx">
+      <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_cuentasContables.resx">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +91,25 @@
     <EmbeddedResource Include="MDI_Finanzas.resx">
       <DependentUpon>MDI_Finanzas.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

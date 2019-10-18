@@ -123,5 +123,17 @@ namespace Finanzas
             frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
             cuentas_contables.ShowDialog();
         }
+
+        private void ConciliacionesBancariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_conciliacionBancaria conciliacionBancaria = new frm_conciliacionBancaria(sUsuario);
+            conciliacionBancaria.MdiParent = this;
+            conciliacionBancaria.Show();
+        }
+
+        private void MDI_Finanzas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
