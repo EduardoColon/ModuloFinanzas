@@ -64,6 +64,24 @@
     <Compile Include="frm_tipoCuentaContable.Designer.cs">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManBancosCheques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManBancosCheques.Designer.cs">
+      <DependentUpon>ManBancosCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManBancosPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManBancosPagos.Designer.cs">
+      <DependentUpon>ManBancosPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantenimientoBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantenimientoBancos.Designer.cs">
+      <DependentUpon>MantenimientoBancos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDI_Finanzas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +105,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoCuentaContable.resx">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManBancosCheques.resx">
+      <DependentUpon>ManBancosCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManBancosPagos.resx">
+      <DependentUpon>ManBancosPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantenimientoBancos.resx">
+      <DependentUpon>MantenimientoBancos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI_Finanzas.resx">
       <DependentUpon>MDI_Finanzas.cs</DependentUpon>
