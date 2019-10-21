@@ -135,5 +135,26 @@ namespace Finanzas
         {
 
         }
+
+        private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_polizas polizas = new frm_polizas();
+            polizas.MdiParent = this;
+            polizas.Show();
+        }
+
+        private void tipoDePolizaaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_tipoPoliza tipoPoliza = new frm_tipoPoliza(sUsuario);
+            tipoPoliza.MdiParent = this;
+            tipoPoliza.Show();
+        }
+
+        private void libroDiarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_libroDiario libroDiario = new frm_libroDiario();
+            libroDiario.MdiParent = this;
+            libroDiario.Show();
+        }
     }
 }

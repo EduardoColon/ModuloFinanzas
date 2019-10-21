@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDeDiseno">
-      <HintPath>..\..\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+      <HintPath>..\..\OctavoSemestre\Analisis De Sistemas II\Capacitaciones\Navegador\Código\CAPACITACION NAV\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,11 +58,29 @@
     <Compile Include="frm_cuentasContables.Designer.cs">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_libroDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_libroDiario.Designer.cs">
+      <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_polizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_polizas.Designer.cs">
+      <DependentUpon>frm_polizas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_tipoCuentaContable.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_tipoCuentaContable.Designer.cs">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_tipoPoliza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tipoPoliza.Designer.cs">
+      <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
     </Compile>
     <Compile Include="ManBancosCheques.cs">
       <SubType>Form</SubType>
@@ -103,8 +121,17 @@
     <EmbeddedResource Include="frm_cuentasContables.resx">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_libroDiario.resx">
+      <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_polizas.resx">
+      <DependentUpon>frm_polizas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoCuentaContable.resx">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tipoPoliza.resx">
+      <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManBancosCheques.resx">
       <DependentUpon>ManBancosCheques.cs</DependentUpon>
