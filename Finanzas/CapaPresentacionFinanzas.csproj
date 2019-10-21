@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_CambioMoneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CambioMoneda.Designer.cs">
+      <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_conciliacionBancaria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_CambioMoneda.resx">
+      <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_conciliacionBancaria.resx">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </EmbeddedResource>

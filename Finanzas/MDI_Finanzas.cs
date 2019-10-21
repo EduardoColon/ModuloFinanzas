@@ -156,5 +156,12 @@ namespace Finanzas
             libroDiario.MdiParent = this;
             libroDiario.Show();
         }
+
+        private void TipoDeCambioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_CambioMoneda cambioMoneda = new frm_CambioMoneda();
+            cambioMoneda.MdiParent = this;
+            cambioMoneda.Show();
+        }
     }
 }
