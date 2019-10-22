@@ -163,5 +163,17 @@ namespace Finanzas
             cambioMoneda.MdiParent = this;
             cambioMoneda.Show();
         }
+
+        private void ProcesosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovimientosDeBancosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_MovimientosBancarios movimientosbancarios = new Frm_MovimientosBancarios();
+            movimientosbancarios.MdiParent = this;
+            movimientosbancarios.Show();
+        }
     }
 }

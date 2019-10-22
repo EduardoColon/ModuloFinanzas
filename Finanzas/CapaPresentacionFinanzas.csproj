@@ -70,6 +70,18 @@
     <Compile Include="frm_libroDiario.Designer.cs">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_MantenimientoCuentasBancarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MantenimientoCuentasBancarias.Designer.cs">
+      <DependentUpon>Frm_MantenimientoCuentasBancarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MovimientosBancarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MovimientosBancarios.Designer.cs">
+      <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_polizas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,24 +99,6 @@
     </Compile>
     <Compile Include="frm_tipoPoliza.Designer.cs">
       <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManBancosCheques.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManBancosCheques.Designer.cs">
-      <DependentUpon>ManBancosCheques.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManBancosPagos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManBancosPagos.Designer.cs">
-      <DependentUpon>ManBancosPagos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MantenimientoBancos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MantenimientoBancos.Designer.cs">
-      <DependentUpon>MantenimientoBancos.cs</DependentUpon>
     </Compile>
     <Compile Include="MDI_Finanzas.cs">
       <SubType>Form</SubType>
@@ -133,6 +127,12 @@
     <EmbeddedResource Include="frm_libroDiario.resx">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MantenimientoCuentasBancarias.resx">
+      <DependentUpon>Frm_MantenimientoCuentasBancarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MovimientosBancarios.resx">
+      <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_polizas.resx">
       <DependentUpon>frm_polizas.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,15 +141,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoPoliza.resx">
       <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManBancosCheques.resx">
-      <DependentUpon>ManBancosCheques.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManBancosPagos.resx">
-      <DependentUpon>ManBancosPagos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MantenimientoBancos.resx">
-      <DependentUpon>MantenimientoBancos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI_Finanzas.resx">
       <DependentUpon>MDI_Finanzas.cs</DependentUpon>
@@ -174,5 +165,6 @@
       <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
