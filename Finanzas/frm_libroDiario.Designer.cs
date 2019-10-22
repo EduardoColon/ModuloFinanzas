@@ -70,7 +70,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(156, 27);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Ingresar a Libro Diario";
+            this.button3.Text = "Generar Libro Mayor";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -81,6 +81,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Consultar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label7
             // 
@@ -179,6 +180,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frm_libroDiario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_libroDiario";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
