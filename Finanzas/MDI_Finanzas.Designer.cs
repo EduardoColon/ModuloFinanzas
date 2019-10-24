@@ -32,6 +32,8 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chequerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conciliacionesBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,9 +56,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chequerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clasificaciónDeGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -90,11 +89,23 @@
             // 
             this.mantenimientosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cuentasBancariasToolStripMenuItem,
-            this.chequerasToolStripMenuItem,
-            this.clasificaciónDeGastosToolStripMenuItem});
+            this.chequerasToolStripMenuItem});
             this.mantenimientosToolStripMenuItem1.Name = "mantenimientosToolStripMenuItem1";
             this.mantenimientosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.mantenimientosToolStripMenuItem1.Text = "Mantenimientos";
+            // 
+            // cuentasBancariasToolStripMenuItem
+            // 
+            this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
+            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
+            this.cuentasBancariasToolStripMenuItem.Click += new System.EventHandler(this.CuentasBancariasToolStripMenuItem_Click);
+            // 
+            // chequerasToolStripMenuItem
+            // 
+            this.chequerasToolStripMenuItem.Name = "chequerasToolStripMenuItem";
+            this.chequerasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.chequerasToolStripMenuItem.Text = "Chequeras";
             // 
             // procesosToolStripMenuItem
             // 
@@ -144,7 +155,7 @@
             this.tipoDeCuentasContablesToolStripMenuItem,
             this.tipoDePolizaaToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
             // cuentasContablesToolStripMenuItem
@@ -179,7 +190,7 @@
             this.balanceGeneralToolStripMenuItem,
             this.presupuestosToolStripMenuItem});
             this.procesosToolStripMenuItem1.Name = "procesosToolStripMenuItem1";
-            this.procesosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.procesosToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
             this.procesosToolStripMenuItem1.Text = "Procesos";
             // 
             // polizasToolStripMenuItem
@@ -257,24 +268,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // cuentasBancariasToolStripMenuItem
-            // 
-            this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
-            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
-            // 
-            // chequerasToolStripMenuItem
-            // 
-            this.chequerasToolStripMenuItem.Name = "chequerasToolStripMenuItem";
-            this.chequerasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.chequerasToolStripMenuItem.Text = "Chequeras";
-            // 
-            // clasificaciónDeGastosToolStripMenuItem
-            // 
-            this.clasificaciónDeGastosToolStripMenuItem.Name = "clasificaciónDeGastosToolStripMenuItem";
-            this.clasificaciónDeGastosToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.clasificaciónDeGastosToolStripMenuItem.Text = "Clasificación de Gastos";
-            // 
             // MDI_Finanzas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -289,7 +282,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finanzas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MDI_Finanzas_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -328,7 +320,6 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDeCambioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasBancariasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chequerasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clasificaciónDeGastosToolStripMenuItem;
     }
 }
 

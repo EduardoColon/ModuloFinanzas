@@ -131,11 +131,6 @@ namespace Finanzas
             conciliacionBancaria.Show();
         }
 
-        private void MDI_Finanzas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_polizas polizas = new frm_polizas();
@@ -174,6 +169,13 @@ namespace Finanzas
             Frm_MovimientosBancarios movimientosbancarios = new Frm_MovimientosBancarios();
             movimientosbancarios.MdiParent = this;
             movimientosbancarios.Show();
+        }
+
+        private void CuentasBancariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_MantenimientoCuentasBancarias manctsbancarias = new Frm_MantenimientoCuentasBancarias(sUsuario);
+            manctsbancarias.MdiParent = this;
+            manctsbancarias.Show();
         }
     }
 }

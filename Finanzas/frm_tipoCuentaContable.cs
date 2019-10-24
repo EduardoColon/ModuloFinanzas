@@ -44,6 +44,5 @@ namespace Finanzas
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
         }
-        
     }
 }
