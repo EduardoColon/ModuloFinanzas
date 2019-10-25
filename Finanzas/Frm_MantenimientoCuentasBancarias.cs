@@ -30,8 +30,8 @@ namespace Finanzas
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarComboConTabla("tbl_cuentabancaria", "FK_Banco");
-            navegador1.asignarComboConTabla("tbl_cuentabancaria", "FK_Moneda");
+            navegador1.asignarComboConTabla("tbl_bancos", "KidBanco");
+            navegador1.asignarComboConTabla("tbl_divisa", "KidDivisa");
             navegador1.asignarAyuda("1");
             navegador1.asignarTabla("tbl_cuentabancaria");
             navegador1.asignarNombreForm("Mantenimiento Cuentas Bancarias");
@@ -39,7 +39,6 @@ namespace Finanzas
 
         private void Navegador1_Load(object sender, EventArgs e)
         {
-        
             string aplicacionActiva = "1";
             navegador1.ObtenerIdUsuario(usuario);
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
