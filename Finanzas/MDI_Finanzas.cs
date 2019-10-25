@@ -123,5 +123,57 @@ namespace Finanzas
             frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
             cuentas_contables.ShowDialog();
         }
+
+        private void ConciliacionesBancariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_conciliacionBancaria conciliacionBancaria = new frm_conciliacionBancaria(sUsuario);
+            conciliacionBancaria.MdiParent = this;
+            conciliacionBancaria.Show();
+        }
+
+        private void MDI_Finanzas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_polizas polizas = new frm_polizas();
+            polizas.MdiParent = this;
+            polizas.Show();
+        }
+
+        private void tipoDePolizaaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_tipoPoliza tipoPoliza = new frm_tipoPoliza(sUsuario);
+            tipoPoliza.MdiParent = this;
+            tipoPoliza.Show();
+        }
+
+        private void libroDiarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_libroDiario libroDiario = new frm_libroDiario();
+            libroDiario.MdiParent = this;
+            libroDiario.Show();
+        }
+
+        private void TipoDeCambioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_CambioMoneda cambioMoneda = new frm_CambioMoneda();
+            cambioMoneda.MdiParent = this;
+            cambioMoneda.Show();
+        }
+
+        private void ProcesosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MovimientosDeBancosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_MovimientosBancarios movimientosbancarios = new Frm_MovimientosBancarios();
+            movimientosbancarios.MdiParent = this;
+            movimientosbancarios.Show();
+        }
     }
 }

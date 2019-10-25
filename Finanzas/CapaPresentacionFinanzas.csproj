@@ -46,17 +46,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_CambioMoneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CambioMoneda.Designer.cs">
+      <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_conciliacionBancaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_conciliacionBancaria.Designer.cs">
+      <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_cuentasContables.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_cuentasContables.Designer.cs">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_libroDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_libroDiario.Designer.cs">
+      <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MantenimientoCuentasBancarias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MantenimientoCuentasBancarias.Designer.cs">
+      <DependentUpon>Frm_MantenimientoCuentasBancarias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MovimientosBancarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_MovimientosBancarios.Designer.cs">
+      <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_polizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_polizas.Designer.cs">
+      <DependentUpon>frm_polizas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_tipoCuentaContable.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_tipoCuentaContable.Designer.cs">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_tipoPoliza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_tipoPoliza.Designer.cs">
+      <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
     </Compile>
     <Compile Include="MDI_Finanzas.cs">
       <SubType>Form</SubType>
@@ -73,15 +115,56 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_CambioMoneda.resx">
+      <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_conciliacionBancaria.resx">
+      <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_cuentasContables.resx">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_libroDiario.resx">
+      <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MantenimientoCuentasBancarias.resx">
+      <DependentUpon>Frm_MantenimientoCuentasBancarias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MovimientosBancarios.resx">
+      <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_polizas.resx">
+      <DependentUpon>frm_polizas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoCuentaContable.resx">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_tipoPoliza.resx">
+      <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDI_Finanzas.resx">
       <DependentUpon>MDI_Finanzas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
