@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaDeDiseno">
-      <HintPath>..\..\..\Analisis de sistemas 2\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+    <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +70,18 @@
     </Compile>
     <Compile Include="frm_libroDiario.Designer.cs">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_mantenimientoBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mantenimientoBancos.Designer.cs">
+      <DependentUpon>frm_mantenimientoBancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoChequeras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoChequeras.Designer.cs">
+      <DependentUpon>frm_MantenimientoChequeras.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_MantenimientoCuentasBancarias.cs">
       <SubType>Form</SubType>
@@ -126,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_libroDiario.resx">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mantenimientoBancos.resx">
+      <DependentUpon>frm_mantenimientoBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoChequeras.resx">
+      <DependentUpon>frm_MantenimientoChequeras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MantenimientoCuentasBancarias.resx">
       <DependentUpon>Frm_MantenimientoCuentasBancarias.cs</DependentUpon>

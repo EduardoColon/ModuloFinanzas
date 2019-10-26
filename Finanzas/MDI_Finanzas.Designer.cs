@@ -34,6 +34,7 @@
             this.mantenimientosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chequerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bancosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conciliacionesBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,7 +90,8 @@
             // 
             this.mantenimientosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cuentasBancariasToolStripMenuItem,
-            this.chequerasToolStripMenuItem});
+            this.chequerasToolStripMenuItem,
+            this.bancosToolStripMenuItem1});
             this.mantenimientosToolStripMenuItem1.Name = "mantenimientosToolStripMenuItem1";
             this.mantenimientosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.mantenimientosToolStripMenuItem1.Text = "Mantenimientos";
@@ -106,6 +108,14 @@
             this.chequerasToolStripMenuItem.Name = "chequerasToolStripMenuItem";
             this.chequerasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.chequerasToolStripMenuItem.Text = "Chequeras";
+            this.chequerasToolStripMenuItem.Click += new System.EventHandler(this.chequerasToolStripMenuItem_Click);
+            // 
+            // bancosToolStripMenuItem1
+            // 
+            this.bancosToolStripMenuItem1.Name = "bancosToolStripMenuItem1";
+            this.bancosToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
+            this.bancosToolStripMenuItem1.Text = "Bancos";
+            this.bancosToolStripMenuItem1.Click += new System.EventHandler(this.bancosToolStripMenuItem1_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -255,7 +265,7 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip.Location = new System.Drawing.Point(0, 711);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statusStrip.Size = new System.Drawing.Size(1294, 22);
@@ -272,7 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 749);
+            this.ClientSize = new System.Drawing.Size(1294, 733);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,6 +330,7 @@
         private System.Windows.Forms.ToolStripMenuItem tipoDeCambioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cuentasBancariasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chequerasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bancosToolStripMenuItem1;
     }
 }
 

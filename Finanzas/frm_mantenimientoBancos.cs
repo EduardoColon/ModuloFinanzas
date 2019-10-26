@@ -10,31 +10,23 @@ using System.Windows.Forms;
 
 namespace Finanzas
 {
-    public partial class Frm_MantenimientoCuentasBancarias : Form
+    public partial class frm_mantenimientoBancos : Form
     {
-
-        ///////////////////////// VARIABLES GLOBALES//////////////////////
         string usuario = "";
 
-
-       
-        public Frm_MantenimientoCuentasBancarias(string user)
+        public frm_mantenimientoBancos(string user)
         {
             InitializeComponent();
-
             usuario = user;
-            string[] alias = { "ID Cuenta:","No._de_Cuenta:", "Descripción:","Banco:","Moneda:","Firmas_Individuales:",
-                                "Firmantes_Conjuntos:","Saldo:","Cuenta_Primaria:","Estado:" };
+            string[] alias = { "ID Banco:", "Nombre:", "Descripción:", "estado:" };
 
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarComboConTabla("tbl_bancos", "KidBanco");
-            navegador1.asignarComboConTabla("tbl_divisa", "KidDivisa");
             navegador1.asignarAyuda("1");
-            navegador1.asignarTabla("tbl_cuentabancaria");
-            navegador1.asignarNombreForm("Mantenimiento Cuentas Bancarias");
+            navegador1.asignarTabla("tbl_bancos");
+            navegador1.asignarNombreForm("Mantenimiento de Bancos");
         }
 
         private void navegador1_Load(object sender, EventArgs e)

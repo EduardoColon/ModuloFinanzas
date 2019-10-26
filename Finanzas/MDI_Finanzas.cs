@@ -177,5 +177,19 @@ namespace Finanzas
             manctsbancarias.MdiParent = this;
             manctsbancarias.Show();
         }
+
+        private void bancosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_mantenimientoBancos bancos = new frm_mantenimientoBancos(sUsuario);
+            bancos.MdiParent = this;
+            bancos.Show();
+        }
+
+        private void chequerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_MantenimientoChequeras chequeras = new frm_MantenimientoChequeras(sUsuario);
+            chequeras.MdiParent = this;
+            chequeras.Show();
+        }
     }
 }
