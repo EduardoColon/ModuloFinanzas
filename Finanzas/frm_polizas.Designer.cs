@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_consulta = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.cbo_tipoPoliza = new System.Windows.Forms.ComboBox();
             this.btn_IngresoLibroDiario = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.Debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_consulta = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_polizas)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta de Polizas";
+            // 
+            // btn_consulta
+            // 
+            this.btn_consulta.Location = new System.Drawing.Point(678, 42);
+            this.btn_consulta.Name = "btn_consulta";
+            this.btn_consulta.Size = new System.Drawing.Size(75, 23);
+            this.btn_consulta.TabIndex = 9;
+            this.btn_consulta.Text = "consultar";
+            this.btn_consulta.UseVisualStyleBackColor = true;
+            this.btn_consulta.Click += new System.EventHandler(this.btn_consulta_Click);
             // 
             // label10
             // 
@@ -91,6 +101,7 @@
             this.btn_IngresoLibroDiario.TabIndex = 6;
             this.btn_IngresoLibroDiario.Text = "Ingresar a Libro Diario";
             this.btn_IngresoLibroDiario.UseVisualStyleBackColor = true;
+            this.btn_IngresoLibroDiario.Click += new System.EventHandler(this.btn_IngresoLibroDiario_Click);
             // 
             // label7
             // 
@@ -168,16 +179,6 @@
             this.label1.Size = new System.Drawing.Size(383, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "INGRESO DE POLIZAS A LIBRO DIARIO";
-            // 
-            // btn_consulta
-            // 
-            this.btn_consulta.Location = new System.Drawing.Point(678, 42);
-            this.btn_consulta.Name = "btn_consulta";
-            this.btn_consulta.Size = new System.Drawing.Size(75, 23);
-            this.btn_consulta.TabIndex = 9;
-            this.btn_consulta.Text = "consultar";
-            this.btn_consulta.UseVisualStyleBackColor = true;
-            this.btn_consulta.Click += new System.EventHandler(this.btn_consulta_Click);
             // 
             // frm_polizas
             // 

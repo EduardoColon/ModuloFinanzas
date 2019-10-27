@@ -22,6 +22,7 @@ namespace Finanzas
             InitializeComponent();
         }
 
+
         private void frm_polizas_Load(object sender, EventArgs e)
         {
             try
@@ -47,6 +48,12 @@ namespace Finanzas
 
         }
 
+        void limpiarForm()
+        {
+            cbo_tipoPoliza.Text = "";
+            dgv_polizas.Rows.Clear();
+        }
+
         private void btn_consulta_Click(object sender, EventArgs e)
         {
             string sFechaInicio = null;
@@ -63,9 +70,6 @@ namespace Finanzas
                 try
                 {
                     DataTable dtPoliza = logic.consultaLogicaPolizas(sFechaInicio, sFechaFinal, sTipoDePoliza);
-
-                    MessageBox.Show(dtPoliza.ToString());
-
                     foreach (DataRow dt in dtPoliza.Rows)
                     {
                         string sCodigoCuenta = dt[1].ToString();
@@ -87,6 +91,13 @@ namespace Finanzas
             {
                 MessageBox.Show("No ha seleccionado un tipo de poliza");
             }
+
+            //limpiarForm();
+        }
+
+        private void btn_IngresoLibroDiario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
