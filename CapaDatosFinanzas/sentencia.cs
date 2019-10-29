@@ -125,7 +125,7 @@ namespace CapaDatosFinanzas
         {
             try
             {
-                string sqlTiposPolizas = "SELECT KidTipoDePoliza FROM tbl_tipo_poliza WHERE estado = 0";
+                string sqlTiposPolizas = "SELECT KidTipoDePoliza FROM tbl_tipo_poliza WHERE estado = 1";
                 OdbcDataAdapter dataTipoPolizas = new OdbcDataAdapter(sqlTiposPolizas, con.conectar());
                 return dataTipoPolizas;
             }

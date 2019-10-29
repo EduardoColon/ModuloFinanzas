@@ -115,13 +115,15 @@ namespace Finanzas
         private void tipoDeCuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_tipoCuentaContable tipocuenta = new frm_tipoCuentaContable(sUsuario);
-            tipocuenta.ShowDialog();
+            tipocuenta.MdiParent = this;
+            tipocuenta.Show();
         }
 
         private void cuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
-            cuentas_contables.ShowDialog();
+            cuentas_contables.MdiParent = this;
+            cuentas_contables.Show();
         }
 
         private void ConciliacionesBancariasToolStripMenuItem_Click(object sender, EventArgs e)
