@@ -118,5 +118,10 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataSet consultaLogicaBitacora()
+        {
+            return sen.consultarBitacora();
+        }
+
     }
 }

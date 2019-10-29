@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDeDiseno">
-      <HintPath>..\..\OctavoSemestre\Analisis De Sistemas II\Capacitaciones\Navegador\Código\CAPACITACION NAV\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+      <HintPath>..\..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,11 +58,23 @@
     <Compile Include="frm_conciliacionBancaria.Designer.cs">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_CreacionPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CreacionPresupuesto.Designer.cs">
+      <DependentUpon>Frm_CreacionPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_cuentasContables.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_cuentasContables.Designer.cs">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_GestionPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_GestionPresupuesto.Designer.cs">
+      <DependentUpon>frm_GestionPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_libroDiario.cs">
       <SubType>Form</SubType>
@@ -121,8 +133,14 @@
     <EmbeddedResource Include="frm_conciliacionBancaria.resx">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CreacionPresupuesto.resx">
+      <DependentUpon>Frm_CreacionPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_cuentasContables.resx">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_GestionPresupuesto.resx">
+      <DependentUpon>frm_GestionPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_libroDiario.resx">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
