@@ -11,7 +11,7 @@ namespace CapaDatosFinanzas
     {
         public OdbcConnection conectar()
         {
-            OdbcConnection conectar = new OdbcConnection("Dsn=finanzas");
+            OdbcConnection conectar = new OdbcConnection("Dsn=HSC");
 
             try
             {
