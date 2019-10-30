@@ -101,7 +101,11 @@
             this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
             this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
+<<<<<<< HEAD
             this.cuentasBancariasToolStripMenuItem.Click += new System.EventHandler(this.cuentasBancariasToolStripMenuItem_Click);
+=======
+            this.cuentasBancariasToolStripMenuItem.Click += new System.EventHandler(this.CuentasBancariasToolStripMenuItem_Click);
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
             // 
             // chequerasToolStripMenuItem
             // 
@@ -265,7 +269,11 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
+<<<<<<< HEAD
             this.statusStrip.Location = new System.Drawing.Point(0, 719);
+=======
+            this.statusStrip.Location = new System.Drawing.Point(0, 711);
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statusStrip.Size = new System.Drawing.Size(1294, 22);
@@ -282,7 +290,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1294, 741);
+=======
+            this.ClientSize = new System.Drawing.Size(1294, 733);
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -292,7 +304,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finanzas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MDI_Finanzas_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

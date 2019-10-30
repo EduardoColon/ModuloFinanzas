@@ -7,50 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDeDiseno;
 
 namespace Finanzas
 {
-
-    public partial class frm_tipoCuentaContable : Form
+    public partial class frm_mantenimientoBancos : Form
     {
         string usuario = "";
-        public frm_tipoCuentaContable(string user)
+
+        public frm_mantenimientoBancos(string user)
         {
             InitializeComponent();
-            //Parametros de Navegador
-
             usuario = user;
-            string[] alias = { "Codigo Tipo Cuenta", "Nombre", "descripcion", "Estado" };
+            string[] alias = { "ID Banco:", "Nombre:", "Descripción:", "estado:" };
+
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarAyuda("1");
-            navegador1.asignarTabla("tbl_tipoCuenta");
-            navegador1.asignarNombreForm("Tipo de Cuenta Contable");
+            navegador1.asignarTabla("tbl_bancos");
+            navegador1.asignarNombreForm("Mantenimiento de Bancos");
         }
 
-
-        private void frm_tipoCuentaContable_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frm_tipoCuentaContable_Load_1(object sender, EventArgs e)
+        private void navegador1_Load(object sender, EventArgs e)
         {
             string aplicacionActiva = "1";
             navegador1.ObtenerIdUsuario(usuario);
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
         }
-<<<<<<< HEAD
-
-        private void navegador1_Load(object sender, EventArgs e)
-        {
-
-        }
-=======
->>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
     }
 }

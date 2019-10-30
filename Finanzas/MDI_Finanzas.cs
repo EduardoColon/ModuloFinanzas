@@ -133,11 +133,6 @@ namespace Finanzas
             conciliacionBancaria.Show();
         }
 
-        private void MDI_Finanzas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_polizas polizas = new frm_polizas();
@@ -178,25 +173,43 @@ namespace Finanzas
             movimientosbancarios.Show();
         }
 
+<<<<<<< HEAD
         private void cuentasBancariasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_ManCtsbancarias manctsbancarias = new frm_ManCtsbancarias(sUsuario);
+=======
+        private void CuentasBancariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_MantenimientoCuentasBancarias manctsbancarias = new Frm_MantenimientoCuentasBancarias(sUsuario);
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
             manctsbancarias.MdiParent = this;
             manctsbancarias.Show();
         }
 
         private void bancosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             frm_ManBancos bancos = new frm_ManBancos(sUsuario);
            bancos.MdiParent = this;
            bancos.Show();
+=======
+            frm_mantenimientoBancos bancos = new frm_mantenimientoBancos(sUsuario);
+            bancos.MdiParent = this;
+            bancos.Show();
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
         }
 
         private void chequerasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             frm_ManChequera chequera = new frm_ManChequera(sUsuario);
             chequera.MdiParent = this;
             chequera.Show();
+=======
+            frm_MantenimientoChequeras chequeras = new frm_MantenimientoChequeras(sUsuario);
+            chequeras.MdiParent = this;
+            chequeras.Show();
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
         }
     }
 }

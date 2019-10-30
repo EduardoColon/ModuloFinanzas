@@ -37,7 +37,11 @@ namespace Finanzas
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
         }
 
+<<<<<<< HEAD
         private void navegador1_Load(object sender, EventArgs e)
+=======
+        private void Navegador1_Load(object sender, EventArgs e)
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
         {
 
         }

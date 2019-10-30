@@ -34,9 +34,12 @@
     <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+<<<<<<< HEAD
     </Reference>
     <Reference Include="CapaDeLogica">
       <HintPath>..\..\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeLogica.dll</HintPath>
+=======
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,7 +77,23 @@
     <Compile Include="frm_libroDiario.Designer.cs">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frm_ManBancos.cs">
+=======
+    <Compile Include="frm_mantenimientoBancos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mantenimientoBancos.Designer.cs">
+      <DependentUpon>frm_mantenimientoBancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MantenimientoChequeras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MantenimientoChequeras.Designer.cs">
+      <DependentUpon>frm_MantenimientoChequeras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_MantenimientoCuentasBancarias.cs">
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_ManBancos.Designer.cs">
@@ -143,6 +162,7 @@
     <EmbeddedResource Include="frm_libroDiario.resx">
       <DependentUpon>frm_libroDiario.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frm_ManBancos.resx">
       <DependentUpon>frm_ManBancos.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +171,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ManCtsbancarias.resx">
       <DependentUpon>frm_ManCtsbancarias.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="frm_mantenimientoBancos.resx">
+      <DependentUpon>frm_mantenimientoBancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MantenimientoChequeras.resx">
+      <DependentUpon>frm_MantenimientoChequeras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_MantenimientoCuentasBancarias.resx">
+      <DependentUpon>Frm_MantenimientoCuentasBancarias.cs</DependentUpon>
+>>>>>>> b7518e0f41e03a4fef04b3bd434a0f194eccf92e
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MovimientosBancarios.resx">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
