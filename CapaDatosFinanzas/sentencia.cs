@@ -31,7 +31,7 @@ namespace CapaDatosFinanzas
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
 
             return resultado;
@@ -56,7 +56,7 @@ namespace CapaDatosFinanzas
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
           
             return resultado;
@@ -74,6 +74,7 @@ namespace CapaDatosFinanzas
             int pTo = sJSon.LastIndexOf("}");
 
             String result = sJSon.Substring(pFrom, pTo - pFrom).Trim();
+
 
             string fecha = DateTime.Now.ToString("yyy/MM/dd");
 

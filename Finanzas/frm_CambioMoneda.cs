@@ -69,8 +69,11 @@ namespace Finanzas
         {
             logica logic = new logica();
 
-            Lbl_Resultado.Text = consultarTipoCambio(lIDMoneda[Cbo_MonedaBase.SelectedIndex],
+            if (Cbo_MonedaBase.Text.Trim() != "")
+                Lbl_Resultado.Text = consultarTipoCambio(lIDMoneda[Cbo_MonedaBase.SelectedIndex],
                 lIDMoneda[Cbo_MonedaObjetivo.SelectedIndex]);
+            else
+                MessageBox.Show("Debe ingresar monedas a la base de datos primeramente");
         }
 
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)

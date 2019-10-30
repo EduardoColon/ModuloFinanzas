@@ -140,6 +140,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "frm_CambioMoneda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_CambioMoneda";
             this.Load += new System.EventHandler(this.Frm_CambioMoneda_Load);
             this.panel1.ResumeLayout(false);

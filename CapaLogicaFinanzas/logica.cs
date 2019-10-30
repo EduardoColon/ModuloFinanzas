@@ -45,7 +45,7 @@ namespace CapaLogicaFinanzas
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
 
             return resultado;
@@ -63,7 +63,7 @@ namespace CapaLogicaFinanzas
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
             return resultado;
         }
