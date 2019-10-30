@@ -42,4 +42,5 @@ namespace Finanzas
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
         }
     }
+
 }
