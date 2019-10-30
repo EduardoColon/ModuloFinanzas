@@ -1,6 +1,6 @@
 ﻿namespace Finanzas
 {
-    partial class frm_cuentasContables
+    partial class frm_ManChequera
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,20 @@
             // navegador1
             // 
             this.navegador1.BackColor = System.Drawing.Color.White;
-            this.navegador1.Location = new System.Drawing.Point(-1, -1);
+            this.navegador1.Location = new System.Drawing.Point(-2, -1);
             this.navegador1.Name = "navegador1";
             this.navegador1.Size = new System.Drawing.Size(1178, 657);
             this.navegador1.TabIndex = 0;
             this.navegador1.Load += new System.EventHandler(this.navegador1_Load);
             // 
-            // frm_cuentasContables
+            // frm_ManChequera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 663);
+            this.ClientSize = new System.Drawing.Size(965, 450);
             this.Controls.Add(this.navegador1);
-            this.Name = "frm_cuentasContables";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_cuentasContables";
-            this.Load += new System.EventHandler(this.frm_cuentasContables_Load);
+            this.Name = "frm_ManChequera";
+            this.Text = "frm_ManChequera";
             this.ResumeLayout(false);
 
         }
