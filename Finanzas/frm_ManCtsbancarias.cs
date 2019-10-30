@@ -10,26 +10,31 @@ using System.Windows.Forms;
 
 namespace Finanzas
 {
-    public partial class frm_cuentasContables : Form
+    public partial class frm_ManCtsbancarias : Form
     {
-        string usuario = "";
-        public frm_cuentasContables(string user)
+        string usuario="";
+        public frm_ManCtsbancarias(string user)
         {
             InitializeComponent();
-
             usuario = user;
-            string[] alias = { "Codigo Cuenta", "Tipo de Cuenta", "Nombre", "Descripcion", "Estado" };
+            string[] alias = { "ID Cuenta:","No._de_Cuenta:", "Descripción:","Banco:","Moneda:","Firmas_Individuales:",
+                                "Firmantes_Conjuntos:","Saldo:","Cuenta_Primaria:","Estado:" };
+
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarComboConTabla("tbl_tipoCuenta", "nombre_tipoCuenta");
+            navegador1.asignarComboConTabla("tbl_bancos", "KidBanco"); //KidBancos
+            navegador1.asignarComboConTabla("tbl_divisa", "KidDivisa"); //KidDivisa
             navegador1.asignarAyuda("1");
-            navegador1.asignarTabla("tbl_cuentas");
-            navegador1.asignarNombreForm("Cuentas Contables");
+            navegador1.asignarTabla("tbl_cuentabancaria");
+            navegador1.asignarNombreForm("Mantenimiento Cuentas Bancarias");
+
+
+
         }
 
-        private void frm_cuentasContables_Load(object sender, EventArgs e)
+        private void navegador1_Load(object sender, EventArgs e)
         {
             string aplicacionActiva = "1";
             navegador1.ObtenerIdUsuario(usuario);

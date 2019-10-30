@@ -10,31 +10,33 @@ using System.Windows.Forms;
 
 namespace Finanzas
 {
-    public partial class frm_cuentasContables : Form
+    public partial class frm_ManChequera : Form
     {
         string usuario = "";
-        public frm_cuentasContables(string user)
+        public frm_ManChequera(string user)
         {
-            InitializeComponent();
-
             usuario = user;
-            string[] alias = { "Codigo Cuenta", "Tipo de Cuenta", "Nombre", "Descripcion", "Estado" };
+            InitializeComponent();
+            string[] alias = { "ID Chequera:", "Cuenta Bancaria:", "No. Cheques:", "Estado:" };
+
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarComboConTabla("tbl_tipoCuenta", "nombre_tipoCuenta");
+            navegador1.asignarComboConTabla("tbl_cuentabancaria", "KidCuentaBancaria"); //KidCuentaBancaria
             navegador1.asignarAyuda("1");
-            navegador1.asignarTabla("tbl_cuentas");
-            navegador1.asignarNombreForm("Cuentas Contables");
+            navegador1.asignarTabla("tbl_chequera");
+            navegador1.asignarNombreForm("Mantenimiento de Chequeras");
+
         }
 
-        private void frm_cuentasContables_Load(object sender, EventArgs e)
+        private void navegador1_Load(object sender, EventArgs e)
         {
             string aplicacionActiva = "1";
             navegador1.ObtenerIdUsuario(usuario);
             navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
             navegador1.ObtenerIdAplicacion(aplicacionActiva);
+
         }
     }
 }
