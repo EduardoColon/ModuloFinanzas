@@ -1,6 +1,6 @@
 ﻿namespace Finanzas
 {
-    partial class frm_tipoPoliza
+    partial class Frm_CreacionPresupuesto
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,21 @@
             // navegador1
             // 
             this.navegador1.BackColor = System.Drawing.Color.White;
-            this.navegador1.Location = new System.Drawing.Point(0, 0);
+            this.navegador1.Location = new System.Drawing.Point(1, -1);
             this.navegador1.Name = "navegador1";
-            this.navegador1.Size = new System.Drawing.Size(1170, 653);
+            this.navegador1.Size = new System.Drawing.Size(1178, 657);
             this.navegador1.TabIndex = 0;
             this.navegador1.Load += new System.EventHandler(this.Navegador1_Load);
             // 
-            // frm_tipoPoliza
+            // Frm_CreacionPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 653);
+            this.ClientSize = new System.Drawing.Size(1177, 648);
             this.Controls.Add(this.navegador1);
-            this.Name = "frm_tipoPoliza";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mantenimiento Tipo de Polizas";
-            this.Load += new System.EventHandler(this.frm_tipoPoliza_Load);
+            this.Name = "Frm_CreacionPresupuesto";
+            this.Text = "Frm_CreacionPresupuesto";
+            this.Load += new System.EventHandler(this.Frm_CreacionPresupuesto_Load);
             this.ResumeLayout(false);
 
         }

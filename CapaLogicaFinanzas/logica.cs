@@ -118,5 +118,12 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
+
+        public DataSet consultaLogicaBitacora()
+        {
+            return sen.consultarBitacora();
+        }
+
     }
 }

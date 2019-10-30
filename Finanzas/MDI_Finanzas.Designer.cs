@@ -32,6 +32,9 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.bancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chequerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clasificaciónDeGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conciliacionesBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +44,7 @@
             this.cuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCuentasContablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDePolizaaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.creacionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroDiarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,14 +53,13 @@
             this.flujoDeEfectivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteIntegradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cuentasBancariasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chequerasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clasificaciónDeGastosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -93,8 +96,26 @@
             this.chequerasToolStripMenuItem,
             this.clasificaciónDeGastosToolStripMenuItem});
             this.mantenimientosToolStripMenuItem1.Name = "mantenimientosToolStripMenuItem1";
-            this.mantenimientosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.mantenimientosToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
             this.mantenimientosToolStripMenuItem1.Text = "Mantenimientos";
+            // 
+            // cuentasBancariasToolStripMenuItem
+            // 
+            this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
+            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
+            // 
+            // chequerasToolStripMenuItem
+            // 
+            this.chequerasToolStripMenuItem.Name = "chequerasToolStripMenuItem";
+            this.chequerasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.chequerasToolStripMenuItem.Text = "Chequeras";
+            // 
+            // clasificaciónDeGastosToolStripMenuItem
+            // 
+            this.clasificaciónDeGastosToolStripMenuItem.Name = "clasificaciónDeGastosToolStripMenuItem";
+            this.clasificaciónDeGastosToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.clasificaciónDeGastosToolStripMenuItem.Text = "Clasificación de Gastos";
             // 
             // procesosToolStripMenuItem
             // 
@@ -103,7 +124,7 @@
             this.movimientosDeBancosToolStripMenuItem,
             this.tipoDeCambioToolStripMenuItem});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
-            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.procesosToolStripMenuItem.Text = "Procesos";
             this.procesosToolStripMenuItem.Click += new System.EventHandler(this.ProcesosToolStripMenuItem_Click);
             // 
@@ -142,7 +163,8 @@
             this.mantenimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cuentasContablesToolStripMenuItem,
             this.tipoDeCuentasContablesToolStripMenuItem,
-            this.tipoDePolizaaToolStripMenuItem});
+            this.tipoDePolizaaToolStripMenuItem,
+            this.creacionPresupuestoToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
@@ -167,6 +189,13 @@
             this.tipoDePolizaaToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.tipoDePolizaaToolStripMenuItem.Text = "Tipo de Polizas";
             this.tipoDePolizaaToolStripMenuItem.Click += new System.EventHandler(this.tipoDePolizaaToolStripMenuItem_Click);
+            // 
+            // creacionPresupuestoToolStripMenuItem
+            // 
+            this.creacionPresupuestoToolStripMenuItem.Name = "creacionPresupuestoToolStripMenuItem";
+            this.creacionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.creacionPresupuestoToolStripMenuItem.Text = "Creacion Presupuesto";
+            this.creacionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.CreacionPresupuestoToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem1
             // 
@@ -222,9 +251,25 @@
             // 
             // presupuestosToolStripMenuItem
             // 
+            this.presupuestosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionPresupuestoToolStripMenuItem,
+            this.reporteIntegradoToolStripMenuItem});
             this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
             this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
+            // 
+            // gestionPresupuestoToolStripMenuItem
+            // 
+            this.gestionPresupuestoToolStripMenuItem.Name = "gestionPresupuestoToolStripMenuItem";
+            this.gestionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.gestionPresupuestoToolStripMenuItem.Text = "Gestion Presupuesto";
+            this.gestionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.GestionPresupuestoToolStripMenuItem_Click);
+            // 
+            // reporteIntegradoToolStripMenuItem
+            // 
+            this.reporteIntegradoToolStripMenuItem.Name = "reporteIntegradoToolStripMenuItem";
+            this.reporteIntegradoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.reporteIntegradoToolStripMenuItem.Text = "Reporte Integrado";
             // 
             // ayudaToolStripMenuItem
             // 
@@ -256,24 +301,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
-            // 
-            // cuentasBancariasToolStripMenuItem
-            // 
-            this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
-            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
-            // 
-            // chequerasToolStripMenuItem
-            // 
-            this.chequerasToolStripMenuItem.Name = "chequerasToolStripMenuItem";
-            this.chequerasToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.chequerasToolStripMenuItem.Text = "Chequeras";
-            // 
-            // clasificaciónDeGastosToolStripMenuItem
-            // 
-            this.clasificaciónDeGastosToolStripMenuItem.Name = "clasificaciónDeGastosToolStripMenuItem";
-            this.clasificaciónDeGastosToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.clasificaciónDeGastosToolStripMenuItem.Text = "Clasificación de Gastos";
             // 
             // MDI_Finanzas
             // 
@@ -329,6 +356,9 @@
         private System.Windows.Forms.ToolStripMenuItem cuentasBancariasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem chequerasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clasificaciónDeGastosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem creacionPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteIntegradoToolStripMenuItem;
     }
 }
 

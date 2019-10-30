@@ -10,34 +10,37 @@ using System.Windows.Forms;
 
 namespace Finanzas
 {
-    public partial class frm_tipoPoliza : Form
+    public partial class Frm_CreacionPresupuesto : Form
     {
         string usuario = "";
-        public frm_tipoPoliza(string user)
+        public Frm_CreacionPresupuesto(string user)
         {
             InitializeComponent();
             usuario = user;
-            string[] alias = { "Codigo Tipo Poliza", "Descripcion", "Estado" };
+            string[] alias = { "Id", "Moneda", "Area", "Cuenta", "Nombre", "Fecha", "Descripcion", "Monto", "Anotacion", "Estado" };
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
+            navegador1.asignarComboConTabla("tbl_moneda", "nombre_moneda", 1);
+            navegador1.asignarComboConTabla("tbl_areas", "nombreArea", 1);
+            navegador1.asignarComboConTabla("tbl_cuentas", "nombre", 1);
             navegador1.asignarAyuda("1");
-            navegador1.asignarTabla("tbl_tipo_poliza");
-            navegador1.asignarNombreForm("Tipo de Poliza");
-        }
-
-        private void frm_tipoPoliza_Load(object sender, EventArgs e)
-        {
-            string aplicacionActiva = "1";
-            navegador1.ObtenerIdUsuario(usuario);
-            navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
-            navegador1.ObtenerIdAplicacion(aplicacionActiva);
+            navegador1.asignarTabla("tbl_presupuesto");
+            navegador1.asignarNombreForm("Creacion Presupuesto");
         }
 
         private void Navegador1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Frm_CreacionPresupuesto_Load(object sender, EventArgs e)
+        {
+            string aplicacionActiva = "1";
+            navegador1.ObtenerIdUsuario(usuario);
+            navegador1.botonesYPermisosInicial(usuario, aplicacionActiva);
+            navegador1.ObtenerIdAplicacion(aplicacionActiva);
         }
     }
 }

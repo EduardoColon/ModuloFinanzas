@@ -177,5 +177,19 @@ namespace Finanzas
             movimientosbancarios.MdiParent = this;
             movimientosbancarios.Show();
         }
+
+        private void CreacionPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CreacionPresupuesto presupuesto = new Frm_CreacionPresupuesto(sUsuario);
+            presupuesto.MdiParent = this;
+            presupuesto.Show();
+        }
+
+        private void GestionPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_GestionPresupuesto presupuesto1 = new Frm_GestionPresupuesto();
+            presupuesto1.MdiParent = this;
+            presupuesto1.Show();
+        }
     }
 }

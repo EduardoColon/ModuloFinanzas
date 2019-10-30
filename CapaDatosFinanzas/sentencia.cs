@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Odbc;
 using System.Linq;
 using System.Net;
@@ -155,6 +156,31 @@ namespace CapaDatosFinanzas
                 Console.WriteLine(ex);
                 return null;
             }
+        }
+
+        /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
+
+        public DataSet consultarBitacora()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select Kidpresupuesto as Id,KidDivisa as Divisa,KidArea as Area,KidCuenta as Cuenta,nombre as Nombre,fecha as Fecha,descripcion as Descripcion,monto as Monto,estado as Estado from tbl_presupuesto"
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+
+            }
+
+            return ds;
         }
     }
 }
