@@ -191,5 +191,26 @@ namespace Finanzas
             presupuesto1.MdiParent = this;
             presupuesto1.Show();
         }
+
+        private void cuentasBancariasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ctsbancarias  ctsbancarias = new frm_ctsbancarias(sUsuario);
+            ctsbancarias.MdiParent = this;
+            ctsbancarias.Show();
+        }
+
+        private void chequerasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_manchequera chequeras = new frm_manchequera(sUsuario);
+            chequeras.MdiParent = this;
+            chequeras.Show();
+        }
+
+        private void bancosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_manbancos bancos = new frm_manbancos(sUsuario);
+            bancos.MdiParent = this;
+            bancos.Show();
+        }
     }
 }
