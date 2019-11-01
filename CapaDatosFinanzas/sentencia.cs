@@ -106,10 +106,18 @@ namespace CapaDatosFinanzas
 
         public OdbcDataAdapter consultarPolizas(string fechaInicial, string fechaFinal, string TipoDePoliza)
         {
+            string sCodigoPoliza = "";
             try
             {
-                
-                string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE PE.KidTipoDePoliza = '"+TipoDePoliza+"' AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
+                OdbcCommand sqlCodigoPoliza = new OdbcCommand("SELECT KidTipoDePoliza FROM tbl_tipo_poliza WHERE descripcion = '" + TipoDePoliza + "' ", con.conectar());
+                OdbcDataReader almacena = sqlCodigoPoliza.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoPoliza = almacena.GetString(0);
+                }
+
+                string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE PE.KidTipoDePoliza = '"+ sCodigoPoliza + "' AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
                 OdbcDataAdapter dataPolizas = new OdbcDataAdapter(sqlConsultarPolizas, con.conectar());
                 return dataPolizas;
             }
@@ -124,7 +132,7 @@ namespace CapaDatosFinanzas
         {
             try
             {
-                string sqlTiposPolizas = "SELECT KidTipoDePoliza FROM tbl_tipo_poliza WHERE estado = 1";
+                string sqlTiposPolizas = "SELECT descripcion FROM tbl_tipo_poliza WHERE estado = 1";
                 OdbcDataAdapter dataTipoPolizas = new OdbcDataAdapter(sqlTiposPolizas, con.conectar());
                 return dataTipoPolizas;
             }
