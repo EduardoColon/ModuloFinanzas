@@ -99,5 +99,10 @@ namespace Finanzas
         {
 
         }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

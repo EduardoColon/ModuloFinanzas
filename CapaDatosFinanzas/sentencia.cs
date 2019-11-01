@@ -120,6 +120,7 @@ namespace CapaDatosFinanzas
             }
         }
 
+
         public OdbcDataAdapter consultarTipoPolizas()
         {
             try
@@ -178,6 +179,45 @@ namespace CapaDatosFinanzas
             catch (ArgumentOutOfRangeException ex)
             {
 
+            }
+
+            return ds;
+        }
+
+        //Eduardo Colon Conciliacion Bancaria Version 2
+
+        public OdbcDataAdapter consultarBancos()
+        {
+            string sqlModulos = "SELECT KidBanco, nombre FROM tbl_bancos WHERE estado = 1";
+            OdbcDataAdapter dataModulos = new OdbcDataAdapter(sqlModulos, con.conectar());
+            return dataModulos;
+        }
+
+        public DataSet consultarLibroBancos(string idBanco, string periodo)
+        {
+            DataSet ds;
+            try
+            {
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+        " FROM tbl_libro_bancos WHERE estado = 1 " +
+        " AND ( EXISTS (  SELECT tbl_cuentabancaria.KidBanco FROM tbl_cuentabancaria WHERE tbl_cuentabancaria.KidBanco = " + idBanco + " AND " +
+        " tbl_cuentabancaria.KidCuentaBancaria = cuenta_debito) " +
+        " OR EXISTS (  SELECT tbl_cuentabancaria.KidBanco FROM tbl_cuentabancaria WHERE tbl_cuentabancaria.KidBanco =  " + idBanco + " AND " +
+        " tbl_cuentabancaria.KidCuentaBancaria = cuenta_credito ) ) " +
+        " AND fecha_movimiento LIKE '" + periodo + "%'"
+    , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
             }
 
             return ds;
