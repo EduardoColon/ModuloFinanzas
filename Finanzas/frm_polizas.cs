@@ -16,7 +16,6 @@ namespace Finanzas
     public partial class frm_polizas : Form
     {
         logica logic = new logica();
-
         public frm_polizas()
         {
             InitializeComponent();
@@ -56,12 +55,14 @@ namespace Finanzas
 
         private void btn_consulta_Click(object sender, EventArgs e)
         {
+            limpiarForm();
             string sFechaInicio = null;
             string sFechaFinal = null;
             string sTipoDePoliza = null;
 
             sFechaInicio = dtp_fechaInicial.Value.ToString("yyyy-MM-dd");
             sFechaFinal = dtp_fechaFinal.Value.ToString("yyyy-MM-dd");
+
 
             if (cbo_tipoPoliza.SelectedItem != null)
             {
@@ -91,13 +92,16 @@ namespace Finanzas
             {
                 MessageBox.Show("No ha seleccionado un tipo de poliza");
             }
-
-            //limpiarForm();
         }
 
         private void btn_IngresoLibroDiario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbo_tipoPoliza_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarForm();
         }
     }
 }
