@@ -150,5 +150,10 @@ namespace CapaLogicaFinanzas
         {
             return sen.consultarLibroBancos(idBanco, periodo);
         }
+
+        public bool ConsultaLogicaCuentaBanco(string idBanco, string idCuenta)
+        {
+            return sen.consultarCuentaBanco(idCuenta, idBanco);
+        }
     }
 }

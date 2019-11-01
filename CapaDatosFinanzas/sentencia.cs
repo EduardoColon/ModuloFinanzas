@@ -222,5 +222,28 @@ namespace CapaDatosFinanzas
 
             return ds;
         }
+
+        public bool consultarCuentaBanco(string idCuenta, string idBanco)
+        {
+            try
+            {
+                OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT KidCuentaBancaria FROM tbl_cuentabancaria " +
+                    " WHERE KidCuentaBancaria = '" + idCuenta + "' AND " +
+                    " KidBanco = '" + idBanco + "'", con.conectar());
+                OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
+
+                if (almacena.HasRows)
+                    return true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return false;
+        }
+
     }
 }
