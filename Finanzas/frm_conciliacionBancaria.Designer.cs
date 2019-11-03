@@ -44,6 +44,12 @@
             this.DgvLibroBancos = new System.Windows.Forms.DataGridView();
             this.BtnAgregarConciliado = new System.Windows.Forms.Button();
             this.BtnRegresarConciliado = new System.Windows.Forms.Button();
+            this.CboMonedas = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.LblDebe = new System.Windows.Forms.Label();
+            this.LblHaber = new System.Windows.Forms.Label();
             this.pdfEstadoCuenta = new AxAcroPDFLib.AxAcroPDF();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConciliado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLibroBancos)).BeginInit();
@@ -53,7 +59,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(702, 659);
+            this.button1.Location = new System.Drawing.Point(772, 669);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 48);
@@ -66,7 +72,7 @@
             // 
             this.LblDiferencia.AutoSize = true;
             this.LblDiferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDiferencia.Location = new System.Drawing.Point(387, 669);
+            this.LblDiferencia.Location = new System.Drawing.Point(697, 679);
             this.LblDiferencia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LblDiferencia.Name = "LblDiferencia";
             this.LblDiferencia.Size = new System.Drawing.Size(58, 29);
@@ -77,7 +83,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(57, 669);
+            this.label6.Location = new System.Drawing.Point(367, 679);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(325, 29);
@@ -92,7 +98,7 @@
             this.DgvConciliado.Location = new System.Drawing.Point(62, 447);
             this.DgvConciliado.Name = "DgvConciliado";
             this.DgvConciliado.RowHeadersWidth = 62;
-            this.DgvConciliado.Size = new System.Drawing.Size(835, 198);
+            this.DgvConciliado.Size = new System.Drawing.Size(905, 198);
             this.DgvConciliado.TabIndex = 24;
             this.DgvConciliado.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvConciliado_DataBindingComplete);
             // 
@@ -145,7 +151,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(456, 86);
+            this.label2.Location = new System.Drawing.Point(741, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 29);
@@ -168,7 +174,7 @@
             this.DtpPeriodo.CustomFormat = "MM/yyyy";
             this.DtpPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpPeriodo.Location = new System.Drawing.Point(524, 83);
+            this.DtpPeriodo.Location = new System.Drawing.Point(809, 80);
             this.DtpPeriodo.Margin = new System.Windows.Forms.Padding(2);
             this.DtpPeriodo.Name = "DtpPeriodo";
             this.DtpPeriodo.Size = new System.Drawing.Size(158, 35);
@@ -195,30 +201,96 @@
             this.DgvLibroBancos.Name = "DgvLibroBancos";
             this.DgvLibroBancos.RowHeadersWidth = 62;
             this.DgvLibroBancos.RowTemplate.Height = 28;
-            this.DgvLibroBancos.Size = new System.Drawing.Size(838, 190);
+            this.DgvLibroBancos.Size = new System.Drawing.Size(908, 190);
             this.DgvLibroBancos.TabIndex = 29;
             this.DgvLibroBancos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLibroBancos_CellContentClick);
             this.DgvLibroBancos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvLibroBancos_DataBindingComplete);
             // 
             // BtnAgregarConciliado
             // 
-            this.BtnAgregarConciliado.Location = new System.Drawing.Point(545, 380);
+            this.BtnAgregarConciliado.Image = ((System.Drawing.Image)(resources.GetObject("BtnAgregarConciliado.Image")));
+            this.BtnAgregarConciliado.Location = new System.Drawing.Point(801, 380);
             this.BtnAgregarConciliado.Name = "BtnAgregarConciliado";
-            this.BtnAgregarConciliado.Size = new System.Drawing.Size(80, 47);
+            this.BtnAgregarConciliado.Size = new System.Drawing.Size(80, 61);
             this.BtnAgregarConciliado.TabIndex = 30;
-            this.BtnAgregarConciliado.Text = ">>";
             this.BtnAgregarConciliado.UseVisualStyleBackColor = true;
             this.BtnAgregarConciliado.Click += new System.EventHandler(this.BtnAgregarConciliado_Click);
             // 
             // BtnRegresarConciliado
             // 
-            this.BtnRegresarConciliado.Location = new System.Drawing.Point(651, 380);
+            this.BtnRegresarConciliado.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegresarConciliado.Image")));
+            this.BtnRegresarConciliado.Location = new System.Drawing.Point(887, 380);
             this.BtnRegresarConciliado.Name = "BtnRegresarConciliado";
-            this.BtnRegresarConciliado.Size = new System.Drawing.Size(80, 47);
+            this.BtnRegresarConciliado.Size = new System.Drawing.Size(80, 61);
             this.BtnRegresarConciliado.TabIndex = 31;
-            this.BtnRegresarConciliado.Text = "<<";
             this.BtnRegresarConciliado.UseVisualStyleBackColor = true;
             this.BtnRegresarConciliado.Click += new System.EventHandler(this.BtnRegresarConciliado_Click);
+            // 
+            // CboMonedas
+            // 
+            this.CboMonedas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CboMonedas.FormattingEnabled = true;
+            this.CboMonedas.Location = new System.Drawing.Point(559, 81);
+            this.CboMonedas.Margin = new System.Windows.Forms.Padding(2);
+            this.CboMonedas.Name = "CboMonedas";
+            this.CboMonedas.Size = new System.Drawing.Size(168, 37);
+            this.CboMonedas.TabIndex = 33;
+            this.CboMonedas.SelectedIndexChanged += new System.EventHandler(this.CboMonedas_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(448, 84);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 29);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Moneda:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(65, 659);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 29);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Debe:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(65, 688);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 29);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Haber:";
+            // 
+            // LblDebe
+            // 
+            this.LblDebe.AutoSize = true;
+            this.LblDebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDebe.Location = new System.Drawing.Point(177, 659);
+            this.LblDebe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblDebe.Name = "LblDebe";
+            this.LblDebe.Size = new System.Drawing.Size(58, 29);
+            this.LblDebe.TabIndex = 36;
+            this.LblDebe.Text = "0.00";
+            // 
+            // LblHaber
+            // 
+            this.LblHaber.AutoSize = true;
+            this.LblHaber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblHaber.Location = new System.Drawing.Point(177, 688);
+            this.LblHaber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblHaber.Name = "LblHaber";
+            this.LblHaber.Size = new System.Drawing.Size(58, 29);
+            this.LblHaber.TabIndex = 37;
+            this.LblHaber.Text = "0.00";
             // 
             // pdfEstadoCuenta
             // 
@@ -234,6 +306,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1557, 788);
+            this.Controls.Add(this.LblHaber);
+            this.Controls.Add(this.LblDebe);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.CboMonedas);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.BtnRegresarConciliado);
             this.Controls.Add(this.BtnAgregarConciliado);
             this.Controls.Add(this.DgvLibroBancos);
@@ -279,5 +357,11 @@
         private System.Windows.Forms.DataGridView DgvLibroBancos;
         private System.Windows.Forms.Button BtnAgregarConciliado;
         private System.Windows.Forms.Button BtnRegresarConciliado;
+        private System.Windows.Forms.ComboBox CboMonedas;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LblDebe;
+        private System.Windows.Forms.Label LblHaber;
     }
 }

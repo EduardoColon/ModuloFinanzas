@@ -13,6 +13,7 @@ namespace Finanzas
         string sUsuario;
         double dTotalDebe = 0.00, dTotalHaber = 0.00, dDiferencia = 0.00;
         List<string> lIdBanco = new List<string>();
+        List<string> lIdMoneda = new List<string>();
         List<string> lIdMovimientoSeleccionado = new List<string>();
         logica logic = new logica();
 
@@ -22,7 +23,7 @@ namespace Finanzas
             InitializeComponent();
             this.sUsuario = sUsuario;
             llenarComboBoxBancos();
-            
+            llenarComboBoxMonedas();
 
 
             DgvConciliado.Columns.Add("KidMovimientoBancario", "KidMovimientoBancario");
@@ -57,6 +58,30 @@ namespace Finanzas
             
         }
 
+        private void llenarComboBoxMonedas()
+        {
+
+            try
+            {
+                DataTable dtModulos = logic.consultaLogicaMonedas();
+
+                foreach (DataRow row in dtModulos.Rows)
+                {
+                    CboMonedas.Items.Add(row[1].ToString());
+                    lIdMoneda.Add(row[0].ToString());
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            if (lIdMoneda.Count > 0)
+                CboMonedas.SelectedIndex = 0;
+
+        }
+
+
         private void Frm_conciliacionBancaria_Load(object sender, EventArgs e)
         {
 
@@ -84,22 +109,24 @@ namespace Finanzas
         private void Cbo_bancos_SelectedIndexChanged(object sender, EventArgs e)
         {
             llenarDgvLibroBancos();
+            limpiarDgvConciliado();
+
         }
 
         private void llenarDgvLibroBancos()
         {
+            LblDiferencia.Text = "";
             DgvLibroBancos.DataSource = null;
             DgvLibroBancos.Refresh();
-
             int iMes = DtpPeriodo.Value.Month;
             int iAnio = DtpPeriodo.Value.Year;
             string periodo = iAnio + "-" + iMes;
 
-            if(Cbo_bancos.SelectedIndex >= 0)
+            if(Cbo_bancos.Text.Trim() != "" && CboMonedas.Text.Trim() != "")
             {
                 try
                 {                   
-                    DataSet ds = logic.consultaLogicaLibroBancos(lIdBanco[Cbo_bancos.SelectedIndex].ToString(), periodo);
+                    DataSet ds = logic.consultaLogicaLibroBancos(lIdBanco[Cbo_bancos.SelectedIndex].ToString(), periodo, lIdMoneda[CboMonedas.SelectedIndex].ToString());
                     DgvLibroBancos.DataSource = ds.Tables[0];
                     DgvConciliado.DataSource = null;
                 }
@@ -113,14 +140,53 @@ namespace Finanzas
 
         }
 
+        private void limpiarDgvConciliado()
+        {
+            DgvConciliado.Rows.Clear();    
+            lIdMovimientoSeleccionado.Clear();
+        }
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             llenarDgvLibroBancos();
+            limpiarDgvConciliado();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
+            string sMensaje = "Cerrar conciliación bancaria con los siguientes datos: " +
+                "\nBanco: " + Cbo_bancos.Text +
+                "\nMoneda: " + CboMonedas.Text +
+                "\nPeriodo: " + DtpPeriodo.Text +
+                "\nSaldo pendiente por cuadrar: " + dDiferencia;
+
+            int iMes = DtpPeriodo.Value.Month;
+            int iAnio = DtpPeriodo.Value.Year;
+            string periodo = iAnio + "-" + iMes;
+
+            DialogResult dialogResult = MessageBox.Show(sMensaje,"Conciliación bancaria", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                for(int i = 0; i < lIdMovimientoSeleccionado.Count; i++)
+                {
+                    logic.registrarMovimientoConciliado(lIdMovimientoSeleccionado[i]);
+                }
+
+
+                if(
+                logic.registrarConciliacionBancaria(lIdBanco[Cbo_bancos.SelectedIndex],
+                    lIdMoneda[CboMonedas.SelectedIndex],
+                    periodo,
+                    dDiferencia.ToString()
+                    ))
+                {
+                    MessageBox.Show("La conciliación fue registrada correctamente");
+                    this.Close();
+                }
+
+             
+            }   
         }
 
         private void DgvLibroBancos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -195,8 +261,9 @@ namespace Finanzas
             }
 
             dDiferencia = dTotalHaber - dTotalDebe;
-
-            LblDiferencia.Text = dDiferencia.ToString();
+            LblDebe.Text = lIdMoneda[CboMonedas.SelectedIndex] + " " + dTotalDebe.ToString();
+            LblHaber.Text = lIdMoneda[CboMonedas.SelectedIndex] + " " + dTotalHaber.ToString();
+            LblDiferencia.Text = lIdMoneda[CboMonedas.SelectedIndex] + " " + dDiferencia.ToString();
 
         }
 
@@ -219,6 +286,12 @@ namespace Finanzas
                 }
             }
 
+        }
+
+        private void CboMonedas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            llenarDgvLibroBancos();
+            limpiarDgvConciliado();
         }
 
         private void DgvLibroBancos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
