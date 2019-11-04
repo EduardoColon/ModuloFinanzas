@@ -61,6 +61,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.conciliaciónBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -188,7 +189,7 @@
             this.balanceGeneralToolStripMenuItem1,
             this.presupuestosToolStripMenuItem1});
             this.contabilidadToolStripMenuItem2.Name = "contabilidadToolStripMenuItem2";
-            this.contabilidadToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.contabilidadToolStripMenuItem2.Size = new System.Drawing.Size(223, 34);
             this.contabilidadToolStripMenuItem2.Text = "Contabilidad";
             // 
             // polizasToolStripMenuItem1
@@ -246,7 +247,7 @@
             this.movimientosDeBancosToolStripMenuItem1,
             this.tipoDeCambioToolStripMenuItem1});
             this.bancosToolStripMenuItem4.Name = "bancosToolStripMenuItem4";
-            this.bancosToolStripMenuItem4.Size = new System.Drawing.Size(270, 34);
+            this.bancosToolStripMenuItem4.Size = new System.Drawing.Size(223, 34);
             this.bancosToolStripMenuItem4.Text = "Bancos";
             // 
             // conciliacionBancariaToolStripMenuItem
@@ -285,7 +286,8 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.creacionPresupuestoToolStripMenuItem});
+            this.creacionPresupuestoToolStripMenuItem,
+            this.conciliaciónBancariaToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
@@ -314,6 +316,13 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(66, 25);
             this.toolStripStatusLabel.Text = "Estado";
+            // 
+            // conciliaciónBancariaToolStripMenuItem
+            // 
+            this.conciliaciónBancariaToolStripMenuItem.Name = "conciliaciónBancariaToolStripMenuItem";
+            this.conciliaciónBancariaToolStripMenuItem.Size = new System.Drawing.Size(308, 34);
+            this.conciliaciónBancariaToolStripMenuItem.Text = "Conciliación Bancaria";
+            this.conciliaciónBancariaToolStripMenuItem.Click += new System.EventHandler(this.ConciliaciónBancariaToolStripMenuItem_Click);
             // 
             // MDI_Finanzas
             // 
@@ -373,6 +382,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem herramientasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem creacionPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem conciliaciónBancariaToolStripMenuItem;
     }
 }
 

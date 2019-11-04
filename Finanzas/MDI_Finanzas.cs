@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -288,6 +289,11 @@ namespace Finanzas
             frm_conciliacionBancaria frm_Conciliacion = new frm_conciliacionBancaria(sUsuario);
             frm_Conciliacion.MdiParent = this;
             frm_Conciliacion.Show();
+        }
+
+        private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+             Help.ShowHelp(this, "C:/Ayudas/ConciliacionBancaria.chm");
         }
     }
 }
