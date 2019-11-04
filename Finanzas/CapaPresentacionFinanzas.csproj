@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
@@ -38,6 +39,10 @@
     <Reference Include="CapaDeLogica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
+=======
+    <Reference Include="CapaDeDiseno">
+      <HintPath>..\..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+>>>>>>> 7dd078cc7403b132d0f49942da4b753e6859ab73
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

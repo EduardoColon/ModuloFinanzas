@@ -16,7 +16,6 @@ namespace Finanzas
     public partial class frm_polizas : Form
     {
         logica logic = new logica();
-
         public frm_polizas()
         {
             InitializeComponent();
@@ -43,25 +42,25 @@ namespace Finanzas
         private void button1_Click(object sender, EventArgs e)
         {
            
-
-
-
         }
 
         void limpiarForm()
         {
+            cbo_tipoPoliza.DataSource = null;
             cbo_tipoPoliza.Text = "";
             dgv_polizas.Rows.Clear();
         }
 
         private void btn_consulta_Click(object sender, EventArgs e)
         {
+            limpiarForm();
             string sFechaInicio = null;
             string sFechaFinal = null;
             string sTipoDePoliza = null;
 
             sFechaInicio = dtp_fechaInicial.Value.ToString("yyyy-MM-dd");
             sFechaFinal = dtp_fechaFinal.Value.ToString("yyyy-MM-dd");
+
 
             if (cbo_tipoPoliza.SelectedItem != null)
             {
@@ -70,13 +69,21 @@ namespace Finanzas
                 try
                 {
                     DataTable dtPoliza = logic.consultaLogicaPolizas(sFechaInicio, sFechaFinal, sTipoDePoliza);
-                    foreach (DataRow dt in dtPoliza.Rows)
+
+
+                        foreach (DataRow dt in dtPoliza.Rows)
+                        {
+                            string sCodigoCuenta = dt[1].ToString();
+
+                            string sNombreCuenta = logic.consultaLogicaNombreCuentaContable(sCodigoCuenta);
+
+                            dgv_polizas.Rows.Add(dt[0].ToString(), sNombreCuenta, dt[2].ToString(), dt[3].ToString());
+
+                        }          
+                        
+                    if(dgv_polizas.Rows.Count == 0)
                     {
-                        string sCodigoCuenta = dt[1].ToString();
-
-                        string sNombreCuenta = logic.consultaLogicaNombreCuentaContable(sCodigoCuenta);
-
-                        dgv_polizas.Rows.Add(dt[0].ToString(), sNombreCuenta, dt[2].ToString(), dt[3].ToString());
+                        MessageBox.Show("No hay polizas de: " + sTipoDePoliza);
                     }
 
                 }
@@ -91,8 +98,6 @@ namespace Finanzas
             {
                 MessageBox.Show("No ha seleccionado un tipo de poliza");
             }
-
-            //limpiarForm();
         }
 
         private void btn_IngresoLibroDiario_Click(object sender, EventArgs e)
@@ -100,9 +105,10 @@ namespace Finanzas
 
         }
 
-        private void GroupBox2_Enter(object sender, EventArgs e)
-        {
 
+        private void cbo_tipoPoliza_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            limpiarForm();
         }
     }
 }

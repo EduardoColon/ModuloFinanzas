@@ -98,6 +98,7 @@
             this.cbo_tipoPoliza.Name = "cbo_tipoPoliza";
             this.cbo_tipoPoliza.Size = new System.Drawing.Size(180, 30);
             this.cbo_tipoPoliza.TabIndex = 7;
+            this.cbo_tipoPoliza.SelectedIndexChanged += new System.EventHandler(this.cbo_tipoPoliza_SelectedIndexChanged);
             // 
             // btn_IngresoLibroDiario
             // 
