@@ -120,9 +120,25 @@ namespace CapaLogicaFinanzas
 
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
-        public DataSet consultaLogicaBitacora()
+        public DataSet consultaLogicapresupuesto()
         {
-            return sen.consultarBitacora();
+            return sen.consultarPresupuesto();
+        }
+
+        public DataTable ConsultaLogicaPerfil(string consultabu)
+        {
+            try
+            {
+                OdbcDataAdapter cmpsperfiles = sen.ConsultarPerfil(consultabu);
+                DataTable tablaperfiles = new DataTable();
+                cmpsperfiles.Fill(tablaperfiles);
+                return tablaperfiles;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
         }
 
     }
