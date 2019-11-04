@@ -294,6 +294,11 @@ namespace Finanzas
             limpiarDgvConciliado();
         }
 
+        private void PdfEstadoCuenta_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void DgvLibroBancos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             identificarCuentasBancoDgvBancos();
