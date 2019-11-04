@@ -67,7 +67,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta de Polizas";
-            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
+        //    this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // btn_consulta
             // 

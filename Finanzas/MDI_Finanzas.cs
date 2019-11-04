@@ -282,5 +282,12 @@ namespace Finanzas
         {
             Help.ShowHelp(this, "C:/Ayudas/CreacionPresupuesto.chm");
         }
+
+        private void ConciliacionBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_conciliacionBancaria frm_Conciliacion = new frm_conciliacionBancaria(sUsuario);
+            frm_Conciliacion.MdiParent = this;
+            frm_Conciliacion.Show();
+        }
     }
 }
