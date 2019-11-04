@@ -277,5 +277,10 @@ namespace Finanzas
         {
             this.Close();
         }
+
+        private void CreacionPresupuestoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "C:/Ayudas/CreacionPresupuesto.chm");
+        }
     }
 }
