@@ -128,6 +128,7 @@ namespace CapaDatosFinanzas
             }
         }
 
+
         public OdbcDataAdapter consultarTipoPolizas()
         {
             try
@@ -190,6 +191,107 @@ namespace CapaDatosFinanzas
 
             return ds;
         }
+
+        
+
+        //Eduardo Colon Conciliacion Bancaria Version 2
+
+        public OdbcDataAdapter consultarBancos()
+        {
+            string sqlModulos = "SELECT KidBanco, nombre FROM tbl_bancos WHERE estado = 1";
+            OdbcDataAdapter dataModulos = new OdbcDataAdapter(sqlModulos, con.conectar());
+            return dataModulos;
+        }
+
+        public OdbcDataAdapter consultarMonedas()
+        {
+            string sqlModulos = "SELECT KidDivisa, nombre FROM tbl_divisa WHERE estado = 1";
+            OdbcDataAdapter dataModulos = new OdbcDataAdapter(sqlModulos, con.conectar());
+            return dataModulos;
+        }
+
+
+        public DataSet consultarLibroBancos(string idBanco, string periodo, string idMoneda)
+        {
+            DataSet ds;
+            try
+            {
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+        " FROM tbl_libro_bancos WHERE estado = 1 " +
+        " AND ( EXISTS (  SELECT tbl_cuentabancaria.KidBanco FROM tbl_cuentabancaria WHERE tbl_cuentabancaria.KidBanco = " + idBanco + " AND " +
+        " tbl_cuentabancaria.KidCuentaBancaria = cuenta_debito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') " +
+        " OR EXISTS (  SELECT tbl_cuentabancaria.KidBanco FROM tbl_cuentabancaria WHERE tbl_cuentabancaria.KidBanco =  " + idBanco + " AND " +
+        " tbl_cuentabancaria.KidCuentaBancaria = cuenta_credito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') ) " +
+        " AND fecha_movimiento LIKE '" + periodo + "%' " +
+        " AND movimiento_conciliado = 0" 
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+        }
+
+        public bool consultarCuentaBanco(string idCuenta, string idBanco)
+        {
+            try
+            {
+                OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT KidCuentaBancaria FROM tbl_cuentabancaria " +
+                    " WHERE KidCuentaBancaria = '" + idCuenta + "' AND " +
+                    " KidBanco = '" + idBanco + "'", con.conectar());
+                OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
+
+                if (almacena.HasRows)
+                    return true;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return false;
+        }
+
+        public void actualizarMovmientoBancario(string idMovimiento)
+        {
+
+            try
+            {
+                OdbcCommand sql = new OdbcCommand("UPDATE tbl_libro_bancos SET " +
+                    " movimiento_conciliado = 1 WHERE KidMovimientoBancario = " + idMovimiento, con.conectar());
+                sql.ExecuteNonQuery();
+                sql.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public void insertarConciliacionBancaria(string idBanco, string idMoneda, string periodo, string saldo)
+        {
+            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
+                  + idBanco + " ,'" +
+                  idMoneda + "' , '" +
+                  periodo + "' , " +
+                  saldo +  " , 1" +
+                  ")  ON DUPLICATE KEY UPDATE diferencia_total=" + saldo, con.conectar());
+            sql.ExecuteNonQuery();
+            sql.Connection.Close();
+        }
+
 
         public OdbcDataAdapter ConsultarPerfil(string consulta)
         {

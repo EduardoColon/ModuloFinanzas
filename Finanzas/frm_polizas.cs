@@ -105,6 +105,7 @@ namespace Finanzas
 
         }
 
+
         private void cbo_tipoPoliza_SelectedIndexChanged(object sender, EventArgs e)
         {
             limpiarForm();

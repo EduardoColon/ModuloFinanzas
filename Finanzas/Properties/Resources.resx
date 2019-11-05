@@ -117,35 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnAgregarConciliado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH4wsCEhYkvuQcDgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADOSURBVEhL
-        7c89C0FRGMDxuyklpZQyYGAwYDCYDDaDj8E34usYLBaDwYAMSpGSJImF/3PvUdfr8XJs51+/Oufh9ODY
-        TNdC0zv+p7byt+wCbXaBNiMLAkh6x7teLZA38lZbA0fU3Nt1zxbId+VN3b1pCqKDA6oy8PVoQQV7dBGS
-        wTuF0cMOZRmobheUsEUfERl8UhQDbFCUAfkX5LDCCDEZfFMcE6xRwGVBBgtMkcBPpTDDHPJrh+ou5DMj
-        pSELTsoSWRgtjzHkX8jZZiLHOQOe/zXrANvUwwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="BtnRegresarConciliado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH4wsCEhYPEljlTgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADMSURBVEhL
-        7dExCwFhHMfx25SSUkoZZLBIUSaDyWLxLuQdeT0Gi8VgMCCDUgpJSWLh+7sedeQc7rHdtz7l+d89/YkT
-        ZbMyZoY+W62AFa7GGkVYKY+lMcEUWqaznoUqizk20DfuGSVssUAOP5XGGHtUNaD7AlXBDvpFGQ2+KYkh
-        jqhrYPIuUDUcMEJKg0+Ko48zmhp4el6gGjhhgIQGQXVwQcs9PfZqgdK7utN2TwHF4PfH+S1QuqO7oXq3
-        wErRgsCiBYH9fUHXiLKV49wAMeA16bNAy4kAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pdfEstadoCuenta.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAIQAAAAIB
-        AAAAAQAAAAAAAAAAAAAAAAwAAAAADgAA2BMAANgTAAAL
-</value>
-  </data>
 </root>
