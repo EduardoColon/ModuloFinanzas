@@ -19,6 +19,7 @@ namespace Finanzas
         public frm_polizas()
         {
             InitializeComponent();
+            txt_noPoliza.Text = "0";
         }
 
 
@@ -102,7 +103,34 @@ namespace Finanzas
 
         private void btn_IngresoLibroDiario_Click(object sender, EventArgs e)
         {
+            DateTime FechaActual = DateTime.Today;
+            string sFecha_actual = FechaActual.ToString("yyyy-MM-dd");
+            string sCodigoPoliza = "";
+            string sTotalPoliza = "";
 
+
+
+            foreach (DataGridViewRow Fila in dgv_polizas.Rows)
+            {
+                sCodigoPoliza = Fila.Cells[0].Value.ToString();
+
+                if(sCodigoPoliza != txt_noPoliza.Text)
+                {
+                    DataTable dtPoliza = logic.consultaLogicaObtenerTotalPoliza(Int32.Parse(sCodigoPoliza));
+
+                    foreach (DataRow dt in dtPoliza.Rows)
+                    {
+                        sTotalPoliza = dt[0].ToString();
+                    }
+
+                    logic.consultaLogicaIngresarLibroDiario(Int32.Parse(sCodigoPoliza), sFecha_actual, Convert.ToDouble(sTotalPoliza), Convert.ToDouble(sTotalPoliza));
+                }
+                txt_noPoliza.Text = sCodigoPoliza;
+            }
+
+            MessageBox.Show("Partidas Ingresadas Exitosamente");
+            txt_noPoliza.Text = "0";
+            limpiarForm();
         }
 
 

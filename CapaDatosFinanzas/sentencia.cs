@@ -117,7 +117,7 @@ namespace CapaDatosFinanzas
                     sCodigoPoliza = almacena.GetString(0);
                 }
 
-                string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE PE.KidTipoDePoliza = '"+ sCodigoPoliza + "' AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
+                string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza LEFT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE LD.KidPoliza IS NULL AND PE.KidTipoDePoliza = '" + sCodigoPoliza + "' AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
                 OdbcDataAdapter dataPolizas = new OdbcDataAdapter(sqlConsultarPolizas, con.conectar());
                 return dataPolizas;
             }
@@ -161,6 +161,39 @@ namespace CapaDatosFinanzas
                 return sNombreCuenta;
             }
             catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        public OdbcDataAdapter IngresarPolizasLibroDiario(int iCodigoPoliza, string sFecha, double dTotalDebe, double dTotalHaber)
+        {
+            try
+            {
+
+                string sqlInsertarLibroDiario = "INSERT INTO tbl_librodiario(KidPoliza, fecha, total_debe,total_haber, estado) VALUES ('"+iCodigoPoliza+"', '"+sFecha+"', '"+dTotalDebe+"', '"+dTotalHaber+"', 1) ";
+                OdbcDataAdapter dataLibroDiario = new OdbcDataAdapter(sqlInsertarLibroDiario, con.conectar());
+                return dataLibroDiario;
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ObtenerTotalPoliza(int iCodigoPoliza)
+        {
+            try
+            {
+                string sqlObtenerTotalPoliza = "SELECT total_poliza FROM tbl_poliza_encabezado WHERE KidPoliza='"+iCodigoPoliza+"'";
+                OdbcDataAdapter dataTotalPoliza = new OdbcDataAdapter(sqlObtenerTotalPoliza, con.conectar());
+                return dataTotalPoliza;
+
+            }catch(Exception ex)
             {
                 Console.WriteLine(ex);
                 return null;
