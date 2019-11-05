@@ -83,11 +83,11 @@
     <Compile Include="Frm_GestionPresupuesto.Designer.cs">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_libroDiario.cs">
+    <Compile Include="frm_ActualizacionPolizas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_libroDiario.Designer.cs">
-      <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    <Compile Include="frm_ActualizacionPolizas.Designer.cs">
+      <DependentUpon>frm_ActualizacionPolizas.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_manbancos.cs">
       <SubType>Form</SubType>
@@ -131,11 +131,17 @@
     <Compile Include="frm_tipoPoliza.Designer.cs">
       <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
     </Compile>
-    <Compile Include="MDI_Finanzas.cs">
+    <Compile Include="MDI_Bancos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDI_Finanzas.Designer.cs">
-      <DependentUpon>MDI_Finanzas.cs</DependentUpon>
+    <Compile Include="MDI_Bancos.Designer.cs">
+      <DependentUpon>MDI_Bancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDI_Contabilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDI_Contabilidad.Designer.cs">
+      <DependentUpon>MDI_Contabilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -169,8 +175,8 @@
     <EmbeddedResource Include="Frm_GestionPresupuesto.resx">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_libroDiario.resx">
-      <DependentUpon>frm_libroDiario.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ActualizacionPolizas.resx">
+      <DependentUpon>frm_ActualizacionPolizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_manbancos.resx">
       <DependentUpon>frm_manbancos.cs</DependentUpon>
@@ -193,8 +199,11 @@
     <EmbeddedResource Include="frm_tipoPoliza.resx">
       <DependentUpon>frm_tipoPoliza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDI_Finanzas.resx">
-      <DependentUpon>MDI_Finanzas.cs</DependentUpon>
+    <EmbeddedResource Include="MDI_Bancos.resx">
+      <DependentUpon>MDI_Bancos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDI_Contabilidad.resx">
+      <DependentUpon>MDI_Contabilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
