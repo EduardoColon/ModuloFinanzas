@@ -52,6 +52,7 @@ namespace CapaLogicaFinanzas
 
         }
 
+   
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)
         {
 
@@ -152,10 +153,116 @@ namespace CapaLogicaFinanzas
 
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
-        public DataSet consultaLogicaBitacora()
+        public DataSet consultaLogicapresupuesto()
         {
-            return sen.consultarBitacora();
+            return sen.consultarPresupuesto();
         }
 
+        public DataTable ConsultaLogicaPerfil(string consultabu)
+        {
+            try
+            {
+                OdbcDataAdapter cmpsperfiles = sen.ConsultarPerfil(consultabu);
+                DataTable tablaperfiles = new DataTable();
+                cmpsperfiles.Fill(tablaperfiles);
+                return tablaperfiles;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        // Eduardo Colon Conciliacion Bancaria Version 2
+
+        public DataTable consultaLogicaBancos()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.consultarBancos();
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaMonedas()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.consultarMonedas();
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
+        public DataSet consultaLogicaLibroBancos(string idBanco, string periodo, string idMoneda)
+        {
+            try
+            {
+                return sen.consultarLibroBancos(idBanco, periodo, idMoneda);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public bool ConsultaLogicaCuentaBanco(string idBanco, string idCuenta)
+        {
+            try
+            {
+                return sen.consultarCuentaBanco(idCuenta, idBanco);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return false;
+        }
+
+        public void registrarMovimientoConciliado(string idMovimiento)
+        {
+            try
+            {
+                sen.actualizarMovmientoBancario(idMovimiento);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        public bool registrarConciliacionBancaria(string idBanco, string idMoneda, string periodo, string saldo)
+        {
+            try
+            {
+                sen.insertarConciliacionBancaria(idBanco, idMoneda, periodo, saldo);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            return true;
+        }
     }
 }

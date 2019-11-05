@@ -133,6 +133,7 @@ namespace Finanzas
             limpiarForm();
         }
 
+
         private void cbo_tipoPoliza_SelectedIndexChanged(object sender, EventArgs e)
         {
             limpiarForm();

@@ -34,17 +34,16 @@
             // navegador1
             // 
             this.navegador1.BackColor = System.Drawing.Color.White;
-            this.navegador1.Location = new System.Drawing.Point(1, -1);
+            this.navegador1.Location = new System.Drawing.Point(1, 0);
             this.navegador1.Name = "navegador1";
-            this.navegador1.Size = new System.Drawing.Size(1178, 657);
+            this.navegador1.Size = new System.Drawing.Size(1164, 657);
             this.navegador1.TabIndex = 0;
-            this.navegador1.Load += new System.EventHandler(this.Navegador1_Load);
             // 
             // Frm_CreacionPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 648);
+            this.ClientSize = new System.Drawing.Size(1160, 648);
             this.Controls.Add(this.navegador1);
             this.Name = "Frm_CreacionPresupuesto";
             this.Text = "Frm_CreacionPresupuesto";
