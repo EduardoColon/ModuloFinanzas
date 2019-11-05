@@ -43,6 +43,7 @@
             this.Debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_noPoliza = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_polizas)).BeginInit();
             this.SuspendLayout();
@@ -181,11 +182,21 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "INGRESO DE POLIZAS A LIBRO DIARIO";
             // 
+            // txt_noPoliza
+            // 
+            this.txt_noPoliza.Enabled = false;
+            this.txt_noPoliza.Location = new System.Drawing.Point(803, 26);
+            this.txt_noPoliza.Name = "txt_noPoliza";
+            this.txt_noPoliza.Size = new System.Drawing.Size(100, 20);
+            this.txt_noPoliza.TabIndex = 3;
+            this.txt_noPoliza.Visible = false;
+            // 
             // frm_polizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 514);
+            this.Controls.Add(this.txt_noPoliza);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Name = "frm_polizas";
@@ -216,5 +227,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Debe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Haber;
         private System.Windows.Forms.Button btn_consulta;
+        private System.Windows.Forms.TextBox txt_noPoliza;
     }
 }

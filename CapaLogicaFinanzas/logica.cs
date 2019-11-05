@@ -118,6 +118,38 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataTable consultaLogicaIngresarLibroDiario(int iCodigoPoliza, string sFecha, double dTotalDebe, double dTotalHaber)
+        {
+            try
+            {
+                OdbcDataAdapter dtIngresoLibroDiario = sen.IngresarPolizasLibroDiario(iCodigoPoliza, sFecha, dTotalDebe, dTotalHaber);
+                DataTable tableIngresoLibroDiario = new DataTable();
+                dtIngresoLibroDiario.Fill(tableIngresoLibroDiario);
+                return tableIngresoLibroDiario;
+
+            }catch(Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaObtenerTotalPoliza(int iCodigoPoliza)
+        {
+            try
+            {
+                OdbcDataAdapter dtObtenerTotalPoliza = sen.ObtenerTotalPoliza(iCodigoPoliza);
+                DataTable tableObtenerTotalPoliza = new DataTable();
+                dtObtenerTotalPoliza.Fill(tableObtenerTotalPoliza);
+                return tableObtenerTotalPoliza;
+                
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
         public DataSet consultaLogicaBitacora()
