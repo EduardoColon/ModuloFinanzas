@@ -169,14 +169,14 @@ namespace CapaDatosFinanzas
 
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
-        public DataSet consultarBitacora()
+        public DataSet consultarPresupuesto()
         {
             OdbcDataAdapter dat = null;
             DataSet ds = null;
             try
             {
                 ds = new DataSet();
-                dat = new OdbcDataAdapter("select Kidpresupuesto as Id,KidDivisa as Divisa,KidArea as Area,KidCuenta as Cuenta,nombre as Nombre,fecha as Fecha,descripcion as Descripcion,monto as Monto,estado as Estado from tbl_presupuesto"
+                dat = new OdbcDataAdapter("select Kidpresupuesto as Id,KidMoneda as Divisa,KidArea as Area,KidCuenta as Cuenta,nombre as Nombre,fecha as Fecha,descripcion as Descripcion,monto as Monto,estado as Estado from tbl_presupuesto"
                 , con.conectar());
                 dat.Fill(ds);
             }
@@ -291,5 +291,16 @@ namespace CapaDatosFinanzas
             sql.ExecuteNonQuery();
             sql.Connection.Close();
         }
+
+
+        public OdbcDataAdapter ConsultarPerfil(string consulta)
+        {
+            con.conectar();
+            string sqlbusqueda = "SELECT * FROM tbl_presupuesto WHERE nombre = " + consulta;
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlbusqueda, con.conectar());
+            return dataTable;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
     }
 }
