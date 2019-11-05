@@ -31,15 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaDeDatos">
-      <HintPath>..\Librerias\CapaDeDatos.dll</HintPath>
-    </Reference>
-    <Reference Include="CapaDeDiseno">
-      <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
-    </Reference>
-    <Reference Include="CapaDeLogica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
+      <HintPath>..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -151,10 +145,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatosFinanzas\CapaDatosFinanzas.csproj">
-      <Project>{5b655b96-d781-4618-bfe8-f8e9e3feb0bc}</Project>
-      <Name>CapaDatosFinanzas</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaLogicaFinanzas\CapaLogicaFinanzas.csproj">
       <Project>{852e5106-6715-4f8b-b4ac-cced236ad114}</Project>
       <Name>CapaLogicaFinanzas</Name>
@@ -233,4 +223,3 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
-

@@ -47,7 +47,7 @@
             this.Controls.Add(this.navegador1);
             this.Name = "frm_cuentasContables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_cuentasContables";
+            this.Text = "Cuentas Contables";
             this.Load += new System.EventHandler(this.frm_cuentasContables_Load);
             this.ResumeLayout(false);
 
