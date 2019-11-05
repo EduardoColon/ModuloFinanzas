@@ -12,13 +12,13 @@ using CapaLogicaFinanzas;
 
 namespace Finanzas
 {
-    public partial class MDI_Finanzas : Form
+    public partial class MDI_Contabilidad : Form
     {
         logica logic = new logica();
         string sUsuario = "miusuario";
         private int childFormNumber = 0;
 
-        public MDI_Finanzas()
+        public MDI_Contabilidad()
         {
             InitializeComponent();
         }
@@ -125,9 +125,7 @@ namespace Finanzas
 
         private void ConciliacionesBancariasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_conciliacionBancaria conciliacionBancaria = new frm_conciliacionBancaria(sUsuario);
-            conciliacionBancaria.MdiParent = this;
-            conciliacionBancaria.Show();
+           
         }
 
         private void MDI_Finanzas_Load(object sender, EventArgs e)
@@ -192,86 +190,62 @@ namespace Finanzas
 
         private void cuentasContablesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
-            cuentas_contables.MdiParent = this;
-            cuentas_contables.Show();
+            
         }
 
         private void tiposDeCuentasContablesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_tipoCuentaContable tipocuenta = new frm_tipoCuentaContable(sUsuario);
-            tipocuenta.MdiParent = this;
-            tipocuenta.Show();
+            
         }
 
         private void tiposDePolizaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_tipoPoliza tipoPoliza = new frm_tipoPoliza(sUsuario);
-            tipoPoliza.MdiParent = this;
-            tipoPoliza.Show();
+           
         }
 
         private void creacionPresupuestoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_CreacionPresupuesto presupuesto = new Frm_CreacionPresupuesto(sUsuario);
-            presupuesto.MdiParent = this;
-            presupuesto.Show();
+           
         }
 
         private void cuentaBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ctsbancarias ctsbancarias = new frm_ctsbancarias(sUsuario);
-            ctsbancarias.MdiParent = this;
-            ctsbancarias.Show();
+            
         }
 
         private void chequeraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_manchequera chequeras = new frm_manchequera(sUsuario);
-            chequeras.MdiParent = this;
-            chequeras.Show();
+            
         }
 
         private void bancosToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            frm_manbancos bancos = new frm_manbancos(sUsuario);
-            bancos.MdiParent = this;
-            bancos.Show();
+            
         }
 
         private void polizasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_polizas polizas = new frm_polizas();
-            polizas.MdiParent = this;
-            polizas.Show();
+            
         }
 
         private void libroDiarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_libroDiario libroDiario = new frm_libroDiario();
-            libroDiario.MdiParent = this;
-            libroDiario.Show();
+            
         }
 
         private void gestionDePresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_GestionPresupuesto presupuesto1 = new Frm_GestionPresupuesto();
-            presupuesto1.MdiParent = this;
-            presupuesto1.Show();
+          
         }
 
         private void movimientosDeBancosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Frm_MovimientosBancarios movimientosbancarios = new Frm_MovimientosBancarios();
-            movimientosbancarios.MdiParent = this;
-            movimientosbancarios.Show();
+           
         }
 
         private void tipoDeCambioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_CambioMoneda cambioMoneda = new frm_CambioMoneda();
-            cambioMoneda.MdiParent = this;
-            cambioMoneda.Show();
+            
         }
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -294,6 +268,55 @@ namespace Finanzas
         private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
              Help.ShowHelp(this, "C:/Ayudas/ConciliacionBancaria.chm");
+        }
+
+        private void cuentasContablesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
+            cuentas_contables.MdiParent = this;
+            cuentas_contables.Show();
+        }
+
+        private void tiposDeCuentasContablesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_tipoCuentaContable tipocuenta = new frm_tipoCuentaContable(sUsuario);
+            tipocuenta.MdiParent = this;
+            tipocuenta.Show();
+        }
+
+        private void tiposDePolizaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_tipoPoliza tipoPoliza = new frm_tipoPoliza(sUsuario);
+            tipoPoliza.MdiParent = this;
+            tipoPoliza.Show();
+        }
+
+        private void creacionPresupuestoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Frm_CreacionPresupuesto presupuesto = new Frm_CreacionPresupuesto(sUsuario);
+            presupuesto.MdiParent = this;
+            presupuesto.Show();
+        }
+
+        private void visualizacionDePolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_polizas polizas = new frm_polizas();
+            polizas.MdiParent = this;
+            polizas.Show();
+        }
+
+        private void actualizacionDePolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ActualizacionPolizas libroDiario = new frm_ActualizacionPolizas();
+            libroDiario.MdiParent = this;
+            libroDiario.Show();
+        }
+
+        private void gestionDePresupuestoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_GestionPresupuesto presupuesto1 = new Frm_GestionPresupuesto();
+            presupuesto1.MdiParent = this;
+            presupuesto1.Show();
         }
     }
 }

@@ -128,6 +128,21 @@ namespace CapaDatosFinanzas
             }
         }
 
+        public OdbcDataAdapter consultarActualizacionPolizas(string fechaInicial, string fechaFinal)
+        {
+            try
+            {
+                string sqlConsultarPolizas = "SELECT PE.KidPoliza,PE.KidTipoDePoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza RIGHT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE (PE.fecha_poliza BETWEEN '" + fechaInicial + "' AND '" + fechaFinal + "');";
+                OdbcDataAdapter dataPolizas = new OdbcDataAdapter(sqlConsultarPolizas, con.conectar());
+                return dataPolizas;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
         public OdbcDataAdapter consultarTipoPolizas()
         {

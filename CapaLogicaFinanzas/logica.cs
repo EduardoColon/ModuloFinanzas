@@ -88,6 +88,25 @@ namespace CapaLogicaFinanzas
             }
         }
 
+
+        public DataTable consultaLogicaActualizacionPolizas(string fechaInicial, string fechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtPolizas = sen.consultarActualizacionPolizas(fechaInicial, fechaFinal);
+                DataTable tablePolizas = new DataTable();
+                dtPolizas.Fill(tablePolizas);
+                return tablePolizas;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
         public DataTable consultaLogicaTipoPolizas()
         {
             try

@@ -1,6 +1,6 @@
 ﻿namespace Finanzas
 {
-    partial class frm_libroDiario
+    partial class frm_ActualizacionPolizas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_actualizar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtp_fechaFinal = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fechaInicial = new System.Windows.Forms.DateTimePicker();
+            this.dgv_polizas = new System.Windows.Forms.DataGridView();
             this.No_Poliza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo_Poliza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Doc_Asociado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo_Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuenta_Contable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.actualizacionpolizas = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_polizas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btn_actualizar);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dtp_fechaFinal);
+            this.groupBox2.Controls.Add(this.dtp_fechaInicial);
+            this.groupBox2.Controls.Add(this.dgv_polizas);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(53, 72);
             this.groupBox2.Name = "groupBox2";
@@ -64,14 +64,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta Libro Diario";
             // 
-            // button3
+            // btn_actualizar
             // 
-            this.button3.Location = new System.Drawing.Point(690, 385);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 27);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Generar Libro Mayor";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Location = new System.Drawing.Point(690, 385);
+            this.btn_actualizar.Name = "btn_actualizar";
+            this.btn_actualizar.Size = new System.Drawing.Size(156, 27);
+            this.btn_actualizar.TabIndex = 6;
+            this.btn_actualizar.Text = "Actualizar Polizas";
+            this.btn_actualizar.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -101,36 +101,36 @@
             this.label6.TabIndex = 3;
             this.label6.Text = "Fecha Inicio";
             // 
-            // dateTimePicker2
+            // dtp_fechaFinal
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(393, 42);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(202, 22);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtp_fechaFinal.Location = new System.Drawing.Point(393, 42);
+            this.dtp_fechaFinal.Name = "dtp_fechaFinal";
+            this.dtp_fechaFinal.Size = new System.Drawing.Size(202, 22);
+            this.dtp_fechaFinal.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtp_fechaInicial
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(157, 42);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtp_fechaInicial.Location = new System.Drawing.Point(157, 42);
+            this.dtp_fechaInicial.Name = "dtp_fechaInicial";
+            this.dtp_fechaInicial.Size = new System.Drawing.Size(200, 22);
+            this.dtp_fechaInicial.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgv_polizas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_polizas.AllowUserToAddRows = false;
+            this.dgv_polizas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_polizas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_polizas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.No_Poliza,
             this.Tipo_Poliza,
-            this.Doc_Asociado,
+            this.Codigo_Cuenta,
             this.Cuenta_Contable,
             this.Debe,
             this.Haber});
-            this.dataGridView1.Location = new System.Drawing.Point(23, 80);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(823, 299);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_polizas.Location = new System.Drawing.Point(23, 80);
+            this.dgv_polizas.Name = "dgv_polizas";
+            this.dgv_polizas.Size = new System.Drawing.Size(823, 299);
+            this.dgv_polizas.TabIndex = 0;
             // 
             // No_Poliza
             // 
@@ -142,10 +142,10 @@
             this.Tipo_Poliza.HeaderText = "Tipo Poliza";
             this.Tipo_Poliza.Name = "Tipo_Poliza";
             // 
-            // Doc_Asociado
+            // Codigo_Cuenta
             // 
-            this.Doc_Asociado.HeaderText = "Doc Asociado";
-            this.Doc_Asociado.Name = "Doc_Asociado";
+            this.Codigo_Cuenta.HeaderText = "Codigo Cuenta";
+            this.Codigo_Cuenta.Name = "Codigo_Cuenta";
             // 
             // Cuenta_Contable
             // 
@@ -162,29 +162,29 @@
             this.Haber.HeaderText = "Haber";
             this.Haber.Name = "Haber";
             // 
-            // label1
+            // actualizacionpolizas
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "LIBRO DIARIO";
+            this.actualizacionpolizas.AutoSize = true;
+            this.actualizacionpolizas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualizacionpolizas.Location = new System.Drawing.Point(340, 29);
+            this.actualizacionpolizas.Name = "actualizacionpolizas";
+            this.actualizacionpolizas.Size = new System.Drawing.Size(293, 24);
+            this.actualizacionpolizas.TabIndex = 3;
+            this.actualizacionpolizas.Text = "ACTUALIZACION DE POLIZAS";
             // 
-            // frm_libroDiario
+            // frm_ActualizacionPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 513);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.actualizacionpolizas);
             this.Controls.Add(this.groupBox2);
-            this.Name = "frm_libroDiario";
+            this.Name = "frm_ActualizacionPolizas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_libroDiario";
+            this.Text = "Actualizacion de Polizas";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_polizas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,19 +193,19 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dtp_fechaFinal;
+        private System.Windows.Forms.DateTimePicker dtp_fechaInicial;
+        private System.Windows.Forms.DataGridView dgv_polizas;
+        private System.Windows.Forms.Label actualizacionpolizas;
         private System.Windows.Forms.DataGridViewTextBoxColumn No_Poliza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo_Poliza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Doc_Asociado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo_Cuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta_Contable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Debe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Haber;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_actualizar;
     }
 }
