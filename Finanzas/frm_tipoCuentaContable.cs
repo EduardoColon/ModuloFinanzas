@@ -26,7 +26,7 @@ namespace Finanzas
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarAyuda("1");
+            navegador1.asignarAyuda("3");
             navegador1.asignarTabla("tbl_tipoCuenta");
             navegador1.asignarNombreForm("Tipo de Cuenta Contable");
         }
