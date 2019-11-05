@@ -24,7 +24,7 @@ namespace Finanzas
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarComboConTabla("tbl_tipoCuenta", "nombre_tipoCuenta",1);
-            navegador1.asignarAyuda("1");
+            navegador1.asignarAyuda("4");
             navegador1.asignarTabla("tbl_cuentas");
             navegador1.asignarNombreForm("Cuentas Contables");
         }

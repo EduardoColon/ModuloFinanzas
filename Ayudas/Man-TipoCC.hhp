@@ -1,0 +1,13 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=Man-TipoCC.chm
+Contents file=Man-TipoCC.hhc
+Display compile progress=No
+Language=0x409 English (United States)
+
+
+[FILES]
+Mantenimiento-TipoCuentaContable.html
+
+[INFOTYPES]
+
