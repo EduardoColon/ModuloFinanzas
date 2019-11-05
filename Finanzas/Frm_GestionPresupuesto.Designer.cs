@@ -30,16 +30,16 @@
         {
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rdb_rechazado = new System.Windows.Forms.RadioButton();
+            this.rdb_aprobado = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btn_actualizar = new System.Windows.Forms.Button();
+            this.txt_des = new System.Windows.Forms.TextBox();
+            this.txt_moneda = new System.Windows.Forms.TextBox();
+            this.txt_area = new System.Windows.Forms.TextBox();
+            this.txt_monto = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,9 +48,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -73,16 +73,16 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.radioButton2);
-            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.rdb_rechazado);
+            this.panel2.Controls.Add(this.rdb_aprobado);
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.btn_actualizar);
+            this.panel2.Controls.Add(this.txt_des);
+            this.panel2.Controls.Add(this.txt_moneda);
+            this.panel2.Controls.Add(this.txt_area);
+            this.panel2.Controls.Add(this.txt_monto);
+            this.panel2.Controls.Add(this.txt_id);
+            this.panel2.Controls.Add(this.txt_nombre);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -95,29 +95,29 @@
             this.panel2.Size = new System.Drawing.Size(995, 214);
             this.panel2.TabIndex = 21;
             // 
-            // radioButton2
+            // rdb_rechazado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(776, 105);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(148, 29);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Rechazado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdb_rechazado.AutoSize = true;
+            this.rdb_rechazado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_rechazado.Location = new System.Drawing.Point(776, 105);
+            this.rdb_rechazado.Name = "rdb_rechazado";
+            this.rdb_rechazado.Size = new System.Drawing.Size(148, 29);
+            this.rdb_rechazado.TabIndex = 18;
+            this.rdb_rechazado.TabStop = true;
+            this.rdb_rechazado.Text = "Rechazado";
+            this.rdb_rechazado.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rdb_aprobado
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(776, 60);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(131, 29);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Aprobado";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdb_aprobado.AutoSize = true;
+            this.rdb_aprobado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_aprobado.Location = new System.Drawing.Point(776, 60);
+            this.rdb_aprobado.Name = "rdb_aprobado";
+            this.rdb_aprobado.Size = new System.Drawing.Size(131, 29);
+            this.rdb_aprobado.TabIndex = 17;
+            this.rdb_aprobado.TabStop = true;
+            this.rdb_aprobado.Text = "Aprobado";
+            this.rdb_aprobado.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -129,56 +129,56 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // button2
+            // btn_actualizar
             // 
-            this.button2.Location = new System.Drawing.Point(361, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 39);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Actualizar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Location = new System.Drawing.Point(361, 148);
+            this.btn_actualizar.Name = "btn_actualizar";
+            this.btn_actualizar.Size = new System.Drawing.Size(102, 39);
+            this.btn_actualizar.TabIndex = 15;
+            this.btn_actualizar.Text = "Actualizar";
+            this.btn_actualizar.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txt_des
             // 
-            this.textBox3.Location = new System.Drawing.Point(524, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 20);
-            this.textBox3.TabIndex = 14;
+            this.txt_des.Location = new System.Drawing.Point(524, 93);
+            this.txt_des.Name = "txt_des";
+            this.txt_des.Size = new System.Drawing.Size(166, 20);
+            this.txt_des.TabIndex = 14;
             // 
-            // textBox7
+            // txt_moneda
             // 
-            this.textBox7.Location = new System.Drawing.Point(524, 23);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(166, 20);
-            this.textBox7.TabIndex = 13;
+            this.txt_moneda.Location = new System.Drawing.Point(524, 23);
+            this.txt_moneda.Name = "txt_moneda";
+            this.txt_moneda.Size = new System.Drawing.Size(166, 20);
+            this.txt_moneda.TabIndex = 13;
             // 
-            // textBox6
+            // txt_area
             // 
-            this.textBox6.Location = new System.Drawing.Point(524, 60);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(166, 20);
-            this.textBox6.TabIndex = 12;
+            this.txt_area.Location = new System.Drawing.Point(524, 60);
+            this.txt_area.Name = "txt_area";
+            this.txt_area.Size = new System.Drawing.Size(166, 20);
+            this.txt_area.TabIndex = 12;
             // 
-            // textBox5
+            // txt_monto
             // 
-            this.textBox5.Location = new System.Drawing.Point(146, 94);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(166, 20);
-            this.textBox5.TabIndex = 11;
+            this.txt_monto.Location = new System.Drawing.Point(146, 94);
+            this.txt_monto.Name = "txt_monto";
+            this.txt_monto.Size = new System.Drawing.Size(166, 20);
+            this.txt_monto.TabIndex = 11;
             // 
-            // textBox2
+            // txt_id
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 20);
-            this.textBox2.TabIndex = 10;
+            this.txt_id.Location = new System.Drawing.Point(146, 21);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(166, 20);
+            this.txt_id.TabIndex = 10;
             // 
-            // textBox4
+            // txt_nombre
             // 
-            this.textBox4.Location = new System.Drawing.Point(146, 60);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 20);
-            this.textBox4.TabIndex = 6;
+            this.txt_nombre.Location = new System.Drawing.Point(146, 60);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(166, 20);
+            this.txt_nombre.TabIndex = 6;
             // 
             // label8
             // 
@@ -252,20 +252,20 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_buscar);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Location = new System.Drawing.Point(7, 225);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 64);
             this.panel1.TabIndex = 20;
             // 
-            // textBox1
+            // txt_buscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(352, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 20);
-            this.textBox1.TabIndex = 4;
+            this.txt_buscar.Location = new System.Drawing.Point(352, 24);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(229, 20);
+            this.txt_buscar.TabIndex = 4;
             // 
             // label2
             // 
@@ -277,14 +277,15 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre a Buscar";
             // 
-            // button1
+            // btn_buscar
             // 
-            this.button1.Location = new System.Drawing.Point(675, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_buscar.Location = new System.Drawing.Point(675, 17);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(112, 33);
+            this.btn_buscar.TabIndex = 2;
+            this.btn_buscar.Text = "Buscar";
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // dataGridView1
             // 
@@ -294,6 +295,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(995, 163);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -332,16 +334,16 @@
 
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rdb_rechazado;
+        private System.Windows.Forms.RadioButton rdb_aprobado;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btn_actualizar;
+        private System.Windows.Forms.TextBox txt_des;
+        private System.Windows.Forms.TextBox txt_moneda;
+        private System.Windows.Forms.TextBox txt_area;
+        private System.Windows.Forms.TextBox txt_monto;
+        private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -350,9 +352,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
     }
