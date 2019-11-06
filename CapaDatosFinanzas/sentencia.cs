@@ -335,5 +335,34 @@ namespace CapaDatosFinanzas
         }
 
         /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+        //=========================================Alejandro Barreda-Movimientos Bancarios===================================================
+        public OdbcDataAdapter consultarChequera(string nocuenta)
+        {
+            string sChequera = "";
+            try
+            {
+                OdbcCommand sCheques = new OdbcCommand("SELECT KidChequera FROM tbl_chequera WHERE No_Cheques > 0 AND KidCuentaBancaria =" + nocuenta + "' ", con.conectar());
+                OdbcDataReader almacena = sCheques.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sChequera = almacena.GetString(0);
+                }
+
+                /* string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza LEFT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE LD.KidPoliza IS NULL AND PE.KidTipoDePoliza = '" + sCodigoPoliza + "' AND (PE.fecha_poliza BETWEEN '" + fechaInicial + "' AND '" + fechaFinal + "');";
+                 OdbcDataAdapter dataPolizas = new OdbcDataAdapter(sqlConsultarPolizas, con.conectar());
+                 return dataPolizas;*/
+                return null; ;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
     }
 }

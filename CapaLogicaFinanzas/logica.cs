@@ -264,5 +264,25 @@ namespace CapaLogicaFinanzas
 
             return true;
         }
+
+
+        //=================================Alejandro Barreda =================================================================
+        public DataTable consultalogicachequera(string nocuenta)
+        {
+            try
+            {
+                OdbcDataAdapter dtchequera = sen.consultarChequera(nocuenta);
+                DataTable tablePolizas = new DataTable();
+                dtchequera.Fill(tablePolizas);
+                return tablePolizas;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
     }
 }
