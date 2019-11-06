@@ -15,7 +15,7 @@ namespace Finanzas
     public partial class Frm_GestionPresupuesto : Form
     {
 
-        logica logic;
+        logica logic = new logica();
         public Frm_GestionPresupuesto()
         {
             InitializeComponent();
@@ -53,11 +53,11 @@ namespace Finanzas
                         modificar = true;
 
                     txt_id.Text = (row[0].ToString());
-                    txt_nombre.Text = (row[1].ToString());
-                    txt_monto.Text = (row[2].ToString());
-                    txt_moneda.Text = (row[3].ToString());
-                    txt_area.Text = (row[4].ToString());
-                    txt_des.Text = (row[5].ToString());
+                    txt_nombre.Text = (row[4].ToString());
+                    txt_monto.Text = (row[7].ToString());
+                    txt_moneda.Text = (row[11].ToString());
+                    txt_area.Text = (row[15].ToString());
+                    txt_des.Text = (row[6].ToString());
 
                 }
 

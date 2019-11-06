@@ -240,7 +240,34 @@ namespace CapaDatosFinanzas
             return ds;
         }
 
-        
+        public OdbcDataAdapter ConsultarPerfil(string consulta)
+        {
+
+            /* string sqlbusqueda = "SELECT tblp.nombre, tblp.fecha, tblp.descripcion, tblp.monto, tblp.estado,tblm.nombre_moneda,tbla.nombreArea, tblc.nombre " +
+                  "from tbl_presupuesto as tblp " +
+                  "inner join tbl_moneda tblm" +
+                  "on tblp.KidMoneda = tblm.kidmoneda" +
+                  "inner join tbl_areas tbla" +
+                  "on tblp.KidArea = tbla.KidArea" +
+                  "inner join tbl_cuentas tblc" +
+                  "on tblp.KidCuenta = tblc.KidCuenta" +
+                  "where tblp.nombre = '"+consulta+"'";*/
+
+            string sqlbusqueda = "SELECT *from tbl_presupuesto as tblp " +
+                "inner join tbl_moneda tblm on tblp.KidMoneda = tblm.kidmoneda " +
+                "inner join tbl_areas tbla on tblp.KidArea = tbla.KidArea " +
+                "inner join tbl_cuentas tblc on tblp.KidCuenta = tblc.KidCuenta " +
+                "where tblp.nombre = '" + consulta + "'";
+
+
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlbusqueda, con.conectar());
+            return dataTable;
+        }
+
+        /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
 
         //Eduardo Colon Conciliacion Bancaria Version 2
 
@@ -341,14 +368,5 @@ namespace CapaDatosFinanzas
         }
 
 
-        public OdbcDataAdapter ConsultarPerfil(string consulta)
-        {
-            con.conectar();
-            string sqlbusqueda = "SELECT * FROM tbl_presupuesto WHERE nombre = " + consulta;
-            OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlbusqueda, con.conectar());
-            return dataTable;
         }
-
-        /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    }
 }
