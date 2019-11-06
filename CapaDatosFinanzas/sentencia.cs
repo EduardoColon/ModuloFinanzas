@@ -250,7 +250,7 @@ namespace CapaDatosFinanzas
         }
 
 
-        public OdbcDataAdapter IngresarCuentasContables(string sCodigoCuenta, string sNombreTipoCuenta, string sNombre, string sDescripcion, string sEstado)
+        public OdbcDataAdapter IngresarCuentasContables(string sCodigoCuenta, string sNombreTipoCuenta, int identificador ,string sNombre, string sDescripcion, string sEstado)
         {
             string sCodigoTipoDeCuenta = "";
             try
@@ -263,7 +263,7 @@ namespace CapaDatosFinanzas
                     sCodigoTipoDeCuenta = almacena.GetString(0);
                 }
 
-                string sqlInsertarCuentaContable = "INSERT INTO tbl_cuentas(KidCuenta, KidTipoCuenta, nombre, descripcion, estado) VALUES ('"+sCodigoCuenta+"', '"+sCodigoTipoDeCuenta+"', '"+sNombre+"', '"+sDescripcion+"','"+sEstado+"');";
+                string sqlInsertarCuentaContable = "INSERT INTO tbl_cuentas(KidCuenta, KidTipoCuenta, Kidentificador,nombre, descripcion, estado) VALUES ('"+sCodigoCuenta+"', '"+sCodigoTipoDeCuenta+"','"+identificador+"' ,'"+sNombre+"', '"+sDescripcion+"','"+sEstado+"');";
                 OdbcDataAdapter dataCuentasContables = new OdbcDataAdapter(sqlInsertarCuentaContable, con.conectar());
                 return dataCuentasContables;
             }
@@ -301,7 +301,7 @@ namespace CapaDatosFinanzas
         {
             try
             {
-                string sqlMaxCuentaContable = "SELECT MAX(C.KidCuenta) FROM tbl_cuentas C INNER JOIN tbl_tipocuenta TP ON C.KidTipoCuenta = TP.KidTipoCuenta WHERE TP.KidTipoCuenta = '"+ sCodigoTipoCuenta + "'";
+                string sqlMaxCuentaContable = "SELECT MAX(C.Kidentificador) FROM tbl_cuentas C INNER JOIN tbl_tipocuenta TP ON C.KidTipoCuenta = TP.KidTipoCuenta WHERE TP.KidTipoCuenta ='" + sCodigoTipoCuenta + "'";
                 OdbcDataAdapter dataMaxCuentaContable = new OdbcDataAdapter(sqlMaxCuentaContable, con.conectar());
                 return dataMaxCuentaContable;
             }
@@ -313,11 +313,43 @@ namespace CapaDatosFinanzas
 
         }
 
+        public OdbcDataAdapter obtenerMaximoCodigoCuentaContable2(int Identificador)
+        {
+            try
+            {
+                string sqlMaxCuentaContable = "SELECT KidCuenta FROM tbl_cuentas WHERE Kidentificador ='" + Identificador + "'";
+                OdbcDataAdapter dataMaxCuentaContable = new OdbcDataAdapter(sqlMaxCuentaContable, con.conectar());
+                return dataMaxCuentaContable;
+            }
+            catch (Exception ex)    
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
         public OdbcDataAdapter ModificarCuentaContable(string sCodigoCuenta, string sNombre, string sDescripcion, string sEstado)
         {
             try
             {
                 string sqlModificarCuentaContable = "UPDATE tbl_cuentas SET nombre = '"+sNombre+"', descripcion='"+sDescripcion+"', estado='"+sEstado+"' WHERE KidCuenta = '"+sCodigoCuenta+"';";
+                OdbcDataAdapter dataModificarCuentaContable = new OdbcDataAdapter(sqlModificarCuentaContable, con.conectar());
+                return dataModificarCuentaContable;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public OdbcDataAdapter EliminarCuentaContable(string sCodigoCuenta)
+        {
+            try
+            {
+                string sqlModificarCuentaContable = "UPDATE tbl_cuentas SET estado=0 WHERE KidCuenta = '" + sCodigoCuenta + "';";
                 OdbcDataAdapter dataModificarCuentaContable = new OdbcDataAdapter(sqlModificarCuentaContable, con.conectar());
                 return dataModificarCuentaContable;
             }
