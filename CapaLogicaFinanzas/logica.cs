@@ -170,6 +170,126 @@ namespace CapaLogicaFinanzas
             }
         }
 
+
+        public DataSet consultaLogicaCuentasContables()
+        {
+            return sen.ConsultarCuentasContables();
+        }
+
+
+        public DataTable consultaLogicaTipoCuentaContable()
+        {
+            try
+            {
+                OdbcDataAdapter dtTipoCuentasContables = sen.consultarTipoCuentaContable();
+                DataTable tableTipoCuentasContables = new DataTable();
+                dtTipoCuentasContables.Fill(tableTipoCuentasContables);
+                return tableTipoCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaIngresoCuentasContables(string sCodigoCuenta, string sNombreTipoCuenta,int identificador ,string sNombre, string sDescripcion, string sEstado)
+        {
+            try
+            {
+                OdbcDataAdapter dtCuentasContables = sen.IngresarCuentasContables(sCodigoCuenta, sNombreTipoCuenta,identificador, sNombre, sDescripcion, sEstado);
+                DataTable tableCuentasContables = new DataTable();
+                dtCuentasContables.Fill(tableCuentasContables);
+                return tableCuentasContables;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public string consultaLogicaCodigoDeTipoDeCuenta(string sNombreTipoCuenta)
+        {
+            try
+            {
+                string sCodigoTipoCuenta = sen.obtenerCodigoDeTipoDeCuenta(sNombreTipoCuenta);
+
+                return sCodigoTipoCuenta;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        public DataTable consultaLogicaMaxCuentaContable(string sCodigoTipoCuenta)
+        {
+            try
+            {
+                OdbcDataAdapter dtMaxCuentasContables = sen.obtenerMaximoCodigoCuentaContable(sCodigoTipoCuenta);
+                DataTable tableMaxCuentasContables = new DataTable();
+                dtMaxCuentasContables.Fill(tableMaxCuentasContables);
+                return tableMaxCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaMaxCuentaContable2(int Identificador)
+        {
+            try
+            {
+                OdbcDataAdapter dtMaxCuentasContables = sen.obtenerMaximoCodigoCuentaContable2(Identificador);
+                DataTable tableMaxCuentasContables = new DataTable();
+                dtMaxCuentasContables.Fill(tableMaxCuentasContables);
+                return tableMaxCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaModificarCuenta(string sCodigoCuenta, string sNombre, string sDescripcion, string sEstado)
+        {
+            try
+            {
+                OdbcDataAdapter dtModificarCuenta = sen.ModificarCuentaContable(sCodigoCuenta, sNombre, sDescripcion, sEstado);
+                DataTable tableModificarCuenta = new DataTable();
+                dtModificarCuenta.Fill(tableModificarCuenta);
+                return tableModificarCuenta;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaEliminarCuentaContable(string sCodigoCuenta)
+        {
+            try
+            {
+                OdbcDataAdapter dtEliminarCuenta = sen.EliminarCuentaContable(sCodigoCuenta);
+                DataTable tableEliminarCuenta = new DataTable();
+                dtEliminarCuenta.Fill(tableEliminarCuenta);
+                return tableEliminarCuenta;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
         public DataSet consultaLogicapresupuesto()
