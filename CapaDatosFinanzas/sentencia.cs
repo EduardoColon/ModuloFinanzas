@@ -215,6 +215,152 @@ namespace CapaDatosFinanzas
             }
         }
 
+
+        public DataSet ConsultarCuentasContables()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("SELECT C.KidCuenta AS Codigo, TP.nombre_tipoCuenta AS Tipo, C.nombre AS Nombre, C.descripcion AS Descripcion, C.estado AS Estado FROM tbl_cuentas C INNER JOIN tbl_tipocuenta TP ON C.KidTipoCuenta = TP.KidTipoCuenta", con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return ds;
+        }
+
+        public OdbcDataAdapter consultarTipoCuentaContable()
+        {
+            try
+            {
+                string sqlTiposCuentasContables = "SELECT nombre_tipoCuenta FROM tbl_tipocuenta WHERE estado = 1";
+                OdbcDataAdapter dataTipoCuentasContables = new OdbcDataAdapter(sqlTiposCuentasContables, con.conectar());
+                return dataTipoCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+
+        public OdbcDataAdapter IngresarCuentasContables(string sCodigoCuenta, string sNombreTipoCuenta, int identificador ,string sNombre, string sDescripcion, string sEstado)
+        {
+            string sCodigoTipoDeCuenta = "";
+            try
+            {
+                OdbcCommand sqlCodigoTipoCuenta = new OdbcCommand("SELECT KidTipoCuenta FROM tbl_tipocuenta WHERE nombre_tipoCuenta = '" + sNombreTipoCuenta + "' ", con.conectar());
+                OdbcDataReader almacena = sqlCodigoTipoCuenta.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoTipoDeCuenta = almacena.GetString(0);
+                }
+
+                string sqlInsertarCuentaContable = "INSERT INTO tbl_cuentas(KidCuenta, KidTipoCuenta, Kidentificador,nombre, descripcion, estado) VALUES ('"+sCodigoCuenta+"', '"+sCodigoTipoDeCuenta+"','"+identificador+"' ,'"+sNombre+"', '"+sDescripcion+"','"+sEstado+"');";
+                OdbcDataAdapter dataCuentasContables = new OdbcDataAdapter(sqlInsertarCuentaContable, con.conectar());
+                return dataCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public string obtenerCodigoDeTipoDeCuenta(string sNombreTipoCuenta)
+        {
+            string sCodigoTipoCuenta = "";
+            try
+            {
+                OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT KidTipoCuenta FROM tbl_tipocuenta WHERE nombre_tipoCuenta = '" + sNombreTipoCuenta + "' ", con.conectar());
+                OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
+
+                while (almacena.Read() == true)
+                {
+                    sCodigoTipoCuenta = almacena.GetString(0);
+                }
+
+                return sCodigoTipoCuenta;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        public OdbcDataAdapter obtenerMaximoCodigoCuentaContable(string sCodigoTipoCuenta)
+        {
+            try
+            {
+                string sqlMaxCuentaContable = "SELECT MAX(C.Kidentificador) FROM tbl_cuentas C INNER JOIN tbl_tipocuenta TP ON C.KidTipoCuenta = TP.KidTipoCuenta WHERE TP.KidTipoCuenta ='" + sCodigoTipoCuenta + "'";
+                OdbcDataAdapter dataMaxCuentaContable = new OdbcDataAdapter(sqlMaxCuentaContable, con.conectar());
+                return dataMaxCuentaContable;
+            }
+            catch (Exception ex)
+            {   
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public OdbcDataAdapter obtenerMaximoCodigoCuentaContable2(int Identificador)
+        {
+            try
+            {
+                string sqlMaxCuentaContable = "SELECT KidCuenta FROM tbl_cuentas WHERE Kidentificador ='" + Identificador + "'";
+                OdbcDataAdapter dataMaxCuentaContable = new OdbcDataAdapter(sqlMaxCuentaContable, con.conectar());
+                return dataMaxCuentaContable;
+            }
+            catch (Exception ex)    
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public OdbcDataAdapter ModificarCuentaContable(string sCodigoCuenta, string sNombre, string sDescripcion, string sEstado)
+        {
+            try
+            {
+                string sqlModificarCuentaContable = "UPDATE tbl_cuentas SET nombre = '"+sNombre+"', descripcion='"+sDescripcion+"', estado='"+sEstado+"' WHERE KidCuenta = '"+sCodigoCuenta+"';";
+                OdbcDataAdapter dataModificarCuentaContable = new OdbcDataAdapter(sqlModificarCuentaContable, con.conectar());
+                return dataModificarCuentaContable;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public OdbcDataAdapter EliminarCuentaContable(string sCodigoCuenta)
+        {
+            try
+            {
+                string sqlModificarCuentaContable = "UPDATE tbl_cuentas SET estado=0 WHERE KidCuenta = '" + sCodigoCuenta + "';";
+                OdbcDataAdapter dataModificarCuentaContable = new OdbcDataAdapter(sqlModificarCuentaContable, con.conectar());
+                return dataModificarCuentaContable;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
         public DataSet consultarPresupuesto()
