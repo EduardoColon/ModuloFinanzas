@@ -35,6 +35,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LblTotal = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.Cbo_cuentas = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnEnviar = new System.Windows.Forms.Button();
@@ -46,9 +49,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.LblTotal = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvMovimientos)).BeginInit();
@@ -140,6 +140,36 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos poliza";
+            // 
+            // LblTotal
+            // 
+            this.LblTotal.AutoSize = true;
+            this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTotal.Location = new System.Drawing.Point(211, 176);
+            this.LblTotal.Name = "LblTotal";
+            this.LblTotal.Size = new System.Drawing.Size(58, 29);
+            this.LblTotal.TabIndex = 17;
+            this.LblTotal.Text = "0.00";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(211, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(26, 29);
+            this.label10.TabIndex = 16;
+            this.label10.Text = "#";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(211, 79);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 29);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Bancos";
             // 
             // Cbo_cuentas
             // 
@@ -251,37 +281,9 @@
             this.DgvMovimientos.RowTemplate.Height = 28;
             this.DgvMovimientos.Size = new System.Drawing.Size(844, 263);
             this.DgvMovimientos.TabIndex = 2;
+            this.DgvMovimientos.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvMovimientos_CellMouseUp);
+            this.DgvMovimientos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvMovimientos_CellValueChanged);
             this.DgvMovimientos.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DgvMovimientos_DataBindingComplete);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(211, 79);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 29);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Bancos";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(211, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 29);
-            this.label10.TabIndex = 16;
-            this.label10.Text = "#";
-            // 
-            // LblTotal
-            // 
-            this.LblTotal.AutoSize = true;
-            this.LblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTotal.Location = new System.Drawing.Point(211, 176);
-            this.LblTotal.Name = "LblTotal";
-            this.LblTotal.Size = new System.Drawing.Size(58, 29);
-            this.LblTotal.TabIndex = 17;
-            this.LblTotal.Text = "0.00";
             // 
             // frm_envioPolizas
             // 

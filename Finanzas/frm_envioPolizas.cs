@@ -13,9 +13,13 @@ namespace Finanzas
 {
     public partial class frm_envioPolizas : Form
     {
+        private bool columnaAgregada = false;
         private string sUsuario;
         List<string> lIdCuentas = new List<string>();
         logica logic = new logica();
+        DataGridViewCheckBoxColumn d = new DataGridViewCheckBoxColumn();
+        double total = 0.0;
+
 
         public frm_envioPolizas(string sUsuario)
         {
@@ -85,9 +89,39 @@ namespace Finanzas
 
         private void DgvMovimientos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            DataGridViewCheckBoxColumn d = new DataGridViewCheckBoxColumn();
-            d.Name = "Seleccionar";
-            DgvMovimientos.Columns.Add(d);
+            if (!columnaAgregada)
+            {
+                d.Name = "Seleccionar";
+                DgvMovimientos.Columns.Add(d);
+                columnaAgregada = true;
+            }
+         
+        }
+
+        private void DgvMovimientos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+        private void DgvMovimientos_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == d.Index && e.RowIndex != -1)
+            {
+                calcularTotal();
+            }
+        }
+
+        private void calcularTotal()
+        {
+            total = 0.00;
+            foreach(DataGridViewRow row in DgvMovimientos.Rows)
+            {
+                if (row["s"] == true)
+                {
+                    total = total + double.Parse(row.Cells[3].Value.ToString());
+                }
+            }
+            LblTotal.Text = total.ToString();
         }
     }
 }
