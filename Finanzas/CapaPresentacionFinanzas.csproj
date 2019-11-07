@@ -35,6 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
+    <Reference Include="CapaDeDisenoBARRA">
+      <HintPath>..\..\BARRA\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDisenoBARRA.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -71,11 +74,11 @@
     <Compile Include="frm_ctsbancarias.Designer.cs">
       <DependentUpon>frm_ctsbancarias.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_cuentasContables.cs">
+    <Compile Include="frm_ctsContables.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_cuentasContables.Designer.cs">
-      <DependentUpon>frm_cuentasContables.cs</DependentUpon>
+    <Compile Include="frm_ctsContables.Designer.cs">
+      <DependentUpon>frm_ctsContables.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_GestionPresupuesto.cs">
       <SubType>Form</SubType>
@@ -169,8 +172,8 @@
     <EmbeddedResource Include="frm_ctsbancarias.resx">
       <DependentUpon>frm_ctsbancarias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_cuentasContables.resx">
-      <DependentUpon>frm_cuentasContables.cs</DependentUpon>
+    <EmbeddedResource Include="frm_ctsContables.resx">
+      <DependentUpon>frm_ctsContables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionPresupuesto.resx">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>

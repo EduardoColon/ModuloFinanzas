@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,6 +44,8 @@
             this.Debe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualizacionpolizas = new System.Windows.Forms.Label();
+            this.txt_codigoCuenta = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_polizas)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +75,7 @@
             this.btn_actualizar.TabIndex = 6;
             this.btn_actualizar.Text = "Actualizar Polizas";
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // button1
             // 
@@ -172,11 +176,24 @@
             this.actualizacionpolizas.TabIndex = 3;
             this.actualizacionpolizas.Text = "ACTUALIZACION DE POLIZAS";
             // 
+            // txt_codigoCuenta
+            // 
+            this.txt_codigoCuenta.Location = new System.Drawing.Point(740, 53);
+            this.txt_codigoCuenta.Name = "txt_codigoCuenta";
+            this.txt_codigoCuenta.Size = new System.Drawing.Size(100, 20);
+            this.txt_codigoCuenta.TabIndex = 4;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // frm_ActualizacionPolizas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 513);
+            this.Controls.Add(this.txt_codigoCuenta);
             this.Controls.Add(this.actualizacionpolizas);
             this.Controls.Add(this.groupBox2);
             this.Name = "frm_ActualizacionPolizas";
@@ -207,5 +224,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Debe;
         private System.Windows.Forms.DataGridViewTextBoxColumn Haber;
         private System.Windows.Forms.Button btn_actualizar;
+        private System.Windows.Forms.TextBox txt_codigoCuenta;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

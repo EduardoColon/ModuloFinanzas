@@ -62,5 +62,35 @@ namespace Finanzas
                     return;
                 }
         }
+
+        public static int contadorFila = 0;
+        bool cuentaRepetida = false;
+        int posicionFila = 0;
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            double dSumaDebe = 0.0;
+            double dSumaHaber = 0.0;
+
+            foreach (DataGridViewRow fila in dgv_polizas.Rows)
+            {
+                string codigoCuenta = fila.Cells[2].Value.ToString();
+                txt_codigoCuenta.Text = codigoCuenta;
+                string debe = fila.Cells[4].Value.ToString();
+                string haber = fila.Cells[5].Value.ToString();
+
+                double dDebe = Convert.ToDouble(debe);
+                double dHaber = Convert.ToDouble(haber);
+
+                if(codigoCuenta == "1.1.1")
+                {
+                    dSumaDebe = dSumaDebe + dDebe;
+                    dSumaHaber = dSumaHaber + dHaber;
+                }
+            }
+
+            MessageBox.Show(dSumaDebe.ToString());
+            MessageBox.Show(dSumaHaber.ToString());
+        }
     }
 }

@@ -272,7 +272,7 @@ namespace Finanzas
 
         private void cuentasContablesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frm_cuentasContables cuentas_contables = new frm_cuentasContables(sUsuario);
+            frm_ctsContables cuentas_contables = new frm_ctsContables(sUsuario);
             cuentas_contables.MdiParent = this;
             cuentas_contables.Show();
         }
