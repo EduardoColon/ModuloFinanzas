@@ -72,11 +72,11 @@ namespace CapaLogicaFinanzas
 
         /*-------------------------------------------------------------Allan Letona------------------------------------------------------------*/
 
-        public DataTable consultaLogicaPolizas(string fechaInicial, string fechaFinal, string TipoDePoliza)
+        public DataTable consultaLogicaPolizas(string fechaInicial, string fechaFinal)
         {
             try
             {
-                OdbcDataAdapter dtPolizas = sen.consultarPolizas(fechaInicial, fechaFinal, TipoDePoliza);
+                OdbcDataAdapter dtPolizas = sen.consultarPolizas(fechaInicial, fechaFinal);
                 DataTable tablePolizas = new DataTable();
                 dtPolizas.Fill(tablePolizas);
                 return tablePolizas;
