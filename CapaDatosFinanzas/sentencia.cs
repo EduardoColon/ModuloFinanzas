@@ -504,7 +504,7 @@ namespace CapaDatosFinanzas
 
         public void insertarConciliacionBancaria(string idBanco, string idMoneda, string periodo, string saldo)
         {
-            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
+            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_encabezado (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
                   + idBanco + " ,'" +
                   idMoneda + "' , '" +
                   periodo + "' , " +
@@ -513,6 +513,36 @@ namespace CapaDatosFinanzas
             sql.ExecuteNonQuery();
             sql.Connection.Close();
         }
+
+
+        public void insertarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
+        {
+            int idMax;
+            try
+            {
+                OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT MAX(KidConciliacion_Bancaria) FROM tbl_conciliacion_bancaria_encabezado ", con.conectar());
+                OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
+
+                if (almacena.HasRows)
+                {
+                    idMax = almacena.GetInt32(0);
+                    
+                    for(int i = 0; i < lIdMovimientoSeleccionado.Count; i++)
+                    {
+                        OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_detalle (KidConciliacion_Bancaria, KidMovimientoBancario, estado) VALUES ("
+                + idMax + " ," + lIdMovimientoSeleccionado[i] + ",  1)", con.conectar());
+                        sql.ExecuteNonQuery();
+                        sql.Connection.Close();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
 
         //Eduardo Colon envio de polizas
         public OdbcDataAdapter consultarCuentasEnvioPolizas()

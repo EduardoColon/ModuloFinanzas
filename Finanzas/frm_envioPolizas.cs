@@ -13,7 +13,6 @@ namespace Finanzas
 {
     public partial class frm_envioPolizas : Form
     {
-        private bool columnaAgregada = false;
         private string sUsuario;
         List<string> lIdCuentas = new List<string>();
         logica logic = new logica();
@@ -89,12 +88,7 @@ namespace Finanzas
 
         private void DgvMovimientos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            if (!columnaAgregada)
-            {
-                d.Name = "Seleccionar";
-                DgvMovimientos.Columns.Add(d);
-                columnaAgregada = true;
-            }
+           
          
         }
 
@@ -114,13 +108,7 @@ namespace Finanzas
         private void calcularTotal()
         {
             total = 0.00;
-            foreach(DataGridViewRow row in DgvMovimientos.Rows)
-            {
-                if (row["s"] == true)
-                {
-                    total = total + double.Parse(row.Cells[3].Value.ToString());
-                }
-            }
+            
             LblTotal.Text = total.ToString();
         }
     }

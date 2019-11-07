@@ -404,6 +404,18 @@ namespace CapaLogicaFinanzas
             return true;
         }
 
+        public void registrarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
+        {
+            try
+            {
+                sen.insertarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
         //Eduardo Colon envio polizas
 
         public DataTable consultaLogicaCuentasEnvioPolizas()
