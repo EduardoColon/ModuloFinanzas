@@ -290,6 +290,42 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataTable consultaLogicaObtenerTotalesCuentasContables(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtTotalesCuentasContables = sen.obtenerTotalesDeCuentasContablesDePartidas(sFechaInicial, sFechaFinal);
+                DataTable tableTotalesCuentasContables = new DataTable();
+                dtTotalesCuentasContables.Fill(tableTotalesCuentasContables);
+                return tableTotalesCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaActualizarDebe_HaberCuentasContables(string sCodigoCuenta, double debe, double haber)
+        {
+            try
+            {
+                OdbcDataAdapter dtActualizarCuentasContables = sen.ActualizarDebe_HaberCuentasContables(sCodigoCuenta, debe, haber);
+                DataTable tableActualizarCuentasContables = new DataTable();
+                dtActualizarCuentasContables.Fill(tableActualizarCuentasContables);
+                return tableActualizarCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
+
+
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
         public DataSet consultaLogicapresupuesto()

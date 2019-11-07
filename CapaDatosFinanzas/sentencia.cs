@@ -361,6 +361,38 @@ namespace CapaDatosFinanzas
 
         }
 
+        public OdbcDataAdapter obtenerTotalesDeCuentasContablesDePartidas(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlTotalesCuentasContables = "SELECT PD.KidCuenta, SUM(PD.debe), SUM(PD.haber) FROM tbl_librodiario LD INNER JOIN tbl_poliza_encabezado PE ON LD.KidPoliza = PE.KidPoliza INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE LD.fecha BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+"' GROUP BY PD.KidCuenta";
+                OdbcDataAdapter dataTotalesCuentasContables = new OdbcDataAdapter(sqlTotalesCuentasContables, con.conectar());
+                return dataTotalesCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ActualizarDebe_HaberCuentasContables(string sCodigoCuenta, double debe, double haber)
+        {
+            try
+            {
+                string sqlActualizarCuentasContables = "UPDATE tbl_cuentas SET debe = debe + '"+debe+"', haber = haber + '"+haber+"' WHERE KidCuenta = '"+sCodigoCuenta+"'";
+                OdbcDataAdapter dataActualizarCuentasContables = new OdbcDataAdapter(sqlActualizarCuentasContables, con.conectar());
+                return dataActualizarCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
         public DataSet consultarPresupuesto()

@@ -64,33 +64,44 @@ namespace Finanzas
         }
 
         public static int contadorFila = 0;
-        bool cuentaRepetida = false;
-        int posicionFila = 0;
 
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
-            double dSumaDebe = 0.0;
-            double dSumaHaber = 0.0;
+            string sFechaInicio = null;
+            string sFechaFinal = null;
 
-            foreach (DataGridViewRow fila in dgv_polizas.Rows)
+            sFechaInicio = dtp_fechaInicial.Value.ToString("yyyy-MM-dd");
+            sFechaFinal = dtp_fechaFinal.Value.ToString("yyyy-MM-dd");
+
+            try
             {
-                string codigoCuenta = fila.Cells[2].Value.ToString();
-                txt_codigoCuenta.Text = codigoCuenta;
-                string debe = fila.Cells[4].Value.ToString();
-                string haber = fila.Cells[5].Value.ToString();
+                DataTable TotalesDeCuentasContables = logic.consultaLogicaObtenerTotalesCuentasContables(sFechaInicio, sFechaFinal);
 
-                double dDebe = Convert.ToDouble(debe);
-                double dHaber = Convert.ToDouble(haber);
-
-                if(codigoCuenta == "1.1.1")
+                foreach (DataRow dt in TotalesDeCuentasContables.Rows)
                 {
-                    dSumaDebe = dSumaDebe + dDebe;
-                    dSumaHaber = dSumaHaber + dHaber;
-                }
-            }
+                    string sCodigoCuenta = dt[0].ToString();
+                    double sTotalDebe = Convert.ToDouble(dt[1].ToString());
+                    double sTotalHaber = Convert.ToDouble(dt[2].ToString());
 
-            MessageBox.Show(dSumaDebe.ToString());
-            MessageBox.Show(dSumaHaber.ToString());
+                    try
+                    {
+                        logic.consultaLogicaActualizarDebe_HaberCuentasContables(sCodigoCuenta, sTotalDebe, sTotalHaber);
+                        MessageBox.Show("Polizas Actualizadas Correctamente");
+                        dgv_polizas.Rows.Clear();
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                    
+                }
+
+
+
+                }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }
