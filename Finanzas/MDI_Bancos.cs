@@ -154,5 +154,12 @@ namespace Finanzas
             bancos.MdiParent = this;
             bancos.Show();
         }
+
+        private void EnvioPolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_envioPolizas frm_Envio = new frm_envioPolizas(sUsuario);
+            frm_Envio.MdiParent = this;
+            frm_Envio.Show();
+        }
     }
 }

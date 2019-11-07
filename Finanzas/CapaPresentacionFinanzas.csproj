@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDeDiseno">
-      <HintPath>..\..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+      <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,6 +75,12 @@
     </Compile>
     <Compile Include="frm_cuentasContables.Designer.cs">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_envioPolizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_envioPolizas.Designer.cs">
+      <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_GestionPresupuesto.cs">
       <SubType>Form</SubType>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_cuentasContables.resx">
       <DependentUpon>frm_cuentasContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_envioPolizas.resx">
+      <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionPresupuesto.resx">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>

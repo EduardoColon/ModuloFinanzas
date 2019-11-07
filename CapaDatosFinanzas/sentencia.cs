@@ -264,6 +264,7 @@ namespace CapaDatosFinanzas
             return dataTable;
         }
 
+
         /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -367,6 +368,41 @@ namespace CapaDatosFinanzas
             sql.Connection.Close();
         }
 
+        //Eduardo Colon envio de polizas
+        public OdbcDataAdapter consultarCuentasEnvioPolizas()
+        {
+            string sqlModulos = "SELECT KidCuenta, nombre FROM tbl_cuentas WHERE estado = 1";
+            OdbcDataAdapter dataModulos = new OdbcDataAdapter(sqlModulos, con.conectar());
+            return dataModulos;
+        }
+
+        public DataSet consultarLibroBancosEnvioPolizas(string fechaInicial, string fechaFinal)
+        {
+            DataSet ds;
+            try
+            {
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+        " FROM tbl_libro_bancos WHERE estado = 1 " +
+        " AND movimiento_trasladado_contabilidad = 0 " +
+        " AND fecha_movimiento between '" + fechaInicial + "' AND '" + fechaFinal + "'"
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
 
         }
+
+    }
 }

@@ -53,6 +53,7 @@ namespace CapaLogicaFinanzas
         }
 
    
+
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)
         {
 
@@ -87,7 +88,6 @@ namespace CapaLogicaFinanzas
                 return null;
             }
         }
-
 
         public DataTable consultaLogicaActualizacionPolizas(string fechaInicial, string fechaFinal)
         {
@@ -282,6 +282,38 @@ namespace CapaLogicaFinanzas
             }
 
             return true;
+        }
+
+        //Eduardo Colon envio polizas
+
+        public DataTable consultaLogicaCuentasEnvioPolizas()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.consultarCuentasEnvioPolizas();
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataSet consultaLogicaLibroBancosEnvioPoliza(string fechaInicial, string fechaFinal)
+        {
+            try
+            {
+                return sen.consultarLibroBancosEnvioPolizas(fechaInicial, fechaFinal);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
         }
     }
 }
