@@ -39,18 +39,17 @@
     </Reference>
     <Reference Include="CapaDeDiseno">
       <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
+
+
     </Reference>
     <Reference Include="CapaDeLogica">
       <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
->>>>>>> Stashed changes
-=======
+
+
     </Reference>
     <Reference Include="CapaDeLogica">
       <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
->>>>>>> Stashed changes
+
     </Reference>
     <Reference Include="CapaDeDisenoBARRA">
       <HintPath>..\Librerias\CapaDeDisenoBARRA.dll</HintPath>

@@ -453,16 +453,13 @@ namespace CapaLogicaFinanzas
             return true;
         }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
         public void registrarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
         {
             try
             {
                 sen.insertarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
-=======
-=======
->>>>>>> Stashed changes
+
 
         //============================Alejandro Barreda- Logica Movimientos bancarios=========================
         public List<string> LogicaObtenerCuentasBancarias()
@@ -472,14 +469,13 @@ namespace CapaLogicaFinanzas
             {
                 resultado = sen.consultarCuentasBancarias();
               
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-<<<<<<< Updated upstream
+
         }
 
         //Eduardo Colon envio polizas
@@ -492,13 +488,12 @@ namespace CapaLogicaFinanzas
                 DataTable tableModulos = new DataTable();
                 dtModulos.Fill(tableModulos);
                 return tableModulos;
-=======
->>>>>>> Stashed changes
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-<<<<<<< Updated upstream
+
                 return null;
             }
         }
@@ -516,10 +511,9 @@ namespace CapaLogicaFinanzas
             }
 
         }
-=======
-=======
+
             }
->>>>>>> Stashed changes
+
             return resultado;
         }
 
@@ -571,9 +565,5 @@ namespace CapaLogicaFinanzas
             }
         }
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
 }
