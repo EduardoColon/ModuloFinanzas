@@ -318,5 +318,13 @@ namespace Finanzas
             presupuesto1.MdiParent = this;
             presupuesto1.Show();
         }
+
+        private void balanceGeneralToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_BalanceGeneral BalanceGeneral = new frm_BalanceGeneral();
+            BalanceGeneral.MdiParent = this;
+            BalanceGeneral.Show();
+
+        }
     }
 }

@@ -323,6 +323,21 @@ namespace CapaLogicaFinanzas
         }
 
 
+        public DataTable consultaLogicaObtenerTipoDeCuenta()
+        {
+            try
+            {
+                OdbcDataAdapter dtObtenerTipoCuenta = sen.ObtenerTipoDeCuenta();
+                DataTable tableTipoDeCuenta = new DataTable();
+                dtObtenerTipoCuenta.Fill(tableTipoDeCuenta);
+                return tableTipoDeCuenta;
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
 
 
 

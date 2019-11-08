@@ -386,6 +386,21 @@ namespace CapaDatosFinanzas
         }
 
 
+        public OdbcDataAdapter ObtenerTipoDeCuenta()
+        {
+            try
+            {
+                string sqlObtenerTipoDeCuenta = "SELECT KidTipoCuenta, nombre_tipoCuenta FROM tbl_tipocuenta WHERE nombre_tipoCuenta LIKE 'ACT%' or nombre_tipoCuenta LIKE 'PAS%'";
+                OdbcDataAdapter dataTipoCuenta = new OdbcDataAdapter(sqlObtenerTipoDeCuenta, con.conectar());
+                return dataTipoCuenta;
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
