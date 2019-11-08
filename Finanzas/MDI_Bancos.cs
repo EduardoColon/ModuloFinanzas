@@ -161,5 +161,12 @@ namespace Finanzas
             frm_Envio.MdiParent = this;
             frm_Envio.Show();
         }
+
+        private void ConsultarConciliacionBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ConsultarConciliacion frm_Consultar = new frm_ConsultarConciliacion(sUsuario);
+            frm_Consultar.MdiParent = this;
+            frm_Consultar.Show();
+        }
     }
 }

@@ -94,9 +94,10 @@ namespace CapaDatosFinanzas
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex);
 
             }
-            
+
 
             return result;
         }
@@ -313,6 +314,8 @@ namespace CapaDatosFinanzas
 
         }
 
+       
+
         public OdbcDataAdapter obtenerMaximoCodigoCuentaContable2(int Identificador)
         {
             try
@@ -447,6 +450,35 @@ namespace CapaDatosFinanzas
         " tbl_cuentabancaria.KidCuentaBancaria = cuenta_credito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') ) " +
         " AND fecha_movimiento LIKE '" + periodo + "%' " +
         " AND movimiento_conciliado = 0" 
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+        }
+
+        public DataSet consultarConciliacionBancaria(string idBanco, string periodo, string idMoneda)
+        {
+
+            DataSet ds;
+            try
+            {
+                string sql = "SELECT KidConciliacion_Bancaria, mes_conciliacion, diferencia_total " +
+        " FROM tbl_conciliacion_bancaria_encabezado WHERE estado = 1 " +
+        " AND KidBanco =" + idBanco + " AND moneda = '" + idMoneda +
+        "' AND mes_conciliacion = '" + periodo + "' ";
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter( sql
     , con.conectar()); ;
                 dat.Fill(ds);
             }

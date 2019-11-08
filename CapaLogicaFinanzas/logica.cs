@@ -106,7 +106,7 @@ namespace CapaLogicaFinanzas
             }
         }
 
-
+   
         public DataTable consultaLogicaTipoPolizas()
         {
             try
@@ -355,6 +355,19 @@ namespace CapaLogicaFinanzas
             try
             {
                 return sen.consultarLibroBancos(idBanco, periodo, idMoneda);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataSet consultaLogicaConciliacionBancaria(string idBanco, string periodo, string idMoneda)
+        {
+            try
+            {
+                return sen.consultarConciliacionBancaria(idBanco, periodo, idMoneda);
             }
             catch (Exception ex)
             {
