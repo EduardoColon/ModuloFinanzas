@@ -27,7 +27,7 @@ namespace Finanzas
             navegador1.asignarComboConTabla("tbl_bancos", "nombre",1); //KidBancos
             navegador1.asignarComboConTabla("tbl_divisa", "Nombre",1); //KidDivisa
             navegador1.asignarComboConTabla("tbl_tipocuentabancaria", "Nombre", 1); //KidTipoCtaBancaria
-            navegador1.asignarAyuda("1");
+            navegador1.asignarAyuda("-2");
             navegador1.asignarTabla("tbl_cuentabancaria");
             navegador1.asignarNombreForm("Mantenimiento Cuentas Bancarias");
 
