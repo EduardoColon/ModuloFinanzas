@@ -170,6 +170,7 @@ namespace CapaLogicaFinanzas
             }
         }
 
+      
 
         public DataSet consultaLogicaCuentasContables()
         {
@@ -403,5 +404,169 @@ namespace CapaLogicaFinanzas
 
             return true;
         }
+
+
+        //============================Alejandro Barreda- Logica Movimientos bancarios=========================
+        public List<string> LogicaObtenerCuentasBancariasconCheques()
+        {
+            List<String> resultado = new List<string>();
+            try
+            {
+                resultado = sen.consultarCuentasBancariasconCheques();
+              
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return resultado;
+        }
+
+        public List<string> LogicaVerificarFondosCuentaBancaria(string numeroCuenta)
+        {
+            List<String> resultado = new List<string>();
+            try
+            {
+               resultado = sen.consultarFondosBancarios(numeroCuenta);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);               
+            }
+            return resultado;
+        }
+
+        public List<string> LogicaObtenerNoDocBancario()
+        {
+            List<String> resultado = new List<string>();
+
+            try
+            {
+                resultado = sen.ObtenerNoDocMovimiento();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return resultado;
+        }
+
+
+        public DataTable LogicaIngresarMovimientoBancario(string ID,string cuenta_debito,string cuenta_credito, string monto, string tipo_movimiento, string fecha_movimiento, string beneficiario, string descripcion, string movimiento_concilidado,
+                                                           string movimiento_trasladado_contabilidad, string KidCuenta_contabledebito, string KidCuenta_contablecredito, string KidTipo_movimiento, string estado)
+        {
+            try
+            {
+                OdbcDataAdapter dtIngresomov1 = sen.IngresarMovimientoBancario(ID,cuenta_debito, cuenta_credito,  monto, tipo_movimiento, fecha_movimiento, beneficiario,  descripcion, movimiento_concilidado, movimiento_trasladado_contabilidad, KidCuenta_contabledebito, KidCuenta_contablecredito,KidTipo_movimiento, estado);
+         DataTable tableIngresomov = new DataTable();
+                dtIngresomov1.Fill(tableIngresomov);
+                return tableIngresomov;
+
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
+       
+
+       
+
+
+        public void LogicaActualizarSaldoBancario(string cuenta, double saldo)
+        {
+            try
+            {
+                sen.actualizarSaldoBancario(cuenta,saldo);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+        }
+
+
+        public List<string> LogicaObtenerCuentasBancarias()
+        {
+            List<String> resultado = new List<string>();
+            try
+            {
+                resultado = sen.consultarCuentasBancarias();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return resultado;
+        }
+
+        public List<string> LogicaObtenerNoCheques(string cuenta)
+        {
+            List<String> resultado = new List<string>();
+            try
+            {
+                resultado = sen.consultarNoCheques(cuenta);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return resultado;
+        }
+
+
+        public void LogicaActualizarCheques(string cuenta, int chequesactuales)
+        {
+            try
+            {
+                sen.actualizarcheques(cuenta, chequesactuales);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+        }
+
+
+        public DataTable consultaLogicaCuentasContables1()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.ConsultarCuentasContables1();
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+        public DataTable LogicaObtenerClasificadorGastos()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.ObtenerClasificadorGastos();
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
     }
 }

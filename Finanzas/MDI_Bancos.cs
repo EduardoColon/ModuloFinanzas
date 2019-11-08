@@ -154,5 +154,12 @@ namespace Finanzas
             bancos.MdiParent = this;
             bancos.Show();
         }
+
+        private void clasificadorDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_clasificadordemovimientos clasficadordegastos = new frm_clasificadordemovimientos(sUsuario);
+            clasficadordegastos.MdiParent = this;
+            clasficadordegastos.Show();
+        }
     }
 }

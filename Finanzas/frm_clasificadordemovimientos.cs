@@ -10,28 +10,22 @@ using System.Windows.Forms;
 
 namespace Finanzas
 {
-    public partial class frm_ctsbancarias : Form
+    public partial class frm_clasificadordemovimientos : Form
     {
         string usuario = "";
-        public frm_ctsbancarias(string user)
+        public frm_clasificadordemovimientos(string user)
         {
             InitializeComponent();
             usuario = user;
-            string[] alias = { "ID Cuenta:","No._de_Cuenta:", "Descripción:","Banco:","Moneda:","Firmas_Individuales:",
-                                "Firmantes_Conjuntos:","Saldo:","Tipo de Cuenta","Estado:" };
+            string[] alias = { "ID tipo movimiento:", "Nombre:", "Descripción:", "estado:" };
 
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.White);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarComboConTabla("tbl_bancos", "nombre",1); //KidBancos
-            navegador1.asignarComboConTabla("tbl_divisa", "Nombre",1); //KidDivisa
-            navegador1.asignarComboConTabla("tbl_tipocuentabancaria", "Nombre", 1); //KidTipoCtaBancaria
             navegador1.asignarAyuda("1");
-            navegador1.asignarTabla("tbl_cuentabancaria");
-            navegador1.asignarNombreForm("Mantenimiento Cuentas Bancarias");
-
-
+            navegador1.asignarTabla("tbl_tipo_movimiento");
+            navegador1.asignarNombreForm("Clasificador de movimientos");
         }
 
         private void navegador1_Load(object sender, EventArgs e)
