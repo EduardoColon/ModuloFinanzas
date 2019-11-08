@@ -453,16 +453,33 @@ namespace CapaLogicaFinanzas
             return true;
         }
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public void registrarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
         {
             try
             {
                 sen.insertarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
+=======
+=======
+>>>>>>> Stashed changes
+
+        //============================Alejandro Barreda- Logica Movimientos bancarios=========================
+        public List<string> LogicaObtenerCuentasBancarias()
+        {
+            List<String> resultado = new List<string>();
+            try
+            {
+                resultado = sen.consultarCuentasBancarias();
+              
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
+<<<<<<< Updated upstream
         }
 
         //Eduardo Colon envio polizas
@@ -475,10 +492,13 @@ namespace CapaLogicaFinanzas
                 DataTable tableModulos = new DataTable();
                 dtModulos.Fill(tableModulos);
                 return tableModulos;
+=======
+>>>>>>> Stashed changes
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+<<<<<<< Updated upstream
                 return null;
             }
         }
@@ -496,5 +516,64 @@ namespace CapaLogicaFinanzas
             }
 
         }
+=======
+=======
+            }
+>>>>>>> Stashed changes
+            return resultado;
+        }
+
+        public List<string> LogicaVerificarFondosCuentaBancaria(string numeroCuenta)
+        {
+            List<String> resultado = new List<string>();
+            try
+            {
+               resultado = sen.consultarFondosBancarios(numeroCuenta);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);               
+            }
+            return resultado;
+        }
+
+        public List<string> LogicaObtenerNoDocBancario()
+        {
+            List<String> resultado = new List<string>();
+
+            try
+            {
+                resultado = sen.ObtenerNoDocMovimiento();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            return resultado;
+        }
+
+
+        public DataTable LogicaIngresarMovimientoBancario(string cuenta_debito,string cuenta_credito, string monto, string tipo_movimiento, string fecha_movimiento, string beneficiario, string descripcion)
+        {
+            try
+            {
+                OdbcDataAdapter dtIngresomov1 = sen.IngresarMovimientoBancario(cuenta_debito,cuenta_credito,  monto,tipo_movimiento, fecha_movimiento, beneficiario,  descripcion);
+         DataTable tableIngresomov = new DataTable();
+                dtIngresomov1.Fill(tableIngresomov);
+                return tableIngresomov;
+
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+                return null;
+            }
+        }
+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
     }
 }

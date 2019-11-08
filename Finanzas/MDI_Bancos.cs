@@ -155,6 +155,8 @@ namespace Finanzas
             bancos.Show();
         }
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         private void EnvioPolizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_envioPolizas frm_Envio = new frm_envioPolizas(sUsuario);
@@ -167,6 +169,18 @@ namespace Finanzas
             frm_ConsultarConciliacion frm_Consultar = new frm_ConsultarConciliacion(sUsuario);
             frm_Consultar.MdiParent = this;
             frm_Consultar.Show();
+=======
+=======
+>>>>>>> Stashed changes
+        private void clasificadorDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_clasificadordemovimientos clasficadordegastos = new frm_clasificadordemovimientos(sUsuario);
+            clasficadordegastos.MdiParent = this;
+            clasficadordegastos.Show();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         }
     }
 }

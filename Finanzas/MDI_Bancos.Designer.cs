@@ -39,14 +39,28 @@
             this.conciliacionBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCambioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.envioPolizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.consultarConciliacionBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.clasificadorDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> Stashed changes
+=======
+            this.clasificadorDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> Stashed changes
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +95,8 @@
             this.mantenimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cuentasBancariasToolStripMenuItem,
             this.chequeraToolStripMenuItem,
-            this.bancosToolStripMenuItem});
+            this.bancosToolStripMenuItem,
+            this.clasificadorDeMovimientosToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(156, 29);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
@@ -89,21 +104,45 @@
             // cuentasBancariasToolStripMenuItem
             // 
             this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+=======
+            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+>>>>>>> Stashed changes
+=======
+            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+>>>>>>> Stashed changes
             this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
             this.cuentasBancariasToolStripMenuItem.Click += new System.EventHandler(this.cuentasBancariasToolStripMenuItem_Click);
             // 
             // chequeraToolStripMenuItem
             // 
             this.chequeraToolStripMenuItem.Name = "chequeraToolStripMenuItem";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+=======
+            this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+>>>>>>> Stashed changes
+=======
+            this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+>>>>>>> Stashed changes
             this.chequeraToolStripMenuItem.Text = "Chequera";
             this.chequeraToolStripMenuItem.Click += new System.EventHandler(this.chequeraToolStripMenuItem_Click);
             // 
             // bancosToolStripMenuItem
             // 
             this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.bancosToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+=======
+            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+>>>>>>> Stashed changes
+=======
+            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+>>>>>>> Stashed changes
             this.bancosToolStripMenuItem.Text = "Bancos";
             this.bancosToolStripMenuItem.Click += new System.EventHandler(this.bancosToolStripMenuItem_Click);
             // 
@@ -112,11 +151,23 @@
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conciliacionBancariaToolStripMenuItem,
             this.movimientosDeBancosToolStripMenuItem,
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.tipoDeCambioToolStripMenuItem,
             this.envioPolizasToolStripMenuItem,
             this.consultarConciliacionBancariaToolStripMenuItem});
             this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
             this.procesosToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
+=======
+            this.tipoDeCambioToolStripMenuItem});
+            this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+>>>>>>> Stashed changes
+=======
+            this.tipoDeCambioToolStripMenuItem});
+            this.procesosToolStripMenuItem.Name = "procesosToolStripMenuItem";
+            this.procesosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+>>>>>>> Stashed changes
             this.procesosToolStripMenuItem.Text = "Procesos";
             // 
             // conciliacionBancariaToolStripMenuItem
@@ -140,6 +191,8 @@
             this.tipoDeCambioToolStripMenuItem.Text = "Tipo de Cambio";
             this.tipoDeCambioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCambioToolStripMenuItem_Click);
             // 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             // envioPolizasToolStripMenuItem
             // 
             this.envioPolizasToolStripMenuItem.Name = "envioPolizasToolStripMenuItem";
@@ -151,22 +204,51 @@
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(98, 29);
+=======
+=======
+>>>>>>> Stashed changes
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(133, 29);
+=======
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+>>>>>>> Stashed changes
+=======
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+>>>>>>> Stashed changes
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
+=======
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+>>>>>>> Stashed changes
+=======
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+>>>>>>> Stashed changes
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // statusStrip
             // 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
@@ -174,12 +256,27 @@
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.statusStrip.Size = new System.Drawing.Size(1353, 32);
+=======
+=======
+>>>>>>> Stashed changes
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel});
+            this.statusStrip.Location = new System.Drawing.Point(0, 639);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1353, 22);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.toolStripStatusLabel.Size = new System.Drawing.Size(66, 25);
             this.toolStripStatusLabel.Text = "Estado";
             // 
@@ -189,6 +286,22 @@
             this.consultarConciliacionBancariaToolStripMenuItem.Size = new System.Drawing.Size(358, 34);
             this.consultarConciliacionBancariaToolStripMenuItem.Text = "Consultar Conciliacion Bancaria";
             this.consultarConciliacionBancariaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarConciliacionBancariaToolStripMenuItem_Click);
+=======
+=======
+>>>>>>> Stashed changes
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel.Text = "Estado";
+            // 
+            // clasificadorDeMovimientosToolStripMenuItem
+            // 
+            this.clasificadorDeMovimientosToolStripMenuItem.Name = "clasificadorDeMovimientosToolStripMenuItem";
+            this.clasificadorDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.clasificadorDeMovimientosToolStripMenuItem.Text = "Clasificador de Movimientos";
+            this.clasificadorDeMovimientosToolStripMenuItem.Click += new System.EventHandler(this.clasificadorDeMovimientosToolStripMenuItem_Click);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
             // 
             // MDI_Bancos
             // 
@@ -232,8 +345,16 @@
         private System.Windows.Forms.ToolStripMenuItem conciliacionBancariaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimientosDeBancosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeCambioToolStripMenuItem;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
         private System.Windows.Forms.ToolStripMenuItem envioPolizasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarConciliacionBancariaToolStripMenuItem;
+=======
+        private System.Windows.Forms.ToolStripMenuItem clasificadorDeMovimientosToolStripMenuItem;
+>>>>>>> Stashed changes
+=======
+        private System.Windows.Forms.ToolStripMenuItem clasificadorDeMovimientosToolStripMenuItem;
+>>>>>>> Stashed changes
     }
 }
 
