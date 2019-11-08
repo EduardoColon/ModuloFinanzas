@@ -37,7 +37,6 @@
             this.tiposDePolizaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.creacionPresupuestoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizacionDePolizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizacionDePolizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,7 +122,6 @@
             // procesosToolStripMenuItem2
             // 
             this.procesosToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.visualizacionDePolizasToolStripMenuItem,
             this.actualizacionDePolizasToolStripMenuItem,
             this.libroMayorToolStripMenuItem,
             this.balanceGeneralToolStripMenuItem,
@@ -131,13 +129,6 @@
             this.procesosToolStripMenuItem2.Name = "procesosToolStripMenuItem2";
             this.procesosToolStripMenuItem2.Size = new System.Drawing.Size(78, 20);
             this.procesosToolStripMenuItem2.Text = "Procesos";
-            // 
-            // visualizacionDePolizasToolStripMenuItem
-            // 
-            this.visualizacionDePolizasToolStripMenuItem.Name = "visualizacionDePolizasToolStripMenuItem";
-            this.visualizacionDePolizasToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.visualizacionDePolizasToolStripMenuItem.Text = "Visualizacion de Polizas";
-            this.visualizacionDePolizasToolStripMenuItem.Click += new System.EventHandler(this.visualizacionDePolizasToolStripMenuItem_Click);
             // 
             // actualizacionDePolizasToolStripMenuItem
             // 
@@ -275,7 +266,6 @@
         private System.Windows.Forms.ToolStripMenuItem tiposDeCuentasContablesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem tiposDePolizaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem creacionPresupuestoToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem visualizacionDePolizasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizacionDePolizasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem libroMayorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem balanceGeneralToolStripMenuItem;

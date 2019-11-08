@@ -115,12 +115,6 @@
     <Compile Include="Frm_MovimientosBancarios.Designer.cs">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_polizas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_polizas.Designer.cs">
-      <DependentUpon>frm_polizas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_tipoCuentaContable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MovimientosBancarios.resx">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_polizas.resx">
-      <DependentUpon>frm_polizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoCuentaContable.resx">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>

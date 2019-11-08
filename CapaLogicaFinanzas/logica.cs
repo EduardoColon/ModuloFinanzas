@@ -72,11 +72,11 @@ namespace CapaLogicaFinanzas
 
         /*-------------------------------------------------------------Allan Letona------------------------------------------------------------*/
 
-        public DataTable consultaLogicaPolizas(string fechaInicial, string fechaFinal, string TipoDePoliza)
+        public DataTable consultaLogicaPolizas(string fechaInicial, string fechaFinal)
         {
             try
             {
-                OdbcDataAdapter dtPolizas = sen.consultarPolizas(fechaInicial, fechaFinal, TipoDePoliza);
+                OdbcDataAdapter dtPolizas = sen.consultarPolizas(fechaInicial, fechaFinal);
                 DataTable tablePolizas = new DataTable();
                 dtPolizas.Fill(tablePolizas);
                 return tablePolizas;
@@ -289,6 +289,42 @@ namespace CapaLogicaFinanzas
                 return null;
             }
         }
+
+        public DataTable consultaLogicaObtenerTotalesCuentasContables(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtTotalesCuentasContables = sen.obtenerTotalesDeCuentasContablesDePartidas(sFechaInicial, sFechaFinal);
+                DataTable tableTotalesCuentasContables = new DataTable();
+                dtTotalesCuentasContables.Fill(tableTotalesCuentasContables);
+                return tableTotalesCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaActualizarDebe_HaberCuentasContables(string sCodigoCuenta, double debe, double haber)
+        {
+            try
+            {
+                OdbcDataAdapter dtActualizarCuentasContables = sen.ActualizarDebe_HaberCuentasContables(sCodigoCuenta, debe, haber);
+                DataTable tableActualizarCuentasContables = new DataTable();
+                dtActualizarCuentasContables.Fill(tableActualizarCuentasContables);
+                return tableActualizarCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
+
 
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 

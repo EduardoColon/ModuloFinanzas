@@ -104,20 +104,11 @@ namespace CapaDatosFinanzas
 
         /*--------------------------------------------------- Allan Letona -----------------------------------------------------------------------*/
 
-        public OdbcDataAdapter consultarPolizas(string fechaInicial, string fechaFinal, string TipoDePoliza)
+        public OdbcDataAdapter consultarPolizas(string fechaInicial, string fechaFinal)
         {
-            string sCodigoPoliza = "";
             try
             {
-                OdbcCommand sqlCodigoPoliza = new OdbcCommand("SELECT KidTipoDePoliza FROM tbl_tipo_poliza WHERE descripcion = '" + TipoDePoliza + "' ", con.conectar());
-                OdbcDataReader almacena = sqlCodigoPoliza.ExecuteReader();
-
-                while (almacena.Read() == true)
-                {
-                    sCodigoPoliza = almacena.GetString(0);
-                }
-
-                string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza LEFT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE LD.KidPoliza IS NULL AND PE.KidTipoDePoliza = '" + sCodigoPoliza + "' AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
+                string sqlConsultarPolizas = "SELECT PE.KidPoliza,PE.KidTipoDePoliza ,PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza LEFT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE LD.KidPoliza IS NULL AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
                 OdbcDataAdapter dataPolizas = new OdbcDataAdapter(sqlConsultarPolizas, con.conectar());
                 return dataPolizas;
             }
@@ -360,6 +351,38 @@ namespace CapaDatosFinanzas
             }
 
         }
+
+        public OdbcDataAdapter obtenerTotalesDeCuentasContablesDePartidas(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlTotalesCuentasContables = "SELECT PD.KidCuenta, SUM(PD.debe), SUM(PD.haber) FROM tbl_librodiario LD INNER JOIN tbl_poliza_encabezado PE ON LD.KidPoliza = PE.KidPoliza INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE LD.fecha BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+"' GROUP BY PD.KidCuenta";
+                OdbcDataAdapter dataTotalesCuentasContables = new OdbcDataAdapter(sqlTotalesCuentasContables, con.conectar());
+                return dataTotalesCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ActualizarDebe_HaberCuentasContables(string sCodigoCuenta, double debe, double haber)
+        {
+            try
+            {
+                string sqlActualizarCuentasContables = "UPDATE tbl_cuentas SET debe = debe + '"+debe+"', haber = haber + '"+haber+"' WHERE KidCuenta = '"+sCodigoCuenta+"'";
+                OdbcDataAdapter dataActualizarCuentasContables = new OdbcDataAdapter(sqlActualizarCuentasContables, con.conectar());
+                return dataActualizarCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
 
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
