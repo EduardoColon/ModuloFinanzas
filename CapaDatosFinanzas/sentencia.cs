@@ -94,9 +94,10 @@ namespace CapaDatosFinanzas
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex);
 
             }
-            
+
 
             return result;
         }
@@ -104,20 +105,11 @@ namespace CapaDatosFinanzas
 
         /*--------------------------------------------------- Allan Letona -----------------------------------------------------------------------*/
 
-        public OdbcDataAdapter consultarPolizas(string fechaInicial, string fechaFinal, string TipoDePoliza)
+        public OdbcDataAdapter consultarPolizas(string fechaInicial, string fechaFinal)
         {
-            string sCodigoPoliza = "";
             try
             {
-                OdbcCommand sqlCodigoPoliza = new OdbcCommand("SELECT KidTipoDePoliza FROM tbl_tipo_poliza WHERE descripcion = '" + TipoDePoliza + "' ", con.conectar());
-                OdbcDataReader almacena = sqlCodigoPoliza.ExecuteReader();
-
-                while (almacena.Read() == true)
-                {
-                    sCodigoPoliza = almacena.GetString(0);
-                }
-
-                string sqlConsultarPolizas = "SELECT PE.KidPoliza, PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza LEFT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE LD.KidPoliza IS NULL AND PE.KidTipoDePoliza = '" + sCodigoPoliza + "' AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
+                string sqlConsultarPolizas = "SELECT PE.KidPoliza,PE.KidTipoDePoliza ,PD.KidCuenta, PD.Debe, PD.Haber FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza LEFT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza WHERE LD.KidPoliza IS NULL AND (PE.fecha_poliza BETWEEN '"+fechaInicial+"' AND '"+fechaFinal+"');";
                 OdbcDataAdapter dataPolizas = new OdbcDataAdapter(sqlConsultarPolizas, con.conectar());
                 return dataPolizas;
             }
@@ -313,6 +305,8 @@ namespace CapaDatosFinanzas
 
         }
 
+       
+
         public OdbcDataAdapter obtenerMaximoCodigoCuentaContable2(int Identificador)
         {
             try
@@ -360,6 +354,38 @@ namespace CapaDatosFinanzas
             }
 
         }
+
+        public OdbcDataAdapter obtenerTotalesDeCuentasContablesDePartidas(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlTotalesCuentasContables = "SELECT PD.KidCuenta, SUM(PD.debe), SUM(PD.haber) FROM tbl_librodiario LD INNER JOIN tbl_poliza_encabezado PE ON LD.KidPoliza = PE.KidPoliza INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE LD.fecha BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+"' GROUP BY PD.KidCuenta";
+                OdbcDataAdapter dataTotalesCuentasContables = new OdbcDataAdapter(sqlTotalesCuentasContables, con.conectar());
+                return dataTotalesCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ActualizarDebe_HaberCuentasContables(string sCodigoCuenta, double debe, double haber)
+        {
+            try
+            {
+                string sqlActualizarCuentasContables = "UPDATE tbl_cuentas SET debe = debe + '"+debe+"', haber = haber + '"+haber+"' WHERE KidCuenta = '"+sCodigoCuenta+"'";
+                OdbcDataAdapter dataActualizarCuentasContables = new OdbcDataAdapter(sqlActualizarCuentasContables, con.conectar());
+                return dataActualizarCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
 
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
@@ -410,6 +436,7 @@ namespace CapaDatosFinanzas
             return dataTable;
         }
 
+
         /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -446,6 +473,35 @@ namespace CapaDatosFinanzas
         " tbl_cuentabancaria.KidCuentaBancaria = cuenta_credito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') ) " +
         " AND fecha_movimiento LIKE '" + periodo + "%' " +
         " AND movimiento_conciliado = 0" 
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+        }
+
+        public DataSet consultarConciliacionBancaria(string idBanco, string periodo, string idMoneda)
+        {
+
+            DataSet ds;
+            try
+            {
+                string sql = "SELECT KidConciliacion_Bancaria, mes_conciliacion, diferencia_total " +
+        " FROM tbl_conciliacion_bancaria_encabezado WHERE estado = 1 " +
+        " AND KidBanco =" + idBanco + " AND moneda = '" + idMoneda +
+        "' AND mes_conciliacion = '" + periodo + "' ";
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter( sql
     , con.conectar()); ;
                 dat.Fill(ds);
             }
@@ -503,7 +559,7 @@ namespace CapaDatosFinanzas
 
         public void insertarConciliacionBancaria(string idBanco, string idMoneda, string periodo, string saldo)
         {
-            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
+            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_encabezado (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
                   + idBanco + " ,'" +
                   idMoneda + "' , '" +
                   periodo + "' , " +
@@ -512,7 +568,6 @@ namespace CapaDatosFinanzas
             sql.ExecuteNonQuery();
             sql.Connection.Close();
         }
-
 
 //==================================Alejandro Barreda Movimientos Bancarios linea 517===================================================
 
@@ -635,8 +690,35 @@ namespace CapaDatosFinanzas
             return resultado;
         }
 
-       
 
+        public void insertarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
+        {
+            int idMax;
+            try
+            {
+                OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT MAX(KidConciliacion_Bancaria) FROM tbl_conciliacion_bancaria_encabezado ", con.conectar());
+                OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
+
+                if (almacena.HasRows)
+                {
+                    idMax = almacena.GetInt32(0);
+
+                    for (int i = 0; i < lIdMovimientoSeleccionado.Count; i++)
+                    {
+                        OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_detalle (KidConciliacion_Bancaria, KidMovimientoBancario, estado) VALUES ("
+                + idMax + " ," + lIdMovimientoSeleccionado[i] + ",  1)", con.conectar());
+                        sql.ExecuteNonQuery();
+                        sql.Connection.Close();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
 
 
         //Actualizar Saldo en CuentasBancarias
@@ -646,7 +728,7 @@ namespace CapaDatosFinanzas
             try
             {
                 OdbcCommand sql = new OdbcCommand("UPDATE tbl_cuentabancaria SET " +
-                    " saldo = '"+monto+"' WHERE NumeroCuenta = " + cuenta, con.conectar());
+                    " saldo = '" + monto + "' WHERE NumeroCuenta = " + cuenta, con.conectar());
                 sql.ExecuteNonQuery();
                 sql.Connection.Close();
             }
@@ -654,35 +736,37 @@ namespace CapaDatosFinanzas
             {
                 Console.WriteLine(ex);
             }
+
         }
 
 
-        //llamar Cuentas Bancarias
-        public List<string> consultarCuentasBancarias()
+
+    //llamar Cuentas Bancarias
+    public List<string> consultarCuentasBancarias()
+    {
+        List<String> resultado = new List<string>();
+        try
         {
-            List<String> resultado = new List<string>();
-            try
+            //llama por medio de Inner join a Numero de Cuenta de tbl_cuentabancaria desde tbl_Chequera
+            OdbcCommand sql = new OdbcCommand("SELECT c.NumeroCuenta FROM tbl_cuentabancaria c WHERE c.estado=1", con.conectar());
+            OdbcDataReader almacena = sql.ExecuteReader();
+            while (almacena.Read() == true)
             {
-                //llama por medio de Inner join a Numero de Cuenta de tbl_cuentabancaria desde tbl_Chequera
-                OdbcCommand sql = new OdbcCommand("SELECT c.NumeroCuenta FROM tbl_cuentabancaria c WHERE c.estado=1", con.conectar());
-                OdbcDataReader almacena = sql.ExecuteReader();
-                while (almacena.Read() == true)
-                {
-                    resultado.Add(almacena.GetString(0));
-                }
-                almacena.Close();
-                sql.Connection.Close();
+                resultado.Add(almacena.GetString(0));
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-            }
-            return resultado;
+            almacena.Close();
+            sql.Connection.Close();
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
+        return resultado;
+    }
 
 
 
-         public List<string> consultarNoCheques(string cuenta)
+    public List<string> consultarNoCheques(string cuenta)
         {
             List<String> resultado = new List<string>();
             try
@@ -739,7 +823,46 @@ namespace CapaDatosFinanzas
 
 
 
-    }
+    
 
     
+
+        //Eduardo Colon envio de polizas
+        public OdbcDataAdapter consultarCuentasEnvioPolizas()
+        {
+            string sqlModulos = "SELECT KidCuenta, nombre FROM tbl_cuentas WHERE estado = 1";
+            OdbcDataAdapter dataModulos = new OdbcDataAdapter(sqlModulos, con.conectar());
+            return dataModulos;
+        }
+
+        public DataSet consultarLibroBancosEnvioPolizas(string fechaInicial, string fechaFinal)
+        {
+            DataSet ds;
+            try
+            {
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+        " FROM tbl_libro_bancos WHERE estado = 1 " +
+        " AND movimiento_trasladado_contabilidad = 0 " +
+        " AND fecha_movimiento between '" + fechaInicial + "' AND '" + fechaFinal + "'"
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+
+        }
+
+    }
+
 }

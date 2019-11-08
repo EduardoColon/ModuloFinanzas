@@ -76,6 +76,12 @@
     <Compile Include="frm_conciliacionBancaria.Designer.cs">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ConsultarConciliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ConsultarConciliacion.Designer.cs">
+      <DependentUpon>frm_ConsultarConciliacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_CreacionPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="frm_ctsContables.Designer.cs">
       <DependentUpon>frm_ctsContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_envioPolizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_envioPolizas.Designer.cs">
+      <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_GestionPresupuesto.cs">
       <SubType>Form</SubType>
@@ -129,12 +141,6 @@
     </Compile>
     <Compile Include="Frm_MovimientosBancarios.Designer.cs">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_polizas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_polizas.Designer.cs">
-      <DependentUpon>frm_polizas.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_tipoCuentaContable.cs">
       <SubType>Form</SubType>
@@ -183,6 +189,9 @@
     <EmbeddedResource Include="frm_conciliacionBancaria.resx">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ConsultarConciliacion.resx">
+      <DependentUpon>frm_ConsultarConciliacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CreacionPresupuesto.resx">
       <DependentUpon>Frm_CreacionPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ctsContables.resx">
       <DependentUpon>frm_ctsContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_envioPolizas.resx">
+      <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionPresupuesto.resx">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>
@@ -209,9 +221,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_MovimientosBancarios.resx">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_polizas.resx">
-      <DependentUpon>frm_polizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoCuentaContable.resx">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>

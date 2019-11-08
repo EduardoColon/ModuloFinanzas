@@ -300,9 +300,9 @@ namespace Finanzas
 
         private void visualizacionDePolizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_polizas polizas = new frm_polizas();
+            /*frm_polizas polizas = new frm_polizas();
             polizas.MdiParent = this;
-            polizas.Show();
+            polizas.Show();*/
         }
 
         private void actualizacionDePolizasToolStripMenuItem_Click(object sender, EventArgs e)

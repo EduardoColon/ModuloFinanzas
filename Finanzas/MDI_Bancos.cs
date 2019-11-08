@@ -155,11 +155,26 @@ namespace Finanzas
             bancos.Show();
         }
 
+
         private void clasificadorDeMovimientosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frm_clasificadordemovimientos clasficadordegastos = new frm_clasificadordemovimientos(sUsuario);
             clasficadordegastos.MdiParent = this;
             clasficadordegastos.Show();
+        }
+        private void EnvioPolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_envioPolizas frm_Envio = new frm_envioPolizas(sUsuario);
+            frm_Envio.MdiParent = this;
+            frm_Envio.Show();
+        }
+
+        private void ConsultarConciliacionBancariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_ConsultarConciliacion frm_Consultar = new frm_ConsultarConciliacion(sUsuario);
+            frm_Consultar.MdiParent = this;
+            frm_Consultar.Show();
+
         }
     }
 }

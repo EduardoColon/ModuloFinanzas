@@ -123,36 +123,37 @@ namespace Finanzas
         }
 
         //LLENAR COMBOBOX DE CUENTAS CONTABLES
-        void llamarcuentascontablescredito() {
-            
-                logica logic = new logica();
-                try
-                {
-                    DataTable dtModulos = logic.consultaLogicaCuentasContables1();
+        void llamarcuentascontablescredito()
+        {
 
-                    foreach (DataRow row in dtModulos.Rows)
-                    {
-                        boxctacontabledebito.Items.Add(row[1].ToString());
-                        boxctacontablecredito.Items.Add(row[1].ToString());
-                        cuentasContables.Add(row[0].ToString());
-                    }
-                }
-                catch (InvalidOperationException ex)
-                {
-                    Console.WriteLine(ex);
-                }
+            logica logic = new logica();
+            try
+            {
+                DataTable dtModulos = logic.consultaLogicaCuentasContables1();
 
-                if (cuentasContables.Count > 0)
+                foreach (DataRow row in dtModulos.Rows)
                 {
-                    boxctacontablecredito.SelectedIndex = 0;
-                    boxctacontabledebito.SelectedIndex = 0;
+                    boxctacontabledebito.Items.Add(row[1].ToString());
+                    boxctacontablecredito.Items.Add(row[1].ToString());
+                    cuentasContables.Add(row[0].ToString());
                 }
             }
-
-
-            //LLENAR COMBOBOX DE Clasificador de Gastos
-            void llamarclasificadordegastos()
+            catch (InvalidOperationException ex)
             {
+                Console.WriteLine(ex);
+            }
+
+            if (cuentasContables.Count > 0)
+            {
+                boxctacontablecredito.SelectedIndex = 0;
+                boxctacontabledebito.SelectedIndex = 0;
+            }
+        }
+
+
+        //LLENAR COMBOBOX DE Clasificador de Gastos
+        void llamarclasificadordegastos()
+        {
             boxClasifGastos.Items.Clear();
             //llenar combobox con cuentas contables
             logica logic = new logica();
@@ -163,8 +164,8 @@ namespace Finanzas
                 foreach (DataRow row in dtModulos.Rows)
                 {
                     boxClasifGastos.Items.Add(row[1].ToString());
-                    
-                   ClasificadordeGastos.Add(row[0].ToString());
+
+                    ClasificadordeGastos.Add(row[0].ToString());
                 }
             }
             catch (InvalidOperationException ex)
@@ -174,65 +175,64 @@ namespace Finanzas
 
             if (cuentasContables.Count > 0)
             {
-               boxClasifGastos.SelectedIndex = 0;
-               
-            } 
+                boxClasifGastos.SelectedIndex = 0;
+
+            }
+        }
+
+
+        //============Verificacion si los campos a ingresar estan llenos y con caracteres permitidos
+        void vercampos()
+        {
+            if (string.IsNullOrEmpty(boxtransac.Text) || boxtransac.SelectedIndex==-1) {
+            
+                    MessageBox.Show("Elija un tipo de Transacción a realizar");
+                
             }
 
-
-            //============Verificacion si los campos a ingresar estan llenos y con caracteres permitidos
-            void vercampos() {
-
-            if (boxctacontablecredito.Text == "" || boxctacontabledebito.Text == "" || boxClasifGastos.Text == "" || boxcredito.Text == "" || boxdebito.Text == "")
+            
+         else if (txtvalor.Text.Any(x => !char.IsLetter(x)))
+            {
+                if (boxtransac.SelectedItem.ToString() == "Cheques")
                 {
-                    MessageBox.Show("Por favor, llene todos los campos de lista");
-                }
-                else if (boxtransac.Text == "")
-                {
-                    MessageBox.Show("Por favor, Elija una transacción a realizar");
-                }
-                else if (txtvalor.Text.Any(x => !char.IsLetter(x)))
-                {
-                     if (boxtransac.SelectedItem.ToString() == "Cheques")
+                    if (txtanombre.Text == "")
+                        MessageBox.Show("Por favor, escriba el nombre del beneficiario");
+                    else if (txtdes.Text == "")
+                        MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
+                    else if (ClasificadordeGastos[boxClasifGastos.SelectedIndex] == "")
+                        MessageBox.Show("Por favor, elija un Clasificador de Gasto");
+                    else
                     {
-                        if (txtanombre.Text == "")
-                            MessageBox.Show("Por favor, escriba el nombre del beneficiario");
-                        else if (txtdes.Text == "")
-                            MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
-                        else if (ClasificadordeGastos[boxClasifGastos.SelectedIndex] == "")
-                            MessageBox.Show("Por favor, elija un Clasificador de Gasto");
-                        else
-                        {
-                            logica logic = new logica();
-                            saldo = logic.LogicaVerificarFondosCuentaBancaria(boxdebito.SelectedItem.ToString());
-                            //conversion lista string a double
-                            List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
-                            //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
-                            saldon = saldolista[0];
+                        logica logic = new logica();
+                        saldo = logic.LogicaVerificarFondosCuentaBancaria(boxdebito.SelectedItem.ToString());
+                        //conversion lista string a double
+                        List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
+                        //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
+                        saldon = saldolista[0];
 
-                            CrearMovimiento();
-                        }
+                        CrearMovimiento();
                     }
+                }
 
-                    else if (boxtransac.SelectedItem.ToString() == "Depositos")
+                else if (boxtransac.SelectedItem.ToString() == "Depositos")
+                {
+                    if (txtanombre.Text == "")
+                        MessageBox.Show("Por favor, escriba el nombre del beneficiario");
+                    else if (txtdes.Text == "")
+                        MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
+                    else if (ClasificadordeGastos[boxClasifGastos.SelectedIndex] == "")
+                        MessageBox.Show("Por favor, elija un Clasificador de Gasto");
+
+                    else
                     {
-                        if (txtanombre.Text == "")
-                            MessageBox.Show("Por favor, escriba el nombre del beneficiario");
-                        else if (txtdes.Text == "")
-                            MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
-                        else if (ClasificadordeGastos[boxClasifGastos.SelectedIndex] == "")
-                            MessageBox.Show("Por favor, elija un Clasificador de Gasto");
-
-                        else
-                        {
-                            logica logic = new logica();
-                            saldo = logic.LogicaVerificarFondosCuentaBancaria(boxcredito.SelectedItem.ToString());
-                            //conversion lista string a double
-                            List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
-                            //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
-                            saldon = saldolista[0];
-                            // CreacionDeposito
-                            saldoactual = (saldon + Convert.ToDouble(txtvalor.Text));
+                        logica logic = new logica();
+                        saldo = logic.LogicaVerificarFondosCuentaBancaria(boxcredito.SelectedItem.ToString());
+                        //conversion lista string a double
+                        List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
+                        //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
+                        saldon = saldolista[0];
+                        // CreacionDeposito
+                        saldoactual = (saldon + Convert.ToDouble(txtvalor.Text));
                         DialogResult asegurarse = MessageBox.Show("¿Está seguro que desea hacer este Depósito?\nUna vez hecho no se podrá revertir.", "Movimientos Bancarios", MessageBoxButtons.OKCancel);
                         if (asegurarse == DialogResult.OK)
                         {
@@ -244,62 +244,63 @@ namespace Finanzas
                             Console.WriteLine("No se creó el Depósito");
                         }
                     }
-                    }
-
-                    else if (boxtransac.Text == "ACH (Pagos por transferencia)")
-                    {
-                        if (txtctacredito.Text == "")
-                            MessageBox.Show("Por favor, ingrese numero de cuenta a la que se hará la transacción");
-                        else if (txtanombre.Text == "")
-                            MessageBox.Show("Por favor, escriba el nombre del beneficiario");
-                        else if (txtdes.Text == "")
-                            MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
-                        else if (ClasificadordeGastos[boxClasifGastos.SelectedIndex] == "")
-                            MessageBox.Show("Por favor, elija un Clasificador de Gasto");
-                        else
-                        {
-                            logica logic = new logica();
-                            saldo = logic.LogicaVerificarFondosCuentaBancaria(boxdebito.SelectedItem.ToString());
-                            //conversion lista string a double
-                            List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
-                            //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
-                            saldon = saldolista[0];
-                            CrearMovimiento();
-                        }
-                    }
-
-                    else if (boxtransac.SelectedItem.ToString() == "Transacciones entre Cuentas propias")
-                    {
-                        if (txtanombre.Text == "")
-                            MessageBox.Show("Por favor, escriba el nombre de quien hace la transaccion");
-                        else if (txtdes.Text == "")
-                            MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
-                        else
-                        {
-                            logica logic = new logica();
-                            saldo = logic.LogicaVerificarFondosCuentaBancaria(boxdebito.SelectedItem.ToString());
-                            //conversion lista string a double
-                            List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
-                            //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
-                            saldon = saldolista[0];
-                            CrearMovimiento();
-                        }
-                    }
-
                 }
-                else
+
+                else if (boxtransac.Text == "ACH (Pagos por transferencia)")
                 {
-                    MessageBox.Show("Por favor, llene el campo de Valor con una cifra numerica");
+                    if (txtctacredito.Text == "")
+                        MessageBox.Show("Por favor, ingrese numero de cuenta a la que se hará la transacción");
+                    else if (txtanombre.Text == "")
+                        MessageBox.Show("Por favor, escriba el nombre del beneficiario");
+                    else if (txtdes.Text == "")
+                        MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
+                    else if (ClasificadordeGastos[boxClasifGastos.SelectedIndex] == "")
+                        MessageBox.Show("Por favor, elija un Clasificador de Gasto");
+                    else
+                    {
+                        logica logic = new logica();
+                        saldo = logic.LogicaVerificarFondosCuentaBancaria(boxdebito.SelectedItem.ToString());
+                        //conversion lista string a double
+                        List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
+                        //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
+                        saldon = saldolista[0];
+                        CrearMovimiento();
+                    }
                 }
+
+                else if (boxtransac.SelectedItem.ToString() == "Transacciones entre Cuentas propias")
+                {
+                    if (txtanombre.Text == "")
+                        MessageBox.Show("Por favor, escriba el nombre de quien hace la transaccion");
+                    else if (txtdes.Text == "")
+                        MessageBox.Show("Por favor, escriba una breve descripcion del movimiento");
+                    else
+                    {
+                        logica logic = new logica();
+                        saldo = logic.LogicaVerificarFondosCuentaBancaria(boxdebito.SelectedItem.ToString());
+                        //conversion lista string a double
+                        List<double> saldolista = saldo.Select(x => double.Parse(x)).ToList();
+                        //como solo existe un dato en posicion [0], se pasa a un double para poder restar o sumar más fácil.
+                        saldon = saldolista[0];
+                        CrearMovimiento();
+                    }
+                }
+                
+
             }
-
-
-
-            //-------------------------------------------------------------------------------------------------------------//
-            //----------------**FUNCION PARA CONSULTAR SALDOS Y CREAR MOVIMIENTOS BANCARIOS**------------------------------//
-            //-------------------------------------------------------------------------------------------------------------//
-            void CrearMovimiento()
+            else
             {
+                MessageBox.Show("Por favor, llene el campo de Valor con una cifra numerica");
+            }
+        }
+
+
+
+        //-------------------------------------------------------------------------------------------------------------//
+        //----------------**FUNCION PARA CONSULTAR SALDOS Y CREAR MOVIMIENTOS BANCARIOS**------------------------------//
+        //-------------------------------------------------------------------------------------------------------------//
+        void CrearMovimiento()
+        {
 
             if (boxctacontablecredito.Text == boxctacontabledebito.Text)
             {
@@ -307,8 +308,8 @@ namespace Finanzas
             }
             else
             {
-            if (saldon > 0 && saldon > Convert.ToDouble(txtvalor.Text))
-            {
+                if (saldon > 0 && saldon > Convert.ToDouble(txtvalor.Text))
+                {
                     DialogResult asegurarse = MessageBox.Show("¿Está seguro que desea hacer este movimiento?\nUna vez hecho no se podrá revertir.", "Movimientos Bancarios", MessageBoxButtons.OKCancel);
                     if (asegurarse == DialogResult.OK)
                     {
@@ -370,160 +371,162 @@ namespace Finanzas
                     {
                         Console.WriteLine("No se creó el movimiento");
                     }
-                
 
 
-                //Si hay fondos pero no para esa transacción
-                else if (saldon > 0 && saldon < Convert.ToDouble(txtvalor.Text))
-                {
-                    MessageBox.Show("No hay fondos suficientes en la Cuenta Bancaria Seleccionada\n" +
-                                    "para la Transacción Solicitada");
+
+                    //Si hay fondos pero no para esa transacción
+                    else if (saldon > 0 && saldon < Convert.ToDouble(txtvalor.Text))
+                    {
+                        MessageBox.Show("No hay fondos suficientes en la Cuenta Bancaria Seleccionada\n" +
+                                        "para la Transacción Solicitada");
+                    }
+
+                    else if (saldon == 0)
+                    {
+                        //Si no hay fondos en la cuenta seleccionada para debitar.
+                        MessageBox.Show("NO HAY FONDOS EN LA CUENTA BANCARIA SELECCIONADA A DEBITAR");
+                    }
+
                 }
-
-                else if (saldon == 0)
-                {
-                    //Si no hay fondos en la cuenta seleccionada para debitar.
-                    MessageBox.Show("NO HAY FONDOS EN LA CUENTA BANCARIA SELECCIONADA A DEBITAR");
-                }
-
-            }
 
 
             }
 
 
             //Si hay fondos
+        }
+
+        //=====================================================================================================================
+        //======================================================================================================================
+
+
+        //Funcion para enviar datos a tbl_libro Bancos
+        void creacionmovimientobancario(string ID, string cuenta_debito, string cuenta_credito, double monto, string tipo_movimiento, string fecha_movimiento, string beneficiario, string descripcion, string movimiento_concilidado,
+                            string movimiento_trasladado_contabilidad, string KidCuenta_contabledebito, string KidCuenta_contablecredito, string KidTipo_movimiento, string estado)
+        {
+            logica sentencia = new logica();
+            sentencia.LogicaIngresarMovimientoBancario(ID, cuenta_debito, cuenta_credito, monto.ToString(), tipo_movimiento, fecha_movimiento, beneficiario, descripcion, movimiento_concilidado, movimiento_trasladado_contabilidad, KidCuenta_contabledebito, KidCuenta_contablecredito, KidTipo_movimiento, estado);
+            if (boxdebito.Enabled == true)
+            {
+                sentencia.LogicaActualizarSaldoBancario(cuenta_debito, saldoactual);
+                sentencia.LogicaActualizarCheques(cuenta_debito, Chequesactuales);
+            }
+            if (boxcredito.Enabled == true)
+            {
+                sentencia.LogicaActualizarSaldoBancario(cuenta_credito, saldoactual);
             }
 
-            //=====================================================================================================================
-            //======================================================================================================================
-
-
-            //Funcion para enviar datos a tbl_libro Bancos
-            void creacionmovimientobancario(string ID, string cuenta_debito, string cuenta_credito, double monto, string tipo_movimiento, string fecha_movimiento, string beneficiario, string descripcion, string movimiento_concilidado,
-                                string movimiento_trasladado_contabilidad, string KidCuenta_contabledebito, string KidCuenta_contablecredito, string KidTipo_movimiento, string estado)
+            if (boxcredito.Enabled == true && boxdebito.Enabled == true)
             {
-                logica sentencia = new logica();
-                sentencia.LogicaIngresarMovimientoBancario(ID, cuenta_debito, cuenta_credito, monto.ToString(), tipo_movimiento, fecha_movimiento, beneficiario, descripcion, movimiento_concilidado, movimiento_trasladado_contabilidad, KidCuenta_contabledebito, KidCuenta_contablecredito, KidTipo_movimiento, estado);
-                if (boxdebito.Enabled == true) {
-                    sentencia.LogicaActualizarSaldoBancario(cuenta_debito, saldoactual);
-                    sentencia.LogicaActualizarCheques(cuenta_debito, Chequesactuales);
-                }
-                if (boxcredito.Enabled == true)
-                {
-                    sentencia.LogicaActualizarSaldoBancario(cuenta_credito, saldoactual);
-                }
-
-                if (boxcredito.Enabled == true && boxdebito.Enabled == true)
-                {
-                    sentencia.LogicaActualizarSaldoBancario(cuenta_debito, saldoactual);
-                    sentencia.LogicaActualizarSaldoBancario(cuenta_credito, saldoactual2);
-                }
-
-
-            }
-
-
-            private void Label3_Click(object sender, EventArgs e)
-            {
-
-            }
-
-            private void txttransac_SelectedIndexChanged(object sender, EventArgs e)
-            {
-
-                if (boxtransac.Text == "Cheques")
-                {
-                    bloqueo();
-                    limpiar();
-                    boxdebito.Enabled = true;
-                    txtvalor.Enabled = true;
-                    txtanombre.Enabled = true;
-                    txtdes.Enabled = true;
-                    llamarChequeras();
-                    boxctacontabledebito.Enabled = true;
-                    boxctacontablecredito.Enabled = true;
-                    llamarcuentascontablescredito();
-                    boxClasifGastos.Enabled = true;
-                    llamarclasificadordegastos();
-                    Documento();
-                }
-
-                if (boxtransac.Text == "Depositos")
-                {
-                    bloqueo();
-                    limpiar();
-                    boxcredito.Enabled = true;
-                    txtvalor.Enabled = true;
-                    txtanombre.Enabled = true;
-                    txtdes.Enabled = true;
-                    llamarCuentaspropias(boxcredito);
-                    boxctacontabledebito.Enabled = true;
-                    boxctacontablecredito.Enabled = true;
-                    llamarcuentascontablescredito();
-                    boxClasifGastos.Enabled = true;
-                    llamarclasificadordegastos();
-                    Documento();
-                }
-
-                if (boxtransac.Text == "ACH (Pagos por transferencia)")
-                {
-                    bloqueo();
-                    limpiar();
-                    boxdebito.Enabled = true;
-                    txtvalor.Enabled = true;
-                    txtanombre.Enabled = true;
-                    txtdes.Enabled = true;
-                    llamarCuentaspropias(boxdebito);
-                    txtctacredito.Enabled = true;
-                    boxctacontabledebito.Enabled = true;
-                    boxctacontablecredito.Enabled = true;
-                    llamarcuentascontablescredito();
-                    boxClasifGastos.Enabled = true;
-                    llamarclasificadordegastos();
-                    Documento();
-                }
-
-                if (boxtransac.Text == "Transacciones entre Cuentas propias")
-                {
-                    bloqueo();
-                    limpiar();
-                    boxcredito.Enabled = true;
-                    boxdebito.Enabled = true;
-                    txtanombre.Enabled = true;
-                    txtvalor.Enabled = true;
-                    txtdes.Enabled = true;
-                    boxctacontabledebito.Enabled = true;
-                    boxctacontablecredito.Enabled = true;
-                    boxClasifGastos.Enabled = true;
-                    llamarclasificadordegastos();
-                    llamarCuentaspropias(boxdebito);
-                    llamarCuentaspropias(boxcredito);
-                    llamarcuentascontablescredito();
-                    Documento();
-                }
-
-
-            }
-
-            private void button2_Click(object sender, EventArgs e)
-            {
-                DialogResult asegurarse = MessageBox.Show("¿Está seguro que desea cancelar?\nSe perderán todos los datos ingresados.", "Movimientos Bancarios", MessageBoxButtons.OKCancel);
-                if (asegurarse == DialogResult.OK)
-                {
-                    limpiar();
-                    bloqueo();
-                }
-                else if (asegurarse == DialogResult.Cancel)
-                {
-                }
-            }
-
-            private void button1_Click(object sender, EventArgs e)
-            {
-                vercampos();
+                sentencia.LogicaActualizarSaldoBancario(cuenta_debito, saldoactual);
+                sentencia.LogicaActualizarSaldoBancario(cuenta_credito, saldoactual2);
             }
 
 
         }
-    } 
+
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttransac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (boxtransac.Text == "Cheques")
+            {
+                bloqueo();
+                limpiar();
+                boxdebito.Enabled = true;
+                txtvalor.Enabled = true;
+                txtanombre.Enabled = true;
+                txtdes.Enabled = true;
+                llamarChequeras();
+                boxctacontabledebito.Enabled = true;
+                boxctacontablecredito.Enabled = true;
+                llamarcuentascontablescredito();
+                boxClasifGastos.Enabled = true;
+                llamarclasificadordegastos();
+                Documento();
+            }
+
+            if (boxtransac.Text == "Depositos")
+            {
+                bloqueo();
+                limpiar();
+                boxcredito.Enabled = true;
+                txtvalor.Enabled = true;
+                txtanombre.Enabled = true;
+                txtdes.Enabled = true;
+                llamarCuentaspropias(boxcredito);
+                boxctacontabledebito.Enabled = true;
+                boxctacontablecredito.Enabled = true;
+                llamarcuentascontablescredito();
+                boxClasifGastos.Enabled = true;
+                llamarclasificadordegastos();
+                Documento();
+            }
+
+            if (boxtransac.Text == "ACH (Pagos por transferencia)")
+            {
+                bloqueo();
+                limpiar();
+                boxdebito.Enabled = true;
+                txtvalor.Enabled = true;
+                txtanombre.Enabled = true;
+                txtdes.Enabled = true;
+                llamarCuentaspropias(boxdebito);
+                txtctacredito.Enabled = true;
+                boxctacontabledebito.Enabled = true;
+                boxctacontablecredito.Enabled = true;
+                llamarcuentascontablescredito();
+                boxClasifGastos.Enabled = true;
+                llamarclasificadordegastos();
+                Documento();
+            }
+
+            if (boxtransac.Text == "Transacciones entre Cuentas propias")
+            {
+                bloqueo();
+                limpiar();
+                boxcredito.Enabled = true;
+                boxdebito.Enabled = true;
+                txtanombre.Enabled = true;
+                txtvalor.Enabled = true;
+                txtdes.Enabled = true;
+                boxctacontabledebito.Enabled = true;
+                boxctacontablecredito.Enabled = true;
+                boxClasifGastos.Enabled = true;
+                llamarclasificadordegastos();
+                llamarCuentaspropias(boxdebito);
+                llamarCuentaspropias(boxcredito);
+                llamarcuentascontablescredito();
+                Documento();
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult asegurarse = MessageBox.Show("¿Está seguro que desea cancelar?\nSe perderán todos los datos ingresados.", "Movimientos Bancarios", MessageBoxButtons.OKCancel);
+            if (asegurarse == DialogResult.OK)
+            {
+                limpiar();
+                bloqueo();
+            }
+            else if (asegurarse == DialogResult.Cancel)
+            {
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            vercampos();
+        }
+
+
+    }
+}
+

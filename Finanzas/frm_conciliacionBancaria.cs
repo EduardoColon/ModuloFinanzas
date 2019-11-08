@@ -53,9 +53,9 @@ namespace Finanzas
                 Console.WriteLine(ex);
             }
 
-            if(lIdBanco.Count > 0)
-               Cbo_bancos.SelectedIndex = 0;
-            
+            if (lIdBanco.Count > 0)
+                Cbo_bancos.SelectedIndex = 0;
+
         }
 
         private void llenarComboBoxMonedas()
@@ -122,10 +122,10 @@ namespace Finanzas
             int iAnio = DtpPeriodo.Value.Year;
             string periodo = iAnio + "-" + iMes;
 
-            if(Cbo_bancos.Text.Trim() != "" && CboMonedas.Text.Trim() != "")
+            if (Cbo_bancos.Text.Trim() != "" && CboMonedas.Text.Trim() != "")
             {
                 try
-                {                   
+                {
                     DataSet ds = logic.consultaLogicaLibroBancos(lIdBanco[Cbo_bancos.SelectedIndex].ToString(), periodo, lIdMoneda[CboMonedas.SelectedIndex].ToString());
                     DgvLibroBancos.DataSource = ds.Tables[0];
                     DgvConciliado.DataSource = null;
@@ -142,7 +142,7 @@ namespace Finanzas
 
         private void limpiarDgvConciliado()
         {
-            DgvConciliado.Rows.Clear();    
+            DgvConciliado.Rows.Clear();
             lIdMovimientoSeleccionado.Clear();
         }
 
@@ -165,16 +165,16 @@ namespace Finanzas
             int iAnio = DtpPeriodo.Value.Year;
             string periodo = iAnio + "-" + iMes;
 
-            DialogResult dialogResult = MessageBox.Show(sMensaje,"Conciliación bancaria", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(sMensaje, "Conciliación bancaria", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                for(int i = 0; i < lIdMovimientoSeleccionado.Count; i++)
+                for (int i = 0; i < lIdMovimientoSeleccionado.Count; i++)
                 {
                     logic.registrarMovimientoConciliado(lIdMovimientoSeleccionado[i]);
                 }
 
 
-                if(
+                if (
                 logic.registrarConciliacionBancaria(lIdBanco[Cbo_bancos.SelectedIndex],
                     lIdMoneda[CboMonedas.SelectedIndex],
                     periodo,
@@ -183,10 +183,9 @@ namespace Finanzas
                 {
                     MessageBox.Show("La conciliación fue registrada correctamente");
                     this.Close();
+                    logic.registrarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
                 }
-
-             
-            }   
+            }
         }
 
         private void DgvLibroBancos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -196,7 +195,7 @@ namespace Finanzas
 
         private void BtnAgregarConciliado_Click(object sender, EventArgs e)
         {
-            foreach ( DataGridViewRow selRow in DgvLibroBancos.SelectedRows.OfType<DataGridViewRow>().ToArray())
+            foreach (DataGridViewRow selRow in DgvLibroBancos.SelectedRows.OfType<DataGridViewRow>().ToArray())
             {
                 lIdMovimientoSeleccionado.Add(selRow.Cells[0].Value.ToString());
                 DataGridViewRow fila = new DataGridViewRow();
@@ -230,9 +229,9 @@ namespace Finanzas
 
         private void eliminarConciliadosDgvBancos()
         {
-            foreach(DataGridViewRow row in DgvLibroBancos.Rows)
+            foreach (DataGridViewRow row in DgvLibroBancos.Rows)
             {
-                if (lIdMovimientoSeleccionado.Exists(e => e.Equals(row.Cells[0].Value.ToString()))) 
+                if (lIdMovimientoSeleccionado.Exists(e => e.Equals(row.Cells[0].Value.ToString())))
                     DgvLibroBancos.Rows.Remove(row);
             }
         }
@@ -245,7 +244,7 @@ namespace Finanzas
             foreach (DataGridViewRow row in DgvLibroBancos.Rows)
             {
 
-                if(logic.ConsultaLogicaCuentaBanco(lIdBanco[Cbo_bancos.SelectedIndex].ToString(), row.Cells[1].Value.ToString()))
+                if (logic.ConsultaLogicaCuentaBanco(lIdBanco[Cbo_bancos.SelectedIndex].ToString(), row.Cells[1].Value.ToString()))
                 {
                     row.Cells[1].Style.BackColor = Color.DarkGray;
                     dTotalDebe = dTotalDebe + Double.Parse(row.Cells[3].Value.ToString());
@@ -257,7 +256,7 @@ namespace Finanzas
                     dTotalHaber = dTotalHaber + Double.Parse(row.Cells[3].Value.ToString());
 
                 }
-              
+
             }
 
             dDiferencia = dTotalHaber - dTotalDebe;

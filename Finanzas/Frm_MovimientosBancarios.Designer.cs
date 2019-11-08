@@ -76,7 +76,7 @@
             "Transacciones entre Cuentas propias"});
             this.boxtransac.Location = new System.Drawing.Point(226, 32);
             this.boxtransac.Name = "boxtransac";
-            this.boxtransac.Size = new System.Drawing.Size(121, 21);
+            this.boxtransac.Size = new System.Drawing.Size(200, 21);
             this.boxtransac.TabIndex = 1;
             this.boxtransac.SelectedIndexChanged += new System.EventHandler(this.txttransac_SelectedIndexChanged);
             // 

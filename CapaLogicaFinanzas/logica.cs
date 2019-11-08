@@ -53,6 +53,7 @@ namespace CapaLogicaFinanzas
         }
 
    
+
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)
         {
 
@@ -72,11 +73,11 @@ namespace CapaLogicaFinanzas
 
         /*-------------------------------------------------------------Allan Letona------------------------------------------------------------*/
 
-        public DataTable consultaLogicaPolizas(string fechaInicial, string fechaFinal, string TipoDePoliza)
+        public DataTable consultaLogicaPolizas(string fechaInicial, string fechaFinal)
         {
             try
             {
-                OdbcDataAdapter dtPolizas = sen.consultarPolizas(fechaInicial, fechaFinal, TipoDePoliza);
+                OdbcDataAdapter dtPolizas = sen.consultarPolizas(fechaInicial, fechaFinal);
                 DataTable tablePolizas = new DataTable();
                 dtPolizas.Fill(tablePolizas);
                 return tablePolizas;
@@ -87,7 +88,6 @@ namespace CapaLogicaFinanzas
                 return null;
             }
         }
-
 
         public DataTable consultaLogicaActualizacionPolizas(string fechaInicial, string fechaFinal)
         {
@@ -106,7 +106,7 @@ namespace CapaLogicaFinanzas
             }
         }
 
-
+   
         public DataTable consultaLogicaTipoPolizas()
         {
             try
@@ -291,6 +291,42 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataTable consultaLogicaObtenerTotalesCuentasContables(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtTotalesCuentasContables = sen.obtenerTotalesDeCuentasContablesDePartidas(sFechaInicial, sFechaFinal);
+                DataTable tableTotalesCuentasContables = new DataTable();
+                dtTotalesCuentasContables.Fill(tableTotalesCuentasContables);
+                return tableTotalesCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaActualizarDebe_HaberCuentasContables(string sCodigoCuenta, double debe, double haber)
+        {
+            try
+            {
+                OdbcDataAdapter dtActualizarCuentasContables = sen.ActualizarDebe_HaberCuentasContables(sCodigoCuenta, debe, haber);
+                DataTable tableActualizarCuentasContables = new DataTable();
+                dtActualizarCuentasContables.Fill(tableActualizarCuentasContables);
+                return tableActualizarCuentasContables;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
+
+
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
         public DataSet consultaLogicapresupuesto()
@@ -364,6 +400,19 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataSet consultaLogicaConciliacionBancaria(string idBanco, string periodo, string idMoneda)
+        {
+            try
+            {
+                return sen.consultarConciliacionBancaria(idBanco, periodo, idMoneda);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
         public bool ConsultaLogicaCuentaBanco(string idBanco, string idCuenta)
         {
             try
@@ -405,7 +454,6 @@ namespace CapaLogicaFinanzas
             return true;
         }
 
-
         //============================Alejandro Barreda- Logica Movimientos bancarios=========================
         public List<string> LogicaObtenerCuentasBancariasconCheques()
         {
@@ -413,13 +461,26 @@ namespace CapaLogicaFinanzas
             try
             {
                 resultado = sen.consultarCuentasBancariasconCheques();
-              
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
             return resultado;
+
+        }
+
+        public void registrarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
+        {
+            try
+            {
+                sen.insertarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            
         }
 
         public List<string> LogicaVerificarFondosCuentaBancaria(string numeroCuenta)
@@ -509,11 +570,12 @@ namespace CapaLogicaFinanzas
             try
             {
                 resultado = sen.consultarNoCheques(cuenta);
-
+               
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+                
             }
             return resultado;
         }
@@ -549,6 +611,29 @@ namespace CapaLogicaFinanzas
             }
 
         }
+//===========================================================================================================
+
+
+        //Eduardo Colon envio polizas
+
+        public DataTable consultaLogicaCuentasEnvioPolizas()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.consultarCuentasEnvioPolizas();
+
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+
+        }
 
         public DataTable LogicaObtenerClasificadorGastos()
         {
@@ -567,6 +652,27 @@ namespace CapaLogicaFinanzas
         }
 
 
+
+        public DataSet consultaLogicaLibroBancosEnvioPoliza(string fechaInicial, string fechaFinal)
+        {
+            try
+            {
+                return sen.consultarLibroBancosEnvioPolizas(fechaInicial, fechaFinal);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+        }
+
+
+
+
+
+        
 
     }
 }

@@ -39,6 +39,7 @@
             this.conciliacionBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCambioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.envioPolizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,12 +47,15 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.clasificadorDeMovimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarConciliacionBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.mantenimientosToolStripMenuItem,
@@ -62,14 +66,14 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1353, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1353, 33);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
             this.inicioToolStripMenuItem.Text = "Inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
@@ -81,27 +85,31 @@
             this.bancosToolStripMenuItem,
             this.clasificadorDeMovimientosToolStripMenuItem});
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
-            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(156, 29);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
             // cuentasBancariasToolStripMenuItem
             // 
             this.cuentasBancariasToolStripMenuItem.Name = "cuentasBancariasToolStripMenuItem";
+
             this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+
+            this.cuentasBancariasToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+
             this.cuentasBancariasToolStripMenuItem.Text = "Cuentas Bancarias";
             this.cuentasBancariasToolStripMenuItem.Click += new System.EventHandler(this.cuentasBancariasToolStripMenuItem_Click);
             // 
             // chequeraToolStripMenuItem
             // 
             this.chequeraToolStripMenuItem.Name = "chequeraToolStripMenuItem";
-            this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.chequeraToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.chequeraToolStripMenuItem.Text = "Chequera";
             this.chequeraToolStripMenuItem.Click += new System.EventHandler(this.chequeraToolStripMenuItem_Click);
             // 
             // bancosToolStripMenuItem
             // 
             this.bancosToolStripMenuItem.Name = "bancosToolStripMenuItem";
-            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.bancosToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.bancosToolStripMenuItem.Text = "Bancos";
             this.bancosToolStripMenuItem.Click += new System.EventHandler(this.bancosToolStripMenuItem_Click);
             // 
@@ -118,21 +126,21 @@
             // conciliacionBancariaToolStripMenuItem
             // 
             this.conciliacionBancariaToolStripMenuItem.Name = "conciliacionBancariaToolStripMenuItem";
-            this.conciliacionBancariaToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.conciliacionBancariaToolStripMenuItem.Size = new System.Drawing.Size(358, 34);
             this.conciliacionBancariaToolStripMenuItem.Text = "Conciliacion Bancaria";
             this.conciliacionBancariaToolStripMenuItem.Click += new System.EventHandler(this.conciliacionBancariaToolStripMenuItem_Click);
             // 
             // movimientosDeBancosToolStripMenuItem
             // 
             this.movimientosDeBancosToolStripMenuItem.Name = "movimientosDeBancosToolStripMenuItem";
-            this.movimientosDeBancosToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.movimientosDeBancosToolStripMenuItem.Size = new System.Drawing.Size(358, 34);
             this.movimientosDeBancosToolStripMenuItem.Text = "Movimientos de Bancos";
             this.movimientosDeBancosToolStripMenuItem.Click += new System.EventHandler(this.movimientosDeBancosToolStripMenuItem_Click);
             // 
             // tipoDeCambioToolStripMenuItem
             // 
             this.tipoDeCambioToolStripMenuItem.Name = "tipoDeCambioToolStripMenuItem";
-            this.tipoDeCambioToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.tipoDeCambioToolStripMenuItem.Size = new System.Drawing.Size(358, 34);
             this.tipoDeCambioToolStripMenuItem.Text = "Tipo de Cambio";
             this.tipoDeCambioToolStripMenuItem.Click += new System.EventHandler(this.tipoDeCambioToolStripMenuItem_Click);
             // 
@@ -145,23 +153,24 @@
             // herramientasToolStripMenuItem
             // 
             this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(133, 29);
             this.herramientasToolStripMenuItem.Text = "Herramientas";
             // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // statusStrip
             // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 639);
+            this.statusStrip.Location = new System.Drawing.Point(0, 629);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1353, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1353, 32);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -177,10 +186,19 @@
             this.clasificadorDeMovimientosToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.clasificadorDeMovimientosToolStripMenuItem.Text = "Clasificador de Movimientos";
             this.clasificadorDeMovimientosToolStripMenuItem.Click += new System.EventHandler(this.clasificadorDeMovimientosToolStripMenuItem_Click);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(66, 25);
+            this.toolStripStatusLabel.Text = "Estado";
+            // 
+            // consultarConciliacionBancariaToolStripMenuItem
+            // 
+            this.consultarConciliacionBancariaToolStripMenuItem.Name = "consultarConciliacionBancariaToolStripMenuItem";
+            this.consultarConciliacionBancariaToolStripMenuItem.Size = new System.Drawing.Size(358, 34);
+            this.consultarConciliacionBancariaToolStripMenuItem.Text = "Consultar Conciliacion Bancaria";
+            this.consultarConciliacionBancariaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarConciliacionBancariaToolStripMenuItem_Click);
             // 
             // MDI_Bancos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1353, 661);
             this.Controls.Add(this.statusStrip);
@@ -220,7 +238,12 @@
         private System.Windows.Forms.ToolStripMenuItem conciliacionBancariaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem movimientosDeBancosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeCambioToolStripMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem clasificadorDeMovimientosToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem envioPolizasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarConciliacionBancariaToolStripMenuItem;
+
     }
 }
 
