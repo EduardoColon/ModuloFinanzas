@@ -94,9 +94,10 @@ namespace CapaDatosFinanzas
             }
             catch(Exception ex)
             {
+                Console.WriteLine(ex);
 
             }
-            
+
 
             return result;
         }
@@ -304,6 +305,8 @@ namespace CapaDatosFinanzas
 
         }
 
+       
+
         public OdbcDataAdapter obtenerMaximoCodigoCuentaContable2(int Identificador)
         {
             try
@@ -433,6 +436,7 @@ namespace CapaDatosFinanzas
             return dataTable;
         }
 
+
         /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -469,6 +473,35 @@ namespace CapaDatosFinanzas
         " tbl_cuentabancaria.KidCuentaBancaria = cuenta_credito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') ) " +
         " AND fecha_movimiento LIKE '" + periodo + "%' " +
         " AND movimiento_conciliado = 0" 
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+        }
+
+        public DataSet consultarConciliacionBancaria(string idBanco, string periodo, string idMoneda)
+        {
+
+            DataSet ds;
+            try
+            {
+                string sql = "SELECT KidConciliacion_Bancaria, mes_conciliacion, diferencia_total " +
+        " FROM tbl_conciliacion_bancaria_encabezado WHERE estado = 1 " +
+        " AND KidBanco =" + idBanco + " AND moneda = '" + idMoneda +
+        "' AND mes_conciliacion = '" + periodo + "' ";
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter( sql
     , con.conectar()); ;
                 dat.Fill(ds);
             }
@@ -526,7 +559,7 @@ namespace CapaDatosFinanzas
 
         public void insertarConciliacionBancaria(string idBanco, string idMoneda, string periodo, string saldo)
         {
-            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
+            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_encabezado (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
                   + idBanco + " ,'" +
                   idMoneda + "' , '" +
                   periodo + "' , " +
@@ -537,5 +570,70 @@ namespace CapaDatosFinanzas
         }
 
 
+        public void insertarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
+        {
+            int idMax;
+            try
+            {
+                OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT MAX(KidConciliacion_Bancaria) FROM tbl_conciliacion_bancaria_encabezado ", con.conectar());
+                OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
+
+                if (almacena.HasRows)
+                {
+                    idMax = almacena.GetInt32(0);
+                    
+                    for(int i = 0; i < lIdMovimientoSeleccionado.Count; i++)
+                    {
+                        OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_detalle (KidConciliacion_Bancaria, KidMovimientoBancario, estado) VALUES ("
+                + idMax + " ," + lIdMovimientoSeleccionado[i] + ",  1)", con.conectar());
+                        sql.ExecuteNonQuery();
+                        sql.Connection.Close();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
+
+
+        //Eduardo Colon envio de polizas
+        public OdbcDataAdapter consultarCuentasEnvioPolizas()
+        {
+            string sqlModulos = "SELECT KidCuenta, nombre FROM tbl_cuentas WHERE estado = 1";
+            OdbcDataAdapter dataModulos = new OdbcDataAdapter(sqlModulos, con.conectar());
+            return dataModulos;
+        }
+
+        public DataSet consultarLibroBancosEnvioPolizas(string fechaInicial, string fechaFinal)
+        {
+            DataSet ds;
+            try
+            {
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+        " FROM tbl_libro_bancos WHERE estado = 1 " +
+        " AND movimiento_trasladado_contabilidad = 0 " +
+        " AND fecha_movimiento between '" + fechaInicial + "' AND '" + fechaFinal + "'"
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+
+        }
+
+    }
 }

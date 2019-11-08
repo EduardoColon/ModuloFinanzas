@@ -53,6 +53,7 @@ namespace CapaLogicaFinanzas
         }
 
    
+
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)
         {
 
@@ -88,7 +89,6 @@ namespace CapaLogicaFinanzas
             }
         }
 
-
         public DataTable consultaLogicaActualizacionPolizas(string fechaInicial, string fechaFinal)
         {
             try
@@ -106,7 +106,7 @@ namespace CapaLogicaFinanzas
             }
         }
 
-
+   
         public DataTable consultaLogicaTipoPolizas()
         {
             try
@@ -399,6 +399,19 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataSet consultaLogicaConciliacionBancaria(string idBanco, string periodo, string idMoneda)
+        {
+            try
+            {
+                return sen.consultarConciliacionBancaria(idBanco, periodo, idMoneda);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
         public bool ConsultaLogicaCuentaBanco(string idBanco, string idCuenta)
         {
             try
@@ -438,6 +451,50 @@ namespace CapaLogicaFinanzas
             }
 
             return true;
+        }
+
+        public void registrarConciliacionBancariaDetalle(List<string> lIdMovimientoSeleccionado)
+        {
+            try
+            {
+                sen.insertarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        }
+
+        //Eduardo Colon envio polizas
+
+        public DataTable consultaLogicaCuentasEnvioPolizas()
+        {
+            try
+            {
+                OdbcDataAdapter dtModulos = sen.consultarCuentasEnvioPolizas();
+                DataTable tableModulos = new DataTable();
+                dtModulos.Fill(tableModulos);
+                return tableModulos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataSet consultaLogicaLibroBancosEnvioPoliza(string fechaInicial, string fechaFinal)
+        {
+            try
+            {
+                return sen.consultarLibroBancosEnvioPolizas(fechaInicial, fechaFinal);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
         }
     }
 }

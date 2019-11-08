@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CapaDeDiseno">
-      <HintPath>..\..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+      <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
     </Reference>
     <Reference Include="CapaDeDisenoBARRA">
-      <HintPath>..\..\BARRA\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDisenoBARRA.dll</HintPath>
+      <HintPath>..\Librerias\CapaDeDisenoBARRA.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -61,6 +61,12 @@
     <Compile Include="frm_conciliacionBancaria.Designer.cs">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ConsultarConciliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ConsultarConciliacion.Designer.cs">
+      <DependentUpon>frm_ConsultarConciliacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_CreacionPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="frm_ctsContables.Designer.cs">
       <DependentUpon>frm_ctsContables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_envioPolizas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_envioPolizas.Designer.cs">
+      <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_GestionPresupuesto.cs">
       <SubType>Form</SubType>
@@ -159,6 +171,9 @@
     <EmbeddedResource Include="frm_conciliacionBancaria.resx">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ConsultarConciliacion.resx">
+      <DependentUpon>frm_ConsultarConciliacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CreacionPresupuesto.resx">
       <DependentUpon>Frm_CreacionPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ctsContables.resx">
       <DependentUpon>frm_ctsContables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_envioPolizas.resx">
+      <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionPresupuesto.resx">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>
