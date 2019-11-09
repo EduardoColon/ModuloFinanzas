@@ -76,6 +76,12 @@
     <Compile Include="frm_conciliacionBancaria.Designer.cs">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Conciliacion_detalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Conciliacion_detalle.Designer.cs">
+      <DependentUpon>frm_Conciliacion_detalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_ConsultarConciliacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_conciliacionBancaria.resx">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Conciliacion_detalle.resx">
+      <DependentUpon>frm_Conciliacion_detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_ConsultarConciliacion.resx">
       <DependentUpon>frm_ConsultarConciliacion.cs</DependentUpon>

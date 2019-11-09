@@ -321,9 +321,9 @@ namespace Finanzas
 
         private void balanceGeneralToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_BalanceGeneral BalanceGeneral = new frm_BalanceGeneral();
-            BalanceGeneral.MdiParent = this;
-            BalanceGeneral.Show();
+        //    frm_BalanceGeneral BalanceGeneral = new frm_BalanceGeneral();
+         //   BalanceGeneral.MdiParent = this;
+          //  BalanceGeneral.Show();
 
         }
     }
