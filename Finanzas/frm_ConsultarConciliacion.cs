@@ -17,6 +17,7 @@ namespace Finanzas
         List<string> lIdBanco = new List<string>();
         List<string> lIdMoneda = new List<string>();
         logica logic = new logica();
+        string sFecha = "", sBanco = "", sMoneda = "";
 
         public frm_ConsultarConciliacion(string sUsuario)
         {
@@ -79,7 +80,7 @@ namespace Finanzas
 
         private void BtnConsultar_Click(object sender, EventArgs e)
         {
-            if(lIdBanco.Count > 0 && lIdMoneda.Count > 0)
+            if (lIdBanco.Count > 0 && lIdMoneda.Count > 0)
             {
                 llenarDgvConciliacion();
             }
@@ -94,12 +95,18 @@ namespace Finanzas
             int iAnio = DtpPeriodo.Value.Year;
             string periodo = iAnio + "-" + iMes;
 
+           
+
             if (Cbo_bancos.Text.Trim() != "" && CboMonedas.Text.Trim() != "")
             {
                 try
                 {
                     DataSet ds = logic.consultaLogicaConciliacionBancaria(lIdBanco[Cbo_bancos.SelectedIndex].ToString(), periodo, lIdMoneda[CboMonedas.SelectedIndex].ToString());
                     DgvConciliacion.DataSource = ds.Tables[0];
+
+                    sFecha = periodo;
+                    sMoneda = CboMonedas.Text;
+                    sBanco = Cbo_bancos.Text;
                 }
                 catch (Exception ex)
                 {
@@ -108,6 +115,16 @@ namespace Finanzas
                 }
 
             }
+        }
+
+        private void DgvConciliacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                frm_Conciliacion_detalle frm_Conciliacion = new frm_Conciliacion_detalle(sBanco, sMoneda, sFecha, DgvConciliacion.CurrentRow.Cells[0].Value.ToString());
+                frm_Conciliacion.Show();
+            }
+    
         }
     }
 }

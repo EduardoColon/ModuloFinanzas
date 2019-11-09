@@ -52,7 +52,7 @@ namespace CapaLogicaFinanzas
 
         }
 
-   
+      
 
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)
         {
@@ -522,6 +522,19 @@ namespace CapaLogicaFinanzas
             try
             {
                 return sen.consultarConciliacionBancaria(idBanco, periodo, idMoneda);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataSet consultaLogicaConciliacionBancariaDetalle(string idConciliacion)
+        {
+            try
+            {
+                return sen.consultarConciliacionBancariaDetalle(idConciliacion);
             }
             catch (Exception ex)
             {

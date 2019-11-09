@@ -62,7 +62,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(771, 667);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(195, 79);
             this.button1.TabIndex = 27;
@@ -99,6 +99,7 @@
             this.DgvConciliado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvConciliado.Location = new System.Drawing.Point(62, 448);
             this.DgvConciliado.Name = "DgvConciliado";
+            this.DgvConciliado.ReadOnly = true;
             this.DgvConciliado.RowHeadersWidth = 62;
             this.DgvConciliado.Size = new System.Drawing.Size(904, 198);
             this.DgvConciliado.TabIndex = 24;
@@ -141,7 +142,7 @@
             // 
             this.btn_EstadoCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EstadoCuenta.Location = new System.Drawing.Point(1133, 110);
-            this.btn_EstadoCuenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_EstadoCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.btn_EstadoCuenta.Name = "btn_EstadoCuenta";
             this.btn_EstadoCuenta.Size = new System.Drawing.Size(327, 54);
             this.btn_EstadoCuenta.TabIndex = 19;
@@ -165,7 +166,7 @@
             this.Cbo_bancos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cbo_bancos.FormattingEnabled = true;
             this.Cbo_bancos.Location = new System.Drawing.Point(147, 82);
-            this.Cbo_bancos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Cbo_bancos.Margin = new System.Windows.Forms.Padding(2);
             this.Cbo_bancos.Name = "Cbo_bancos";
             this.Cbo_bancos.Size = new System.Drawing.Size(282, 37);
             this.Cbo_bancos.TabIndex = 17;
@@ -177,7 +178,7 @@
             this.DtpPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtpPeriodo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtpPeriodo.Location = new System.Drawing.Point(808, 80);
-            this.DtpPeriodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DtpPeriodo.Margin = new System.Windows.Forms.Padding(2);
             this.DtpPeriodo.Name = "DtpPeriodo";
             this.DtpPeriodo.Size = new System.Drawing.Size(158, 35);
             this.DtpPeriodo.TabIndex = 16;
@@ -201,6 +202,7 @@
             this.DgvLibroBancos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvLibroBancos.Location = new System.Drawing.Point(58, 185);
             this.DgvLibroBancos.Name = "DgvLibroBancos";
+            this.DgvLibroBancos.ReadOnly = true;
             this.DgvLibroBancos.RowHeadersWidth = 62;
             this.DgvLibroBancos.RowTemplate.Height = 28;
             this.DgvLibroBancos.Size = new System.Drawing.Size(908, 189);
@@ -233,7 +235,7 @@
             this.CboMonedas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CboMonedas.FormattingEnabled = true;
             this.CboMonedas.Location = new System.Drawing.Point(560, 82);
-            this.CboMonedas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CboMonedas.Margin = new System.Windows.Forms.Padding(2);
             this.CboMonedas.Name = "CboMonedas";
             this.CboMonedas.Size = new System.Drawing.Size(168, 37);
             this.CboMonedas.TabIndex = 33;

@@ -447,6 +447,7 @@ namespace CapaDatosFinanzas
             }
         }
 
+      
         public OdbcDataAdapter ConsultarBalanceGeneralPasivoCorriente(string sFechaInicial, string sFechaFinal)
         {
             try
@@ -624,6 +625,36 @@ namespace CapaDatosFinanzas
 
             return ds;
         }
+
+        public DataSet consultarConciliacionBancariaDetalle(string idConciliacion)
+        {
+            DataSet ds;
+            try
+            {
+
+                string sql = "SELECT tbl_libro_bancos.KidMovimientoBancario, tbl_libro_bancos.cuenta_debito, tbl_libro_bancos.cuenta_credito, " +
+                    " tbl_libro_bancos.monto  , tbl_libro_bancos.tipo_movimiento, tbl_libro_bancos.fecha_movimiento FROM tbl_libro_bancos" +
+                    " INNER JOIN tbl_conciliacion_bancaria_detalle ON tbl_libro_bancos.KidMovimientoBancario = tbl_conciliacion_bancaria_detalle.KidMovimientoBancario" +
+                    " WHERE tbl_conciliacion_bancaria_detalle.KidConciliacion_Bancaria = " + idConciliacion;
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter(sql
+    , con.conectar()); ;
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+
+            return ds;
+        }
+
 
         public bool consultarCuentaBanco(string idCuenta, string idBanco)
         {
