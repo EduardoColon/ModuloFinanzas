@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaDeDisenoBARRA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BARRA\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDisenoBARRA.dll</HintPath>
+=======
     <Reference Include="CapaDatos">
       <HintPath>..\Librerias\CapaDatos.dll</HintPath>
     </Reference>
@@ -45,6 +54,7 @@
     </Reference>
     <Reference Include="CapaDeDisenoBARRA">
       <HintPath>..\Librerias\CapaDeDisenoBARRA.dll</HintPath>
+>>>>>>> d7b58f67d37eb316a54bc542c592f053fa9d1c2b
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_BalanceGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_BalanceGeneral.Designer.cs">
+      <DependentUpon>frm_BalanceGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_CambioMoneda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +196,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_BalanceGeneral.resx">
+      <DependentUpon>frm_BalanceGeneral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_CambioMoneda.resx">
       <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
     </EmbeddedResource>

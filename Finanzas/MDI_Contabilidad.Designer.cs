@@ -148,6 +148,7 @@
             this.balanceGeneralToolStripMenuItem.Name = "balanceGeneralToolStripMenuItem";
             this.balanceGeneralToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.balanceGeneralToolStripMenuItem.Text = "Balance General";
+            this.balanceGeneralToolStripMenuItem.Click += new System.EventHandler(this.balanceGeneralToolStripMenuItem_Click);
             // 
             // presupuestosToolStripMenuItem
             // 

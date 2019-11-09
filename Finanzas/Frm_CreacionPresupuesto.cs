@@ -25,7 +25,7 @@ namespace Finanzas
             navegador1.asignarComboConTabla("tbl_moneda", "nombre_moneda", 1);
             navegador1.asignarComboConTabla("tbl_areas", "nombreArea", 1);
             navegador1.asignarComboConTabla("tbl_cuentas", "nombre", 1);
-            navegador1.asignarAyuda("500");
+            navegador1.asignarAyuda("501");
             navegador1.asignarTabla("tbl_presupuesto");
             navegador1.asignarNombreForm("Creacion Presupuesto");
         }
