@@ -158,7 +158,7 @@ namespace Finanzas
 
                         try
                         {
-                            logic.consultaLogicaActualizarDebe_HaberCuentasContables(sCodigoCuenta, sTotalDebe, sTotalHaber);
+                            logic.consultaLogicaInsertarBalanceGeneral(sCodigoCuenta, sFecha_actual,sTotalDebe, sTotalHaber);
                             dgv_polizas.Rows.Clear();
                         }
                         catch (Exception ex)

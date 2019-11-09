@@ -32,12 +32,12 @@
             this.dtp_fechaInicial = new System.Windows.Forms.DateTimePicker();
             this.dtp_fechaFinal = new System.Windows.Forms.DateTimePicker();
             this.dgv_balancegeneral = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.Codigo_Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Primera_Columna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Segunda_Column = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_balancegeneral)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,8 +79,37 @@
             this.dgv_balancegeneral.Location = new System.Drawing.Point(360, 12);
             this.dgv_balancegeneral.Name = "dgv_balancegeneral";
             this.dgv_balancegeneral.ReadOnly = true;
+            this.dgv_balancegeneral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_balancegeneral.Size = new System.Drawing.Size(820, 646);
             this.dgv_balancegeneral.TabIndex = 3;
+            // 
+            // Codigo_Cuenta
+            // 
+            this.Codigo_Cuenta.FillWeight = 62.94415F;
+            this.Codigo_Cuenta.HeaderText = "Codigo Cuenta";
+            this.Codigo_Cuenta.Name = "Codigo_Cuenta";
+            this.Codigo_Cuenta.ReadOnly = true;
+            // 
+            // Cuenta
+            // 
+            this.Cuenta.FillWeight = 169.0395F;
+            this.Cuenta.HeaderText = "Cuenta";
+            this.Cuenta.Name = "Cuenta";
+            this.Cuenta.ReadOnly = true;
+            // 
+            // Primera_Columna
+            // 
+            this.Primera_Columna.FillWeight = 84.00813F;
+            this.Primera_Columna.HeaderText = "";
+            this.Primera_Columna.Name = "Primera_Columna";
+            this.Primera_Columna.ReadOnly = true;
+            // 
+            // Segunda_Column
+            // 
+            this.Segunda_Column.FillWeight = 84.00813F;
+            this.Segunda_Column.HeaderText = "";
+            this.Segunda_Column.Name = "Segunda_Column";
+            this.Segunda_Column.ReadOnly = true;
             // 
             // label1
             // 
@@ -99,30 +128,6 @@
             this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha Final";
-            // 
-            // Codigo_Cuenta
-            // 
-            this.Codigo_Cuenta.FillWeight = 62.94415F;
-            this.Codigo_Cuenta.HeaderText = "Codigo Cuenta";
-            this.Codigo_Cuenta.Name = "Codigo_Cuenta";
-            // 
-            // Cuenta
-            // 
-            this.Cuenta.FillWeight = 169.0395F;
-            this.Cuenta.HeaderText = "Cuenta";
-            this.Cuenta.Name = "Cuenta";
-            // 
-            // Primera_Columna
-            // 
-            this.Primera_Columna.FillWeight = 84.00813F;
-            this.Primera_Columna.HeaderText = "";
-            this.Primera_Columna.Name = "Primera_Columna";
-            // 
-            // Segunda_Column
-            // 
-            this.Segunda_Column.FillWeight = 84.00813F;
-            this.Segunda_Column.HeaderText = "";
-            this.Segunda_Column.Name = "Segunda_Column";
             // 
             // frm_BalanceGeneral
             // 

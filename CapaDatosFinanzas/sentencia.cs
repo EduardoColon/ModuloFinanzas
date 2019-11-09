@@ -359,7 +359,7 @@ namespace CapaDatosFinanzas
         {
             try
             {
-                string sqlTotalesCuentasContables = "SELECT PD.KidCuenta, SUM(PD.debe), SUM(PD.haber) FROM tbl_librodiario LD INNER JOIN tbl_poliza_encabezado PE ON LD.KidPoliza = PE.KidPoliza INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE LD.fecha BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+"' GROUP BY PD.KidCuenta";
+                string sqlTotalesCuentasContables = "SELECT PD.KidCuenta, PD.debe, PD.haber FROM tbl_librodiario LD INNER JOIN tbl_poliza_encabezado PE ON LD.KidPoliza = PE.KidPoliza INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza WHERE LD.fecha BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+"'";
                 OdbcDataAdapter dataTotalesCuentasContables = new OdbcDataAdapter(sqlTotalesCuentasContables, con.conectar());
                 return dataTotalesCuentasContables;
             }
@@ -390,11 +390,102 @@ namespace CapaDatosFinanzas
         {
             try
             {
-                string sqlObtenerTipoDeCuenta = "SELECT KidTipoCuenta, nombre_tipoCuenta FROM tbl_tipocuenta WHERE nombre_tipoCuenta LIKE 'ACT%' or nombre_tipoCuenta LIKE 'PAS%'";
+                string sqlObtenerTipoDeCuenta = "SELECT KidTipoCuenta, nombre_tipoCuenta FROM tbl_tipocuenta WHERE nombre_tipoCuenta LIKE 'ACT%' or nombre_tipoCuenta LIKE 'PAS%' or nombre_tipoCuenta LIKE 'CAP%'";
                 OdbcDataAdapter dataTipoCuenta = new OdbcDataAdapter(sqlObtenerTipoDeCuenta, con.conectar());
                 return dataTipoCuenta;
 
             }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        public OdbcDataAdapter InsertarBalanceGeneral(string codigoCuenta, string fecha, double debe, double haber)
+        {
+            try
+            {
+                string sqlInsertarBalanceGeneral = "INSERT INTO tbl_balancegeneral(KidCuenta, fecha_balance, debe, haber,estado) VALUES ('"+codigoCuenta+"', '"+fecha+"', '"+debe+"', '"+haber+"',1)";
+                OdbcDataAdapter dataInsertBlanceGeneral = new OdbcDataAdapter(sqlInsertarBalanceGeneral, con.conectar());
+                return dataInsertBlanceGeneral;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ConsultarBalanceGeneralActivoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlConsultarBalance = "SELECT BG.KidCuenta, C.nombre ,SUM(BG.debe), SUM(BG.haber) FROM tbl_balancegeneral BG INNER JOIN tbl_cuentas C ON BG.KidCuenta = C.KidCuenta WHERE BG.KidCuenta LIKE '1.1%' AND fecha_balance BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+"' GROUP BY BG.KidCuenta";
+                OdbcDataAdapter dataConsultarBalance = new OdbcDataAdapter(sqlConsultarBalance, con.conectar());
+                return dataConsultarBalance;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ConsultarBalanceGeneralActivoNoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlConsultarBalance = "SELECT BG.KidCuenta, C.nombre ,SUM(BG.debe), SUM(BG.haber) FROM tbl_balancegeneral BG INNER JOIN tbl_cuentas C ON BG.KidCuenta = C.KidCuenta WHERE BG.KidCuenta LIKE '1.2%' AND fecha_balance BETWEEN '" + sFechaInicial + "' AND '" + sFechaFinal + "' GROUP BY BG.KidCuenta";
+                OdbcDataAdapter dataConsultarBalance = new OdbcDataAdapter(sqlConsultarBalance, con.conectar());
+                return dataConsultarBalance;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ConsultarBalanceGeneralPasivoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlConsultarBalance = "SELECT BG.KidCuenta, C.nombre ,SUM(BG.debe), SUM(BG.haber) FROM tbl_balancegeneral BG INNER JOIN tbl_cuentas C ON BG.KidCuenta = C.KidCuenta WHERE BG.KidCuenta LIKE '2.1%' AND fecha_balance BETWEEN '" + sFechaInicial + "' AND '" + sFechaFinal + "' GROUP BY BG.KidCuenta";
+                OdbcDataAdapter dataConsultarBalance = new OdbcDataAdapter(sqlConsultarBalance, con.conectar());
+                return dataConsultarBalance;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ConsultarBalanceGeneralPasivoNoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlConsultarBalance = "SELECT BG.KidCuenta, C.nombre ,SUM(BG.debe), SUM(BG.haber) FROM tbl_balancegeneral BG INNER JOIN tbl_cuentas C ON BG.KidCuenta = C.KidCuenta WHERE BG.KidCuenta LIKE '2.2%' AND fecha_balance BETWEEN '" + sFechaInicial + "' AND '" + sFechaFinal + "' GROUP BY BG.KidCuenta";
+                OdbcDataAdapter dataConsultarBalance = new OdbcDataAdapter(sqlConsultarBalance, con.conectar());
+                return dataConsultarBalance;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ConsultarBalanceGeneralCapital(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlConsultarBalance = "SELECT BG.KidCuenta, C.nombre ,SUM(BG.debe), SUM(BG.haber) FROM tbl_balancegeneral BG INNER JOIN tbl_cuentas C ON BG.KidCuenta = C.KidCuenta WHERE BG.KidCuenta LIKE '3.1%' AND fecha_balance BETWEEN '" + sFechaInicial + "' AND '" + sFechaFinal + "' GROUP BY BG.KidCuenta";
+                OdbcDataAdapter dataConsultarBalance = new OdbcDataAdapter(sqlConsultarBalance, con.conectar());
+                return dataConsultarBalance;
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
                 return null;

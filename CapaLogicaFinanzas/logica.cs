@@ -340,6 +340,108 @@ namespace CapaLogicaFinanzas
         }
 
 
+        public DataTable consultaLogicaInsertarBalanceGeneral(string codigoCuenta, string fecha, double debe, double haber)
+        {
+            try
+            {
+                OdbcDataAdapter dtInsertarBalanceGeneral = sen.InsertarBalanceGeneral(codigoCuenta, fecha, debe, haber);
+                DataTable tableBalanceGeneral = new DataTable();
+                dtInsertarBalanceGeneral.Fill(tableBalanceGeneral);
+                return tableBalanceGeneral;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+        public DataTable consultaLogicaConsultarBalanceGeneralActivoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtConsultarBalanceGeneral = sen.ConsultarBalanceGeneralActivoCorriente(sFechaInicial, sFechaFinal);
+                DataTable tableBalanceGeneral = new DataTable();
+                dtConsultarBalanceGeneral.Fill(tableBalanceGeneral);
+                return tableBalanceGeneral;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaConsultarBalanceGeneralActivoNoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtConsultarBalanceGeneral = sen.ConsultarBalanceGeneralActivoNoCorriente(sFechaInicial, sFechaFinal);
+                DataTable tableBalanceGeneral = new DataTable();
+                dtConsultarBalanceGeneral.Fill(tableBalanceGeneral);
+                return tableBalanceGeneral;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaConsultarBalanceGeneralPasivoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtConsultarBalanceGeneral = sen.ConsultarBalanceGeneralPasivoCorriente(sFechaInicial, sFechaFinal);
+                DataTable tableBalanceGeneral = new DataTable();
+                dtConsultarBalanceGeneral.Fill(tableBalanceGeneral);
+                return tableBalanceGeneral;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaConsultarBalanceGeneralPasivoNoCorriente(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtConsultarBalanceGeneral = sen.ConsultarBalanceGeneralPasivoNoCorriente(sFechaInicial, sFechaFinal);
+                DataTable tableBalanceGeneral = new DataTable();
+                dtConsultarBalanceGeneral.Fill(tableBalanceGeneral);
+                return tableBalanceGeneral;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable consultaLogicaConsultarBalanceGeneralCapital(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtConsultarBalanceGeneral = sen.ConsultarBalanceGeneralCapital(sFechaInicial, sFechaFinal);
+                DataTable tableBalanceGeneral = new DataTable();
+                dtConsultarBalanceGeneral.Fill(tableBalanceGeneral);
+                return tableBalanceGeneral;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
 
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 

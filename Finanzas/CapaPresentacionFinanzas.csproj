@@ -31,11 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaDeDiseno">
-      <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
+    <Reference Include="CapaDeDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NAV2K19-master\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDiseno.dll</HintPath>
     </Reference>
-    <Reference Include="CapaDeDisenoBARRA">
-      <HintPath>..\Librerias\CapaDeDisenoBARRA.dll</HintPath>
+    <Reference Include="CapaDeDisenoBARRA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\BARRA\NAV2K19\DLL\Navegador\CapaDeDiseno\bin\Debug\CapaDeDisenoBARRA.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
