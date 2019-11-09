@@ -1,6 +1,6 @@
 ﻿namespace Finanzas
 {
-    partial class frm_ctsbancarias
+    partial class frm_clasificadordemovimientos
     {
         /// <summary>
         /// Required designer variable.
@@ -33,22 +33,23 @@
             // 
             // navegador1
             // 
+            this.navegador1.AutoScroll = true;
             this.navegador1.BackColor = System.Drawing.Color.White;
-            this.navegador1.Location = new System.Drawing.Point(-1, -1);
+            this.navegador1.Location = new System.Drawing.Point(-3, 1);
             this.navegador1.Name = "navegador1";
             this.navegador1.Size = new System.Drawing.Size(1178, 657);
             this.navegador1.TabIndex = 0;
             this.navegador1.Load += new System.EventHandler(this.navegador1_Load);
             // 
-            // frm_ctsbancarias
+            // frm_clasificadordemovimientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(937, 456);
+            this.ClientSize = new System.Drawing.Size(1176, 659);
             this.Controls.Add(this.navegador1);
-            this.Name = "frm_ctsbancarias";
-            this.Text = "frm_ctsbancarias";
+            this.Name = "frm_clasificadordemovimientos";
+            this.Text = "frm_clasificadordemovimientos";
             this.ResumeLayout(false);
 
         }

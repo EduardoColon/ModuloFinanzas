@@ -33,6 +33,8 @@
             // 
             // navegador1
             // 
+            this.navegador1.AutoScroll = true;
+            this.navegador1.AutoSize = true;
             this.navegador1.BackColor = System.Drawing.Color.White;
             this.navegador1.Location = new System.Drawing.Point(-1, 1);
             this.navegador1.Name = "navegador1";
@@ -44,11 +46,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.navegador1);
             this.Name = "frm_manchequera";
             this.Text = "frm_manchequera";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

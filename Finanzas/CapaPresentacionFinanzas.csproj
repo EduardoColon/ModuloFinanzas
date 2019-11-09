@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CapaDatos">
+      <HintPath>..\Librerias\CapaDatos.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaDeDatos">
+      <HintPath>..\Librerias\CapaDeDatos.dll</HintPath>
+    </Reference>
     <Reference Include="CapaDeDiseno">
       <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaDeLogica">
+      <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
     </Reference>
     <Reference Include="CapaDeDisenoBARRA">
       <HintPath>..\Librerias\CapaDeDisenoBARRA.dll</HintPath>
@@ -54,6 +63,12 @@
     </Compile>
     <Compile Include="frm_CambioMoneda.Designer.cs">
       <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_clasificadordemovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_clasificadordemovimientos.Designer.cs">
+      <DependentUpon>frm_clasificadordemovimientos.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_conciliacionBancaria.cs">
       <SubType>Form</SubType>
@@ -167,6 +182,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frm_CambioMoneda.resx">
       <DependentUpon>frm_CambioMoneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_clasificadordemovimientos.resx">
+      <DependentUpon>frm_clasificadordemovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_conciliacionBancaria.resx">
       <DependentUpon>frm_conciliacionBancaria.cs</DependentUpon>
