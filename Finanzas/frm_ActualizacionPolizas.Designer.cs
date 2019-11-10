@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbo_TipoPoliza = new System.Windows.Forms.ComboBox();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.Haber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actualizacionpolizas = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cbo_TipoPoliza = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_noPoliza = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_polizas)).BeginInit();
@@ -70,6 +70,23 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta Libro Diario";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(590, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Seleccione";
+            // 
+            // cbo_TipoPoliza
+            // 
+            this.cbo_TipoPoliza.FormattingEnabled = true;
+            this.cbo_TipoPoliza.Location = new System.Drawing.Point(569, 39);
+            this.cbo_TipoPoliza.Name = "cbo_TipoPoliza";
+            this.cbo_TipoPoliza.Size = new System.Drawing.Size(121, 25);
+            this.cbo_TipoPoliza.TabIndex = 7;
             // 
             // btn_actualizar
             // 
@@ -185,23 +202,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // cbo_TipoPoliza
-            // 
-            this.cbo_TipoPoliza.FormattingEnabled = true;
-            this.cbo_TipoPoliza.Location = new System.Drawing.Point(569, 39);
-            this.cbo_TipoPoliza.Name = "cbo_TipoPoliza";
-            this.cbo_TipoPoliza.Size = new System.Drawing.Size(121, 25);
-            this.cbo_TipoPoliza.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(590, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Seleccione";
-            // 
             // txt_noPoliza
             // 
             this.txt_noPoliza.Enabled = false;
@@ -216,6 +216,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1001, 513);
             this.Controls.Add(this.txt_noPoliza);
             this.Controls.Add(this.actualizacionpolizas);
