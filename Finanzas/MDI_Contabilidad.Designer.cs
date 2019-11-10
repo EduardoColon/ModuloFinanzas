@@ -142,6 +142,7 @@
             this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
             this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.libroMayorToolStripMenuItem.Text = "Libro Mayor";
+            this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.libroMayorToolStripMenuItem_Click);
             // 
             // balanceGeneralToolStripMenuItem
             // 

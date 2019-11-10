@@ -326,5 +326,12 @@ namespace Finanzas
             BalanceGeneral.Show();
 
         }
+
+        private void libroMayorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_libroMayor LibroMayor = new frm_libroMayor();
+            LibroMayor.MdiParent = this;
+            LibroMayor.Show();
+        }
     }
 }
