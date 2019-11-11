@@ -1,4 +1,4 @@
-﻿namespace Finanzas
+namespace Finanzas
 {
     partial class frm_conciliacionBancaria
     {
@@ -309,11 +309,11 @@
             // 
             this.pdfEstadoCuenta.Enabled = true;
             this.pdfEstadoCuenta.Location = new System.Drawing.Point(3, 3);
-            this.pdfEstadoCuenta.Name = "pdfEstadoCuenta";
-            this.pdfEstadoCuenta.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstadoCuenta.OcxState")));
+             this.pdfEstadoCuenta.Name = "pdfEstadoCuenta";
+             this.pdfEstadoCuenta.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfEstadoCuenta.OcxState")));
             this.pdfEstadoCuenta.Size = new System.Drawing.Size(555, 554);
             this.pdfEstadoCuenta.TabIndex = 28;
-            this.pdfEstadoCuenta.Enter += new System.EventHandler(this.PdfEstadoCuenta_Enter);
+             this.pdfEstadoCuenta.Enter += new System.EventHandler(this.PdfEstadoCuenta_Enter);
             // 
             // frm_conciliacionBancaria
             // 

@@ -30,8 +30,6 @@
         {
             this.button4 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rdb_rechazado = new System.Windows.Forms.RadioButton();
-            this.rdb_aprobado = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.txt_des = new System.Windows.Forms.TextBox();
@@ -47,6 +45,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.rdb_rechazado = new System.Windows.Forms.RadioButton();
+            this.rdb_aprobado = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -94,30 +94,6 @@
             this.panel2.Size = new System.Drawing.Size(865, 191);
             this.panel2.TabIndex = 21;
             // 
-            // rdb_rechazado
-            // 
-            this.rdb_rechazado.AutoSize = true;
-            this.rdb_rechazado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_rechazado.Location = new System.Drawing.Point(46, 75);
-            this.rdb_rechazado.Name = "rdb_rechazado";
-            this.rdb_rechazado.Size = new System.Drawing.Size(120, 24);
-            this.rdb_rechazado.TabIndex = 18;
-            this.rdb_rechazado.TabStop = true;
-            this.rdb_rechazado.Text = "Rechazado";
-            this.rdb_rechazado.UseVisualStyleBackColor = true;
-            // 
-            // rdb_aprobado
-            // 
-            this.rdb_aprobado.AutoSize = true;
-            this.rdb_aprobado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_aprobado.Location = new System.Drawing.Point(46, 33);
-            this.rdb_aprobado.Name = "rdb_aprobado";
-            this.rdb_aprobado.Size = new System.Drawing.Size(106, 24);
-            this.rdb_aprobado.TabIndex = 17;
-            this.rdb_aprobado.TabStop = true;
-            this.rdb_aprobado.Text = "Aprobado";
-            this.rdb_aprobado.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(352, 138);
@@ -136,6 +112,7 @@
             this.btn_actualizar.TabIndex = 15;
             this.btn_actualizar.Text = "Actualizar";
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // txt_des
             // 
@@ -249,6 +226,30 @@
             this.panel3.Size = new System.Drawing.Size(229, 137);
             this.panel3.TabIndex = 19;
             // 
+            // rdb_rechazado
+            // 
+            this.rdb_rechazado.AutoSize = true;
+            this.rdb_rechazado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_rechazado.Location = new System.Drawing.Point(46, 75);
+            this.rdb_rechazado.Name = "rdb_rechazado";
+            this.rdb_rechazado.Size = new System.Drawing.Size(120, 24);
+            this.rdb_rechazado.TabIndex = 18;
+            this.rdb_rechazado.TabStop = true;
+            this.rdb_rechazado.Text = "Rechazado";
+            this.rdb_rechazado.UseVisualStyleBackColor = true;
+            // 
+            // rdb_aprobado
+            // 
+            this.rdb_aprobado.AutoSize = true;
+            this.rdb_aprobado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_aprobado.Location = new System.Drawing.Point(46, 33);
+            this.rdb_aprobado.Name = "rdb_aprobado";
+            this.rdb_aprobado.Size = new System.Drawing.Size(106, 24);
+            this.rdb_aprobado.TabIndex = 17;
+            this.rdb_aprobado.TabStop = true;
+            this.rdb_aprobado.Text = "Aprobado";
+            this.rdb_aprobado.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -312,13 +313,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(884, 491);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_GestionPresupuesto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_GestionPresupuesto";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -519,6 +519,29 @@ namespace CapaDatosFinanzas
             return ds;
         }
 
+        public DataSet consultarPresupuesto1()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select Kidpresupuesto as Id,nombre as Nombre,monto as Monto,estado as Estado from tbl_presupuesto"
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+
+            }
+
+            return ds;
+        }
+
         public OdbcDataAdapter ConsultarPerfil(string consulta)
         {
 
@@ -542,6 +565,75 @@ namespace CapaDatosFinanzas
             OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlbusqueda, con.conectar());
             return dataTable;
         }
+
+        public OdbcDataAdapter Gestion(string consulta)
+
+        {
+
+            string sqlbusqueda = "select tpre.nombre as Nombre , tpre.monto as Aceptado , SUM(tpold.debe) as Gasto ,  tpre.monto -  SUM(tpold.debe) as Disponible " +
+                " from tbl_presupuesto as tpre " +
+                "inner join tbl_tipo_poliza ttpol on tpre.nombre = ttpol.descripcion " +
+                "inner join tbl_poliza_encabezado tpole  on ttpol.KidTipoDePoliza = tpole.KidTipoDePoliza " +
+                "inner join tbl_poliza_detalle tpold on  tpole.KidPoliza = tpold.KidPoliza " +
+                "where tpre.nombre = ttpol.descripcion" +
+                " and tpold.KidPoliza = tpole.KidPoliza" +
+                " and ttpol.KidTipoDePoliza = tpole.KidTipoDePoliza" +
+                " and tpre.nombre = '" + consulta + "'";
+
+
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlbusqueda, con.conectar());
+            return dataTable;
+        }
+
+        public OdbcDataAdapter Gestion1(string consulta)
+
+        {
+
+            string sqlbusqueda = "select tpre.nombre as Nombre , tpre.monto as Aceptado , SUM(tpold.debe) as Gasto ,  tpre.monto -  SUM(tpold.debe) as Disponible " +
+                " from tbl_presupuesto as tpre " +
+                "inner join tbl_tipo_poliza ttpol on tpre.nombre = ttpol.descripcion " +
+                "inner join tbl_poliza_encabezado tpole  on ttpol.KidTipoDePoliza = tpole.KidTipoDePoliza " +
+                "inner join tbl_poliza_detalle tpold on  tpole.KidPoliza = tpold.KidPoliza " +
+                "where tpre.nombre = ttpol.descripcion" +
+                " and tpold.KidPoliza = tpole.KidPoliza" +
+                " and ttpol.KidTipoDePoliza = tpole.KidTipoDePoliza" +
+                " and tpre.nombre = '" + consulta + "'";
+
+
+            OdbcDataAdapter dataTable = new OdbcDataAdapter(sqlbusqueda, con.conectar());
+            return dataTable;
+        }
+
+        public OdbcDataAdapter ActualizarPresupuesto(string consulta)
+        {
+            try
+            {
+                string aceptado = "UPDATE tbl_presupuesto set estado = '2' where Kidpresupuesto = '" + consulta + "'";
+                OdbcDataAdapter acualizarpresupuesto = new OdbcDataAdapter(aceptado, con.conectar());
+                return acualizarpresupuesto;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public OdbcDataAdapter ActualizarPresupuestoRechazado(string consulta)
+        {
+            try
+            {
+                string aceptado = "UPDATE tbl_presupuesto set estado = '0' where Kidpresupuesto = '" + consulta + "'";
+                OdbcDataAdapter acualizarpresupuesto = new OdbcDataAdapter(aceptado, con.conectar());
+                return acualizarpresupuesto;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
 
 
         /* --------------------------------------------------------------------------------------------------------------------------------------------------------------*/

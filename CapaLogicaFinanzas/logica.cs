@@ -451,6 +451,11 @@ namespace CapaLogicaFinanzas
             return sen.consultarPresupuesto();
         }
 
+        public DataSet consultaPresupuesto()
+        {
+            return sen.consultarPresupuesto1();
+        }
+
         public DataTable ConsultaLogicaPerfil(string consultabu)
         {
             try
@@ -459,6 +464,72 @@ namespace CapaLogicaFinanzas
                 DataTable tablaperfiles = new DataTable();
                 cmpsperfiles.Fill(tablaperfiles);
                 return tablaperfiles;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable datos(string consultabu)
+        {
+            try
+            {
+                OdbcDataAdapter cmpsperfiles = sen.Gestion(consultabu);
+                DataTable tablaperfiles = new DataTable();
+                cmpsperfiles.Fill(tablaperfiles);
+                return tablaperfiles;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable datos1(string consultabu)
+        {
+            try
+            {
+                OdbcDataAdapter cmpsperfiles = sen.Gestion1(consultabu);
+                DataTable tablaperfiles = new DataTable();
+                cmpsperfiles.Fill(tablaperfiles);
+                return tablaperfiles;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
+        public DataTable PresupuestoAprobado(string consultabu)
+        {
+            try
+            {
+                OdbcDataAdapter cmpsperfiles = sen.ActualizarPresupuesto(consultabu);
+                DataTable aprobado = new DataTable();
+                cmpsperfiles.Fill(aprobado);
+                return aprobado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public DataTable PresupuestoRechazado(string consultabu)
+        {
+            try
+            {
+                OdbcDataAdapter cmpsperfiles = sen.ActualizarPresupuestoRechazado(consultabu);
+                DataTable aprobado = new DataTable();
+                cmpsperfiles.Fill(aprobado);
+                return aprobado;
             }
             catch (Exception ex)
             {

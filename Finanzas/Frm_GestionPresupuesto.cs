@@ -74,12 +74,52 @@ namespace Finanzas
                 }
                 else
                 {
+                    limpiar();
                     MessageBox.Show("No se encontró el Presupuesto Buscado");
                 }
             }
             catch (InvalidOperationException ex)
             {
                 Console.WriteLine(ex);
+            }
+        }
+
+        void limpiar()
+        {
+            txt_buscar.Clear();
+            txt_nombre.Clear();
+            txt_monto.Clear();
+            txt_moneda.Clear();
+            txt_area.Clear();
+            txt_des.Clear();
+            txt_id.Clear();
+        }
+
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            string consulta = txt_id.Text;
+
+            bool aprobado = rdb_aprobado.Checked;
+            bool rechazado = rdb_rechazado.Checked;
+
+            if (aprobado)
+            {
+                logic.PresupuestoAprobado(consulta);
+                limpiar();
+                MessageBox.Show("Presupuesto Aprobado");
+
+            }
+            else if (rechazado)
+            {
+                logic.PresupuestoRechazado(consulta);
+                limpiar();
+                MessageBox.Show("Presupuesto Rechazado");
+            }
+            else
+            {
+                limpiar();
+                MessageBox.Show("Presupuesto no Revisado");
             }
         }
     }

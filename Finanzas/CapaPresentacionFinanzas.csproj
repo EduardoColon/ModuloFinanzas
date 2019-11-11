@@ -31,20 +31,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaDatos">
+    <Reference Include="CapaDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDatos.dll</HintPath>
     </Reference>
-    <Reference Include="CapaDeDatos">
+    <Reference Include="CapaDeDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDeDatos.dll</HintPath>
     </Reference>
     <Reference Include="CapaDeDiseno">
       <HintPath>..\Librerias\CapaDeDiseno.dll</HintPath>
     </Reference>
-    <Reference Include="CapaDeLogica">
-      <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
-    </Reference>
     <Reference Include="CapaDeDisenoBARRA">
       <HintPath>..\Librerias\CapaDeDisenoBARRA.dll</HintPath>
+    </Reference>
+    <Reference Include="CapaDeLogica, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -160,6 +163,12 @@
     <Compile Include="Frm_MovimientosBancarios.Designer.cs">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_PatidaPresupuestaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PatidaPresupuestaria.Designer.cs">
+      <DependentUpon>Frm_PatidaPresupuestaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_tipoCuentaContable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +258,9 @@
     <EmbeddedResource Include="Frm_MovimientosBancarios.resx">
       <DependentUpon>Frm_MovimientosBancarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PatidaPresupuestaria.resx">
+      <DependentUpon>Frm_PatidaPresupuestaria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_tipoCuentaContable.resx">
       <DependentUpon>frm_tipoCuentaContable.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,14 +287,6 @@
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="AxAcroPDFLib">
-      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
     </COMReference>
   </ItemGroup>
   <ItemGroup />

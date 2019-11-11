@@ -163,15 +163,16 @@
             // gestionDePresupuestoToolStripMenuItem1
             // 
             this.gestionDePresupuestoToolStripMenuItem1.Name = "gestionDePresupuestoToolStripMenuItem1";
-            this.gestionDePresupuestoToolStripMenuItem1.Size = new System.Drawing.Size(220, 22);
-            this.gestionDePresupuestoToolStripMenuItem1.Text = "Gestion de Presupuesto";
+            this.gestionDePresupuestoToolStripMenuItem1.Size = new System.Drawing.Size(227, 22);
+            this.gestionDePresupuestoToolStripMenuItem1.Text = "Revision de Presupuesto";
             this.gestionDePresupuestoToolStripMenuItem1.Click += new System.EventHandler(this.gestionDePresupuestoToolStripMenuItem1_Click);
             // 
             // reporteIntegradoToolStripMenuItem
             // 
             this.reporteIntegradoToolStripMenuItem.Name = "reporteIntegradoToolStripMenuItem";
-            this.reporteIntegradoToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.reporteIntegradoToolStripMenuItem.Text = "Reporte Integrado";
+            this.reporteIntegradoToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.reporteIntegradoToolStripMenuItem.Text = "Gestion Presupuestaria";
+            this.reporteIntegradoToolStripMenuItem.Click += new System.EventHandler(this.reporteIntegradoToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
