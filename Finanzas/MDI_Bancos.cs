@@ -183,5 +183,12 @@ namespace Finanzas
             frm_Consultar.MdiParent = this;
             frm_Consultar.Show();
         }
+
+        private void envioPolizasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_envioPolizas envioPolizas = new frm_envioPolizas(sUsuario);
+            envioPolizas.MdiParent = this;
+            envioPolizas.Show();
+        }
     }
 }
