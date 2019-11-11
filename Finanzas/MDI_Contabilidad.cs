@@ -333,5 +333,12 @@ namespace Finanzas
             LibroMayor.MdiParent = this;
             LibroMayor.Show();
         }
+
+        private void reporteIntegradoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_PatidaPresupuestaria partida = new Frm_PatidaPresupuestaria();
+            partida.MdiParent = this;
+           partida.Show();
+        }
     }
 }
