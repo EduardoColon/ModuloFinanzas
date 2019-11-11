@@ -97,7 +97,7 @@ namespace Finanzas
             fdlg.RestoreDirectory = true;
             if (fdlg.ShowDialog() == DialogResult.OK)
             {
-                //Diego//pdfEstadoCuenta.src = fdlg.FileName;
+                pdfEstadoCuenta.src = fdlg.FileName;
             }
         }
 
