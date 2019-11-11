@@ -154,6 +154,8 @@ namespace CapaLogicaFinanzas
             }
         }
 
+     
+
         public DataTable consultaLogicaObtenerTotalPoliza(int iCodigoPoliza)
         {
             try
@@ -170,7 +172,7 @@ namespace CapaLogicaFinanzas
             }
         }
 
-      
+
 
         public DataSet consultaLogicaCuentasContables()
         {
@@ -836,6 +838,8 @@ namespace CapaLogicaFinanzas
 
         }
 
+
+
         public DataTable LogicaObtenerClasificadorGastos()
         {
             try
@@ -869,11 +873,85 @@ namespace CapaLogicaFinanzas
 
         }
 
+        public int consultarMaxPoliza()
+        {
+            return sen.consultarMaxpoliza() + 1;
+        }
 
+        public string consultarNombreCuentaContable(string v)
+        {
+            return sen.consultarNombreCuentaContable(v);
+        }
 
+        public bool insertarPolizaEncabezado(string documento, string descripcion, string fecha, string total)
+        {
+            try
+            {
+                return sen.insertarPolizaEncabezado(documento, descripcion, fecha, total);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+        }
 
+        public void marcarMovimientoEnviadoContabilidad(List<string> idMovimiento)
+        {
+           sen.marcarMovimientoEnviadoContabilidad(idMovimiento);
+        }
 
-        
+        public bool insertarPolizaDetalle(int numeroPoliza, List<string> idCuentaDebe, List<string> idCuentaHaber, List<string> monto)
+        {
+            List<double> nuevosMontosDebe = new List<double>();
+            List<double> nuevosMontosHaber = new List<double>();
+            List<string> nuevaListaCuentas = new List<string>();
 
+            for (int i = 0; i < idCuentaDebe.Count; i++)
+            {
+                if (!nuevaListaCuentas.Contains(idCuentaDebe[i]))
+                {
+                    nuevaListaCuentas.Add(idCuentaDebe[i]);
+                    nuevosMontosDebe.Add(0.00);
+                    nuevosMontosHaber.Add(0.00);
+                }
+            }
+
+            for (int i = 0; i < idCuentaHaber.Count; i++)
+            {
+                if (!nuevaListaCuentas.Contains(idCuentaHaber[i]))
+                {
+                    nuevaListaCuentas.Add(idCuentaHaber[i]);
+                    nuevosMontosHaber.Add(0.00);
+                    nuevosMontosDebe.Add(0.00);
+
+                }
+            }
+
+            for (int i = 0; i < nuevaListaCuentas.Count; i++)
+            {
+                for (int j = 0; j < idCuentaDebe.Count; j++)
+                {
+                    if (nuevaListaCuentas[i] == idCuentaDebe[j])
+                    {
+                        nuevosMontosDebe[i] = nuevosMontosDebe[i] + double.Parse(monto[j]);
+                    }
+
+                    if (nuevaListaCuentas[i] == idCuentaHaber[j])
+                    {
+                        nuevosMontosHaber[i] = nuevosMontosHaber[i] + double.Parse(monto[j]);
+                    }
+                }
+            }
+
+            try
+            {
+                return sen.insertarPolizaDetalle(numeroPoliza, nuevaListaCuentas, nuevosMontosDebe, nuevosMontosHaber);
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+        }
     }
 }

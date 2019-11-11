@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LblBanco = new System.Windows.Forms.Label();
+            this.LblMoneda = new System.Windows.Forms.Label();
+            this.LblMes = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.LblMes = new System.Windows.Forms.Label();
-            this.LblMoneda = new System.Windows.Forms.Label();
-            this.LblBanco = new System.Windows.Forms.Label();
             this.DgvConciliacion = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvConciliacion)).BeginInit();
@@ -55,6 +55,39 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Conciliación a detalle";
+            // 
+            // LblBanco
+            // 
+            this.LblBanco.AutoSize = true;
+            this.LblBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBanco.Location = new System.Drawing.Point(117, 61);
+            this.LblBanco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblBanco.Name = "LblBanco";
+            this.LblBanco.Size = new System.Drawing.Size(98, 29);
+            this.LblBanco.TabIndex = 42;
+            this.LblBanco.Text = "BANCO";
+            // 
+            // LblMoneda
+            // 
+            this.LblMoneda.AutoSize = true;
+            this.LblMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMoneda.Location = new System.Drawing.Point(137, 99);
+            this.LblMoneda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblMoneda.Name = "LblMoneda";
+            this.LblMoneda.Size = new System.Drawing.Size(66, 29);
+            this.LblMoneda.TabIndex = 41;
+            this.LblMoneda.Text = "GTQ";
+            // 
+            // LblMes
+            // 
+            this.LblMes.AutoSize = true;
+            this.LblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblMes.Location = new System.Drawing.Point(95, 143);
+            this.LblMes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LblMes.Name = "LblMes";
+            this.LblMes.Size = new System.Drawing.Size(65, 29);
+            this.LblMes.TabIndex = 40;
+            this.LblMes.Text = "MES";
             // 
             // label7
             // 
@@ -89,39 +122,6 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Banco:";
             // 
-            // LblMes
-            // 
-            this.LblMes.AutoSize = true;
-            this.LblMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMes.Location = new System.Drawing.Point(95, 143);
-            this.LblMes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblMes.Name = "LblMes";
-            this.LblMes.Size = new System.Drawing.Size(65, 29);
-            this.LblMes.TabIndex = 40;
-            this.LblMes.Text = "MES";
-            // 
-            // LblMoneda
-            // 
-            this.LblMoneda.AutoSize = true;
-            this.LblMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblMoneda.Location = new System.Drawing.Point(137, 99);
-            this.LblMoneda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblMoneda.Name = "LblMoneda";
-            this.LblMoneda.Size = new System.Drawing.Size(66, 29);
-            this.LblMoneda.TabIndex = 41;
-            this.LblMoneda.Text = "GTQ";
-            // 
-            // LblBanco
-            // 
-            this.LblBanco.AutoSize = true;
-            this.LblBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBanco.Location = new System.Drawing.Point(117, 61);
-            this.LblBanco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LblBanco.Name = "LblBanco";
-            this.LblBanco.Size = new System.Drawing.Size(98, 29);
-            this.LblBanco.TabIndex = 42;
-            this.LblBanco.Text = "BANCO";
-            // 
             // DgvConciliacion
             // 
             this.DgvConciliacion.AllowUserToAddRows = false;
@@ -140,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(1065, 689);
             this.Controls.Add(this.DgvConciliacion);
             this.Controls.Add(this.groupBox1);
