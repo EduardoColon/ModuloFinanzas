@@ -16,7 +16,6 @@ namespace Finanzas
         private string sUsuario;
         List<string> lIdCuentas = new List<string>();
         logica logic = new logica();
-        DataGridViewCheckBoxColumn d = new DataGridViewCheckBoxColumn();
         double total = 0.0;
 
 
@@ -25,6 +24,8 @@ namespace Finanzas
             InitializeComponent();
             this.sUsuario = sUsuario;
             llenarComboBoxCuentas();
+            int nPoliza = logic.consultarMaxPoliza();
+            LbLNumeroPoliza.Text = nPoliza.ToString();
         }
 
 
@@ -36,7 +37,6 @@ namespace Finanzas
 
                 foreach (DataRow row in dtModulos.Rows)
                 {
-                    Cbo_cuentas.Items.Add(row[1].ToString());
                     lIdCuentas.Add(row[0].ToString());
                 }
             }
@@ -45,8 +45,6 @@ namespace Finanzas
                 Console.WriteLine(ex);
             }
 
-            if (lIdCuentas.Count > 0)
-                Cbo_cuentas.SelectedIndex = 0;
         }
 
   
@@ -88,8 +86,12 @@ namespace Finanzas
 
         private void DgvMovimientos_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-           
-         
+            double total = 0.00;
+           foreach(DataGridViewRow row in DgvMovimientos.Rows)
+            {
+                total = total + double.Parse(row.Cells[3].Value.ToString());
+            }
+            LblTotal.Text = total.ToString();
         }
 
         private void DgvMovimientos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -99,17 +101,58 @@ namespace Finanzas
 
         private void DgvMovimientos_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == d.Index && e.RowIndex != -1)
-            {
-                calcularTotal();
-            }
+        
         }
 
-        private void calcularTotal()
+        private void BtnEnviar_Click(object sender, EventArgs e)
         {
-            total = 0.00;
+            if(DgvMovimientos.Rows.Count == 0)
+            {
+                MessageBox.Show("No es posible crear una poliza vacia, ajuste de nuevo las fecha final y la fecha inicial");
+            }
+            else
+            {
+
+                if (logic.insertarPolizaEncabezado(DgvMovimientos.Rows[0].Cells[0].Value.ToString(), 
+                    TxtConcepto.Text, 
+                    DtpFechaPoliza.Text,
+                    LblTotal.Text.ToString()))
+                {
+                    int numeroPoliza = logic.consultarMaxPoliza() - 1;
+                    List<string> idMovimiento = new List<string>();
+                    List<string> idCuentaDebe = new List<string>();
+                    List<string> idCuentaHaber = new List<string>();
+                    List<string> monto = new List<string>();
+
+                    foreach (DataGridViewRow row in DgvMovimientos.Rows)
+                    {
+                        idMovimiento.Add(row.Cells[0].Value.ToString());
+                        idCuentaDebe.Add(logic.consultarNombreCuentaContable(row.Cells[1].Value.ToString()));
+                        idCuentaHaber.Add(logic.consultarNombreCuentaContable(row.Cells[2].Value.ToString()));
+                        monto.Add(row.Cells[3].Value.ToString());        
+                    }
+
+                    if(logic.insertarPolizaDetalle(numeroPoliza, idCuentaDebe, idCuentaHaber, monto))
+                    {
+                        MessageBox.Show("La poliza fue enviada correctamente.");
+                        logic.marcarMovimientoEnviadoContabilidad(idMovimiento);
+
+                        DgvMovimientos.DataSource = null;
+                        LblTotal.Text = "0.00";
+                        TxtConcepto.Text = " ";
+                        LbLNumeroPoliza.Text = "#";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrio un error al intentar enviar la poliza");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al intentar enviar la poliza");
+                }
             
-            LblTotal.Text = total.ToString();
+            }
         }
     }
 }

@@ -689,6 +689,7 @@ namespace CapaDatosFinanzas
             return ds;
         }
 
+     
         public DataSet consultarConciliacionBancaria(string idBanco, string periodo, string idMoneda)
         {
 
@@ -717,6 +718,8 @@ namespace CapaDatosFinanzas
 
             return ds;
         }
+
+     
 
         public DataSet consultarConciliacionBancariaDetalle(string idConciliacion)
         {
@@ -788,7 +791,10 @@ namespace CapaDatosFinanzas
 
         public void insertarConciliacionBancaria(string idBanco, string idMoneda, string periodo, string saldo)
         {
-            OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_encabezado (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
+            try
+            {
+
+                OdbcCommand sql = new OdbcCommand("INSERT INTO tbl_conciliacion_bancaria_encabezado (KidBanco, moneda, mes_conciliacion, diferencia_total, estado) VALUES ("
                   + idBanco + " ,'" +
                   idMoneda + "' , '" +
                   periodo + "' , " +
@@ -796,6 +802,12 @@ namespace CapaDatosFinanzas
                   ")  ON DUPLICATE KEY UPDATE diferencia_total=" + saldo, con.conectar());
             sql.ExecuteNonQuery();
             sql.Connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
 
 //==================================Alejandro Barreda Movimientos Bancarios linea 517===================================================
@@ -1070,7 +1082,9 @@ namespace CapaDatosFinanzas
             try
             {
                 ds = new DataSet();
-                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, (SELECT tbl_cuentas.nombre FROM tbl_cuentas WHERE tbl_cuentas.KidCuenta = tbl_libro_bancos.KidCuenta_Contable_Debito) as Cuenta_Debito, " +
+                    " (SELECT tbl_cuentas.nombre FROM tbl_cuentas WHERE tbl_cuentas.KidCuenta = tbl_libro_bancos.KidCuenta_Contable_Credito) as Cuenta_Credito, " +
+                    "monto, tipo_movimiento, fecha_movimiento " +
         " FROM tbl_libro_bancos WHERE estado = 1 " +
         " AND movimiento_trasladado_contabilidad = 0 " +
         " AND fecha_movimiento between '" + fechaInicial + "' AND '" + fechaFinal + "'"
@@ -1091,6 +1105,122 @@ namespace CapaDatosFinanzas
             return ds;
 
         }
+
+        public int consultarMaxpoliza()
+        {
+
+            try
+            {
+                OdbcCommand sql = new OdbcCommand("SELECT MAX(KidPoliza) FROM tbl_poliza_encabezado", con.conectar());
+                OdbcDataReader almacena = sql.ExecuteReader();
+
+                if (almacena.HasRows)
+                {
+                    return almacena.GetInt32(0);
+                }
+                almacena.Close();
+                sql.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return 0;
+        }
+
+        public string consultarNombreCuentaContable(string v)
+        {
+            try
+            {
+                OdbcCommand sql = new OdbcCommand("SELECT KidCuenta FROM tbl_cuentas WHERE nombre = '" + v + "'", con.conectar());
+                OdbcDataReader almacena = sql.ExecuteReader();
+
+                if (almacena.HasRows)
+                {
+                    return almacena.GetString(0);
+                }
+                almacena.Close();
+                sql.Connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            return null;
+        }
+
+
+        public void marcarMovimientoEnviadoContabilidad(List<string> idMovimiento)
+        {
+           
+            for(int i = 0; i < idMovimiento.Count; i++)
+            {
+                try
+                {
+                    OdbcCommand sql = new OdbcCommand("UPDATE tbl_libro_bancos SET " +
+                        " movimiento_trasladado_contabilidad = 1 WHERE KidMovimientoBancario = " + idMovimiento[i], con.conectar());
+                    sql.ExecuteNonQuery();
+                    sql.Connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+
+            }
+        }
+
+        public bool insertarPolizaEncabezado(string documento, string descripcion, string fecha, string total)
+        {
+
+            try
+            {
+                string stringSql = "INSERT INTO tbl_poliza_encabezado (KidTipoDePoliza, KidDocumentoAsociado, descripcion, fecha_poliza, total_poliza, estado) " +
+                    " VALUES ('B', '" + documento + "', '" + descripcion + "', '" + fecha + "', " + total + ",1)";
+
+                OdbcCommand sql = new OdbcCommand(stringSql, con.conectar());
+                sql.ExecuteNonQuery();
+                sql.Connection.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            return true;
+        }
+
+        public bool insertarPolizaDetalle(int numeroPoliza, List<string> nuevaListaCuentas, List<double> nuevosMontosDebe, List<double> nuevosMontosHaber)
+        {
+
+            OdbcConnection connection = con.conectar();
+            OdbcCommand sql = new OdbcCommand();
+            try
+            {
+
+                for (int i = 0; i < nuevaListaCuentas.Count; i++)
+                {
+                    string stringSql = "INSERT INTO tbl_poliza_detalle (KidPoliza, KidCuenta, debe, haber) " +
+                       " VALUES ( " + numeroPoliza + " , '" + nuevaListaCuentas[i] + "', " + nuevosMontosDebe[i] + ", " + nuevosMontosHaber[i] +")";
+
+                     sql = new OdbcCommand(stringSql, connection);
+                    sql.ExecuteNonQuery();
+
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+            sql.Connection.Close();
+            return true;
+        }
+
 
     }
 
