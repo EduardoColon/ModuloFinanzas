@@ -324,6 +324,7 @@
             this.Name = "Frm_GestionPresupuesto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_GestionPresupuesto";
+            this.Load += new System.EventHandler(this.Frm_GestionPresupuesto_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);

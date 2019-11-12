@@ -19,8 +19,8 @@ namespace Finanzas
         public Frm_PatidaPresupuestaria()
         {
             InitializeComponent();
-            dataGridView1.DataSource = logic.consultaPresupuesto().Tables[0];
-             
+           
+            dataGridView1.DataSource = logic.consultaPresupuesto().Tables[0];   
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -28,7 +28,23 @@ namespace Finanzas
             this.Close();
         }
 
-   
+        void limpiar()
+        {
+            txt_buscar.Clear();
+            textBox1.Clear();
+            txt_id.Clear();
+            txt_nombre.Clear();
+            txt_moneda.Clear();
+            txt_monto.Clear();
+            txt_nombreori.Clear();
+            txt_montoori.Clear();
+            txt_estadoori.Clear();
+            textBox2.Clear();
+
+
+            dataGridView2.DataSource = null;
+            dataGridView3.DataSource = null;
+        }
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
@@ -45,13 +61,17 @@ namespace Finanzas
             }
 
             txt_buscar.Clear();
+
             dataGridView2.DataSource = mostrar;
+            dataGridView2.ClearSelection();
         }
 
        
         private void Frm_PatidaPresupuestaria_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.ClearSelection();
+          
+            dataGridView3.ClearSelection();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -74,6 +94,7 @@ namespace Finanzas
             }
             textBox1.Clear();
             dataGridView3.DataSource = mostrar;
+            dataGridView3.ClearSelection();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -134,7 +155,7 @@ namespace Finanzas
 
             string movimiento3 = txt_id.Text;
 
-          
+            limpiar();
 
             MessageBox.Show("Presupuesto Actualizado");
 

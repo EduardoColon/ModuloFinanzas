@@ -38,8 +38,8 @@
             this.creacionPresupuestoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.procesosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizacionDePolizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.libroMayorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePresupuestoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteIntegradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +51,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.flujoDeEfectivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +126,8 @@
             this.actualizacionDePolizasToolStripMenuItem,
             this.balanceGeneralToolStripMenuItem,
             this.libroMayorToolStripMenuItem,
-            this.presupuestosToolStripMenuItem});
+            this.presupuestosToolStripMenuItem,
+            this.flujoDeEfectivoToolStripMenuItem});
             this.procesosToolStripMenuItem2.Name = "procesosToolStripMenuItem2";
             this.procesosToolStripMenuItem2.Size = new System.Drawing.Size(78, 20);
             this.procesosToolStripMenuItem2.Text = "Procesos";
@@ -137,19 +139,19 @@
             this.actualizacionDePolizasToolStripMenuItem.Text = "Actualizacion de Polizas";
             this.actualizacionDePolizasToolStripMenuItem.Click += new System.EventHandler(this.actualizacionDePolizasToolStripMenuItem_Click);
             // 
-            // libroMayorToolStripMenuItem
-            // 
-            this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
-            this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.libroMayorToolStripMenuItem.Text = "Balance de Saldos";
-            this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.libroMayorToolStripMenuItem_Click);
-            // 
             // balanceGeneralToolStripMenuItem
             // 
             this.balanceGeneralToolStripMenuItem.Name = "balanceGeneralToolStripMenuItem";
             this.balanceGeneralToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.balanceGeneralToolStripMenuItem.Text = "Balance General";
             this.balanceGeneralToolStripMenuItem.Click += new System.EventHandler(this.balanceGeneralToolStripMenuItem_Click);
+            // 
+            // libroMayorToolStripMenuItem
+            // 
+            this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
+            this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.libroMayorToolStripMenuItem.Text = "Balance de Saldos";
+            this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.libroMayorToolStripMenuItem_Click);
             // 
             // presupuestosToolStripMenuItem
             // 
@@ -227,6 +229,13 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
+            // flujoDeEfectivoToolStripMenuItem
+            // 
+            this.flujoDeEfectivoToolStripMenuItem.Name = "flujoDeEfectivoToolStripMenuItem";
+            this.flujoDeEfectivoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.flujoDeEfectivoToolStripMenuItem.Text = "Flujo De Efectivo";
+            this.flujoDeEfectivoToolStripMenuItem.Click += new System.EventHandler(this.flujoDeEfectivoToolStripMenuItem_Click);
+            // 
             // MDI_Contabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +284,7 @@
         private System.Windows.Forms.ToolStripMenuItem presupuestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDePresupuestoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reporteIntegradoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem flujoDeEfectivoToolStripMenuItem;
     }
 }
 
