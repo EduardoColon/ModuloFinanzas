@@ -43,17 +43,25 @@
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDePresupuestoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteIntegradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flujoDeEfectivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.creacionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conciliaciónBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.balanceGeneralToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.balanceDeSaldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.flujoDeEfectivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -70,7 +78,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1294, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1053, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -176,6 +184,13 @@
             this.reporteIntegradoToolStripMenuItem.Text = "Gestion Presupuestaria";
             this.reporteIntegradoToolStripMenuItem.Click += new System.EventHandler(this.reporteIntegradoToolStripMenuItem_Click);
             // 
+            // flujoDeEfectivoToolStripMenuItem
+            // 
+            this.flujoDeEfectivoToolStripMenuItem.Name = "flujoDeEfectivoToolStripMenuItem";
+            this.flujoDeEfectivoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.flujoDeEfectivoToolStripMenuItem.Text = "Flujo De Efectivo";
+            this.flujoDeEfectivoToolStripMenuItem.Click += new System.EventHandler(this.flujoDeEfectivoToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
@@ -192,7 +207,9 @@
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.creacionPresupuestoToolStripMenuItem,
-            this.conciliaciónBancariaToolStripMenuItem});
+            this.conciliaciónBancariaToolStripMenuItem,
+            this.balanceGeneralToolStripMenuItem1,
+            this.balanceDeSaldosToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
@@ -200,26 +217,38 @@
             // creacionPresupuestoToolStripMenuItem
             // 
             this.creacionPresupuestoToolStripMenuItem.Name = "creacionPresupuestoToolStripMenuItem";
-            this.creacionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.creacionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.creacionPresupuestoToolStripMenuItem.Text = "Creacion Presupuesto";
             this.creacionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.CreacionPresupuestoToolStripMenuItem_Click_1);
             // 
             // conciliaciónBancariaToolStripMenuItem
             // 
             this.conciliaciónBancariaToolStripMenuItem.Name = "conciliaciónBancariaToolStripMenuItem";
-            this.conciliaciónBancariaToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.conciliaciónBancariaToolStripMenuItem.Text = "Conciliación Bancaria";
+            this.conciliaciónBancariaToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.conciliaciónBancariaToolStripMenuItem.Text = "Actualizacion De Polizas";
             this.conciliaciónBancariaToolStripMenuItem.Click += new System.EventHandler(this.ConciliaciónBancariaToolStripMenuItem_Click);
+            // 
+            // balanceGeneralToolStripMenuItem1
+            // 
+            this.balanceGeneralToolStripMenuItem1.Name = "balanceGeneralToolStripMenuItem1";
+            this.balanceGeneralToolStripMenuItem1.Size = new System.Drawing.Size(223, 22);
+            this.balanceGeneralToolStripMenuItem1.Text = "Balance General";
+            // 
+            // balanceDeSaldosToolStripMenuItem
+            // 
+            this.balanceDeSaldosToolStripMenuItem.Name = "balanceDeSaldosToolStripMenuItem";
+            this.balanceDeSaldosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.balanceDeSaldosToolStripMenuItem.Text = "Balance De Saldos";
             // 
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 719);
+            this.statusStrip.Location = new System.Drawing.Point(0, 993);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1294, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1053, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -229,18 +258,54 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // flujoDeEfectivoToolStripMenuItem
+            // lbl_usuario
             // 
-            this.flujoDeEfectivoToolStripMenuItem.Name = "flujoDeEfectivoToolStripMenuItem";
-            this.flujoDeEfectivoToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.flujoDeEfectivoToolStripMenuItem.Text = "Flujo De Efectivo";
-            this.flujoDeEfectivoToolStripMenuItem.Click += new System.EventHandler(this.flujoDeEfectivoToolStripMenuItem_Click);
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(94, 18);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(19, 20);
+            this.lbl_usuario.TabIndex = 4;
+            this.lbl_usuario.Text = "--";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(0, 943);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1053, 47);
+            this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lbl_usuario);
+            this.panel2.Location = new System.Drawing.Point(786, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(264, 46);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usuario:";
             // 
             // MDI_Contabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1294, 741);
+            this.ClientSize = new System.Drawing.Size(1053, 1015);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -255,6 +320,9 @@
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +353,12 @@
         private System.Windows.Forms.ToolStripMenuItem gestionDePresupuestoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reporteIntegradoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem flujoDeEfectivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem balanceGeneralToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem balanceDeSaldosToolStripMenuItem;
+        public System.Windows.Forms.Label lbl_usuario;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

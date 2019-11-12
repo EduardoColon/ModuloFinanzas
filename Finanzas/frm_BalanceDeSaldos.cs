@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogicaFinanzas;
+using CapaDatos;
 
 namespace Finanzas
 {
     public partial class frm_BalanceDeSaldos : Form
     {
         logica logic = new logica();
-        public frm_BalanceDeSaldos()
+        sentencia s = new sentencia();
+        string sUsuario = "";
+        public frm_BalanceDeSaldos(string sUsuario)
         {
             InitializeComponent();
+            this.sUsuario = sUsuario;
         }
 
         private void btn_consultar_Click(object sender, EventArgs e)
@@ -95,11 +99,18 @@ namespace Finanzas
                     }
                 }
 
+                s.insertarBitacora(sUsuario, "Realizo un Balance De Saldos", "tbl_balanceGeneral");
+
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        private void frm_BalanceDeSaldos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

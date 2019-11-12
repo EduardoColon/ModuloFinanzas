@@ -141,6 +141,7 @@
             this.Name = "frm_BalanceDeSaldos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Balance De Saldos";
+            this.Load += new System.EventHandler(this.frm_BalanceDeSaldos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_BalanceDeSaldos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
