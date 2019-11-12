@@ -123,8 +123,8 @@
             // 
             this.procesosToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actualizacionDePolizasToolStripMenuItem,
-            this.libroMayorToolStripMenuItem,
             this.balanceGeneralToolStripMenuItem,
+            this.libroMayorToolStripMenuItem,
             this.presupuestosToolStripMenuItem});
             this.procesosToolStripMenuItem2.Name = "procesosToolStripMenuItem2";
             this.procesosToolStripMenuItem2.Size = new System.Drawing.Size(78, 20);
@@ -141,7 +141,7 @@
             // 
             this.libroMayorToolStripMenuItem.Name = "libroMayorToolStripMenuItem";
             this.libroMayorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.libroMayorToolStripMenuItem.Text = "Libro Mayor";
+            this.libroMayorToolStripMenuItem.Text = "Balance de Saldos";
             this.libroMayorToolStripMenuItem.Click += new System.EventHandler(this.libroMayorToolStripMenuItem_Click);
             // 
             // balanceGeneralToolStripMenuItem

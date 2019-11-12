@@ -94,7 +94,7 @@ namespace Finanzas
                         haber = 0.0;
                         total = 0.0;
                         subTotales = 0.0;
-                        totalActivo = 0.0;
+                        //totalActivo = 0.0;
 
                     }
                     else if(fila[0].ToString() == "2.1")
@@ -202,7 +202,7 @@ namespace Finanzas
                         subTotales = 0.0;
                         totalCapital = 0.0;
                         totalPasivo = 0.0;
-                        PasivoCapital = 0.0;
+                        //PasivoCapital = 0.0;
                     }
 
 
@@ -230,7 +230,17 @@ namespace Finanzas
                 }
                 else if(Convert.ToString(row.Cells[1].Value) == "SUMA CAPITAL + PASIVO") 
                 {
-                    row.DefaultCellStyle.BackColor = Color.LightGreen;
+                    if(totalActivo >= PasivoCapital)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.LightGreen;
+                        MessageBox.Show("Balance General Cuadrado");
+                    }
+                    else
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                        MessageBox.Show("Balance General No Cuadrado");
+                    }
+                    
                 }
             }
 

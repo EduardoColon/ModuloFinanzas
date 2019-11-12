@@ -493,6 +493,23 @@ namespace CapaDatosFinanzas
             }
         }
 
+        public OdbcDataAdapter BalanceDeSaldos(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                string sqlBalanceDeSaldos = "SELECT  PD.KidCuenta, SUM(PD.Debe), SUM(PD.Haber) FROM tbl_poliza_encabezado PE INNER JOIN tbl_poliza_detalle PD ON PE.KidPoliza = PD.KidPoliza RIGHT JOIN tbl_librodiario LD ON PE.KidPoliza = LD.KidPoliza  WHERE (PE.fecha_poliza BETWEEN '"+sFechaInicial+"' AND '"+sFechaFinal+ "') GROUP BY PD.KidCuenta ORDER BY PD.KidCuenta";
+                OdbcDataAdapter dataBalanceDeSaldos = new OdbcDataAdapter(sqlBalanceDeSaldos, con.conectar());
+                return dataBalanceDeSaldos;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
+
 
         /*--------------------------------------------------- Diego Gomez -----------------------------------------------------------------------*/
 
