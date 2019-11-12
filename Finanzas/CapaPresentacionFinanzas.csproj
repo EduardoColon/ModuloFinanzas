@@ -35,6 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDatos.dll</HintPath>
     </Reference>
+    <Reference Include="CapaDatosSeguridad">
+      <HintPath>..\Librerias\CapaDatosSeguridad.dll</HintPath>
+    </Reference>
     <Reference Include="CapaDeDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDeDatos.dll</HintPath>
@@ -49,9 +52,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Librerias\CapaDeLogica.dll</HintPath>
     </Reference>
-    <Reference Include="CapaDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Librerias\CapaDiseno.dll</HintPath>
+    <Reference Include="CapaDisenoSeguridad">
+      <HintPath>..\Librerias\CapaDisenoSeguridad.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

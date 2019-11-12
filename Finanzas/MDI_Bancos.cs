@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaLogicaFinanzas;
 using CapaDiseno;
+using CapaLogicaFinanzas;
 
 namespace Finanzas
 {
@@ -196,6 +196,11 @@ namespace Finanzas
         {
             frm_login login = new frm_login();
             login.ShowDialog();
+        }
+
+        private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
