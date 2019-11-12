@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaLogicaFinanzas;
 using CapaDiseno;
+using CapaLogicaFinanzas;
 
 namespace Finanzas
 {
@@ -137,7 +137,7 @@ namespace Finanzas
 
         private void tipoDeCambioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_CambioMoneda cambioMoneda = new frm_CambioMoneda();
+            frm_CambioMoneda cambioMoneda = new frm_CambioMoneda(sUsuario);
             cambioMoneda.MdiParent = this;
             cambioMoneda.Show();
         }
@@ -196,6 +196,12 @@ namespace Finanzas
         {
             frm_login login = new frm_login();
             login.ShowDialog();
+            sUsuario = login.obtenerNombreUsuario();
+        }
+
+        private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

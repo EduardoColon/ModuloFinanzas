@@ -786,29 +786,39 @@ namespace CapaDatosFinanzas
 
         public DataSet consultarLibroBancos(string idBanco, string periodo, string idMoneda)
         {
+            Console.WriteLine("Funcion invocada");
+
             DataSet ds;
             try
             {
-                ds = new DataSet();
-                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
+                string sql = "SELECT KidMovimientoBancario, cuenta_debito, cuenta_credito, monto, tipo_movimiento, fecha_movimiento " +
         " FROM tbl_libro_bancos WHERE estado = 1 " +
         " AND ( EXISTS (  SELECT tbl_cuentabancaria.KidBanco FROM tbl_cuentabancaria WHERE tbl_cuentabancaria.KidBanco = " + idBanco + " AND " +
-        " tbl_cuentabancaria.KidCuentaBancaria = cuenta_debito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') " +
+        " tbl_cuentabancaria.NumeroCuenta = cuenta_debito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') " +
         " OR EXISTS (  SELECT tbl_cuentabancaria.KidBanco FROM tbl_cuentabancaria WHERE tbl_cuentabancaria.KidBanco =  " + idBanco + " AND " +
-        " tbl_cuentabancaria.KidCuentaBancaria = cuenta_credito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') ) " +
+        " tbl_cuentabancaria.NumeroCuenta = cuenta_credito AND tbl_cuentabancaria.KidMoneda= '" + idMoneda + "') ) " +
         " AND fecha_movimiento LIKE '" + periodo + "%' " +
-        " AND movimiento_conciliado = 0" 
+        " AND movimiento_conciliado = 0";
+
+                ds = new DataSet();
+                OdbcDataAdapter dat = new OdbcDataAdapter(sql
     , con.conectar()); ;
                 dat.Fill(ds);
+
+                Console.WriteLine(sql);
+
             }
             catch (OdbcException ex)
             {
                 Console.WriteLine(ex);
+                Console.WriteLine("ERROR1");
                 return null;
             }
             catch (ArgumentOutOfRangeException ex)
             {
                 Console.WriteLine(ex);
+                Console.WriteLine("ERROR2");
+
                 return null;
             }
 
@@ -882,7 +892,7 @@ namespace CapaDatosFinanzas
             try
             {
                 OdbcCommand sqlCodigoCuenta = new OdbcCommand("SELECT KidCuentaBancaria FROM tbl_cuentabancaria " +
-                    " WHERE KidCuentaBancaria = '" + idCuenta + "' AND " +
+                    " WHERE NumeroCuenta = '" + idCuenta + "' AND " +
                     " KidBanco = '" + idBanco + "'", con.conectar());
                 OdbcDataReader almacena = sqlCodigoCuenta.ExecuteReader();
 
@@ -1188,11 +1198,6 @@ namespace CapaDatosFinanzas
             return dataModulos;
         }
 
-
-
-    
-
-    
 
         //Eduardo Colon envio de polizas
         public OdbcDataAdapter consultarCuentasEnvioPolizas()

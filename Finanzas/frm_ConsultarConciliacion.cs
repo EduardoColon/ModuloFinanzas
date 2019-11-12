@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
 using CapaLogicaFinanzas;
 
 namespace Finanzas
@@ -18,12 +19,14 @@ namespace Finanzas
         List<string> lIdMoneda = new List<string>();
         logica logic = new logica();
         string sFecha = "", sBanco = "", sMoneda = "";
+        string sUsuario;
 
         public frm_ConsultarConciliacion(string sUsuario)
         {
             InitializeComponent();
             llenarComboBoxBancos();
             llenarComboBoxMonedas();
+            this.sUsuario = sUsuario;
         }
 
         private void Frm_ConsultarConciliacion_Load(object sender, EventArgs e)
@@ -121,8 +124,11 @@ namespace Finanzas
         {
             if (e.RowIndex > -1)
             {
-                frm_Conciliacion_detalle frm_Conciliacion = new frm_Conciliacion_detalle(sBanco, sMoneda, sFecha, DgvConciliacion.CurrentRow.Cells[0].Value.ToString());
+                frm_Conciliacion_detalle frm_Conciliacion = new frm_Conciliacion_detalle(sBanco, sMoneda, sFecha, DgvConciliacion.CurrentRow.Cells[0].Value.ToString(), sUsuario);
+
                 frm_Conciliacion.Show();
+                sentencia s = new sentencia();
+                s.insertarBitacora(sUsuario, "Consulto una conciliacion bancaria", "tbl_conciliacion_bancaria_detalle");
             }
     
         }

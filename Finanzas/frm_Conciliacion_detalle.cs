@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
 using CapaLogicaFinanzas;
 
 namespace Finanzas
@@ -14,8 +15,9 @@ namespace Finanzas
     public partial class frm_Conciliacion_detalle : Form
     {
 
+        sentencia s = new sentencia();
         logica logic = new logica();
-        public frm_Conciliacion_detalle(string sBanco, string sMoneda, string sFecha, string idConciliacion)
+        public frm_Conciliacion_detalle(string sBanco, string sMoneda, string sFecha, string idConciliacion, string idUsuario)
         {
             InitializeComponent();
             LblBanco.Text = sBanco;
@@ -23,6 +25,8 @@ namespace Finanzas
             LblMes.Text = sFecha;
 
             llenarDataGrid(idConciliacion);
+
+            s.insertarBitacora(idUsuario, "Consulto a detella una conciliacion", "tbl_conciliacion_detalle");
         }
 
         private void llenarDataGrid(string idConciliacion)

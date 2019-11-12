@@ -337,6 +337,7 @@ namespace Finanzas
             frm_BalanceDeSaldos LibroMayor = new frm_BalanceDeSaldos(sUsuario);
             LibroMayor.MdiParent = this;
             LibroMayor.Show();
+
         }
 
         private void reporteIntegradoToolStripMenuItem_Click(object sender, EventArgs e)
