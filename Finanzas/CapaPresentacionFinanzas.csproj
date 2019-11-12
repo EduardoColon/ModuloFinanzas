@@ -121,6 +121,12 @@
     <Compile Include="frm_envioPolizas.Designer.cs">
       <DependentUpon>frm_envioPolizas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_FlujoEfectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_FlujoEfectivo.Designer.cs">
+      <DependentUpon>Frm_FlujoEfectivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_GestionPresupuesto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_envioPolizas.resx">
       <DependentUpon>frm_envioPolizas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_FlujoEfectivo.resx">
+      <DependentUpon>Frm_FlujoEfectivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GestionPresupuesto.resx">
       <DependentUpon>Frm_GestionPresupuesto.cs</DependentUpon>

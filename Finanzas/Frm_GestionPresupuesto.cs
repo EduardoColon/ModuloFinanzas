@@ -38,6 +38,11 @@ namespace Finanzas
 
         }
 
+        void nuevo()
+        {
+            dataGridView1.DataSource = logic.consultaLogicapresupuesto().Tables[0];
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             string consulta = txt_buscar.Text;
@@ -108,6 +113,7 @@ namespace Finanzas
                 logic.PresupuestoAprobado(consulta);
                 limpiar();
                 MessageBox.Show("Presupuesto Aprobado");
+                nuevo();
 
             }
             else if (rechazado)
@@ -115,12 +121,19 @@ namespace Finanzas
                 logic.PresupuestoRechazado(consulta);
                 limpiar();
                 MessageBox.Show("Presupuesto Rechazado");
+                nuevo();
             }
             else
             {
                 limpiar();
                 MessageBox.Show("Presupuesto no Revisado");
+                nuevo();
             }
+        }
+
+        private void Frm_GestionPresupuesto_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ClearSelection();
         }
     }
 }

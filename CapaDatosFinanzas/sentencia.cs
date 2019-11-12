@@ -543,7 +543,116 @@ namespace CapaDatosFinanzas
             try
             {
                 ds = new DataSet();
-                dat = new OdbcDataAdapter("select Kidpresupuesto as Id,nombre as Nombre,monto as Monto,estado as Estado from tbl_presupuesto"
+                dat = new OdbcDataAdapter("select Kidpresupuesto as Id,nombre as Nombre,monto as Monto,estado as Estado from tbl_presupuesto  where estado='2'"
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+
+            }
+           
+
+            return ds;
+        }
+
+        public DataSet consultarIngreso()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select tblc.nombre as Cuenta ,  sum(tblpd.debe) as Cantidad from tbl_cuentas as tblc " +
+                    " inner join tbl_poliza_detalle tblpd on tblc.KidCuenta = tblpd.KidCuenta " +
+                    " group by tblpd.KidCuenta "
+
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                ds = null;
+                dat.Fill(ds);
+            }
+           
+
+            return ds;
+        }
+
+        public DataSet consultarTotalIngreso()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select sum(debe) as Total_de_Ingresos from tbl_poliza_detalle"
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                ds = null;
+                dat.Fill(ds);
+            }
+
+
+            return ds;
+        }
+
+        public DataSet consultarTotalEgresos()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select sum(haber) as Total_de_Egresos from tbl_poliza_detalle"
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                ds = null;
+                dat.Fill(ds);
+            }
+
+
+            return ds;
+        }
+
+        public DataSet consultarSaldo()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select sum(debe) as Saldo_Ingresos, sum(haber) as Saldo_Egresos, haber-debe as Saldo from tbl_poliza_detalle"
+                , con.conectar());
+                dat.Fill(ds);
+            }
+            catch (OdbcException ex)
+            {
+                ds = null;
+                dat.Fill(ds);
+            }
+
+
+            return ds;
+        }
+
+        public DataSet consultarEgreso()
+        {
+            OdbcDataAdapter dat = null;
+            DataSet ds = null;
+            try
+            {
+                ds = new DataSet();
+                dat = new OdbcDataAdapter("select tblc.nombre as Cuenta ,  sum(tblpd.haber) as Cantidad from tbl_cuentas as tblc " +
+                    " inner join tbl_poliza_detalle tblpd on tblc.KidCuenta = tblpd.KidCuenta " +
+                    " group by tblpd.KidCuenta "
                 , con.conectar());
                 dat.Fill(ds);
             }

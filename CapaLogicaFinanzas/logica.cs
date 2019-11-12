@@ -476,6 +476,31 @@ namespace CapaLogicaFinanzas
             return sen.consultarPresupuesto1();
         }
 
+        public DataSet consultaIngresos()
+        {
+            return sen.consultarIngreso();
+        }
+
+        public DataSet TotalIngresos()
+        {
+            return sen.consultarTotalIngreso();
+        }
+
+        public DataSet TotalEgresos()
+        {
+            return sen.consultarTotalEgresos();
+        }
+
+        public DataSet consultaEgresos()
+        {
+            return sen.consultarEgreso();
+        }
+
+        public DataSet Saldo()
+        {
+            return sen.consultarSaldo();
+        }
+
         public DataTable ConsultaLogicaPerfil(string consultabu)
         {
             try

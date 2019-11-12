@@ -340,5 +340,12 @@ namespace Finanzas
             partida.MdiParent = this;
            partida.Show();
         }
+
+        private void flujoDeEfectivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_FlujoEfectivo flujo = new Frm_FlujoEfectivo();
+            flujo.MdiParent = this;
+            flujo.Show();
+        }
     }
 }
