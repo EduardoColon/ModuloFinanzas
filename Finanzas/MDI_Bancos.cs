@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogicaFinanzas;
+using CapaDiseno;
 
 namespace Finanzas
 {
@@ -189,6 +190,12 @@ namespace Finanzas
             frm_envioPolizas envioPolizas = new frm_envioPolizas(sUsuario);
             envioPolizas.MdiParent = this;
             envioPolizas.Show();
+        }
+
+        private void MDI_Bancos_Load(object sender, EventArgs e)
+        {
+            frm_login login = new frm_login();
+            login.ShowDialog();
         }
     }
 }

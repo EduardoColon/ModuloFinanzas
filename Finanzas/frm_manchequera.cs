@@ -21,10 +21,10 @@ namespace Finanzas
 
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
-            navegador1.asignarColorFondo(Color.White);
+            navegador1.asignarColorFondo(Color.Coral);
             navegador1.asignarColorFuente(Color.Black);
             navegador1.asignarComboConTabla("tbl_cuentabancaria", "NumeroCuenta",1); //KidCuentaBancaria
-            navegador1.asignarAyuda("-3");
+            navegador1.asignarAyuda("505");
             navegador1.asignarTabla("tbl_chequera");
             navegador1.asignarNombreForm("Mantenimiento de Chequeras");
 

@@ -23,7 +23,7 @@ namespace Finanzas
             InitializeComponent();
             usuario = user;
             navegador1.asignarSalida(this);
-            navegador1.asignarAyuda("1");
+            navegador1.asignarAyuda("503");
             navegador1.Btn_Ingresar.Click += Btn_Ingresar_Click;
             navegador1.Btn_Modificar.Click += Btn_Modificar_Click;
             navegador1.Btn_Guardar.Click += Btn_Guardar_Click;
@@ -331,9 +331,11 @@ namespace Finanzas
 
             foreach (DataRow row in maxCodigoCuentaContable.Rows)
             {
+               
+                    string maxCodigo = row[0].ToString();
+                    int identificador = Convert.ToInt32(maxCodigo);
 
-                string maxCodigo = row[0].ToString();
-                int identificador = Convert.ToInt32(maxCodigo);
+               
 
                 DataTable maxCodCuentaContable = logic.consultaLogicaMaxCuentaContable2(identificador);
 

@@ -22,7 +22,7 @@ namespace Finanzas
             navegador1.asignarSalida(this);
             navegador1.asignarColorFondo(Color.Coral);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarAyuda("1");
+            navegador1.asignarAyuda("500");
             navegador1.asignarTabla("tbl_tipo_poliza");
             navegador1.asignarNombreForm("Tipo de Poliza");
         }
