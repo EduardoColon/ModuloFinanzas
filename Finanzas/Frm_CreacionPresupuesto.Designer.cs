@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(1166, 672);
             this.Controls.Add(this.navegador1);
             this.Name = "Frm_CreacionPresupuesto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_CreacionPresupuesto";
             this.Load += new System.EventHandler(this.Frm_CreacionPresupuesto_Load);
             this.ResumeLayout(false);
