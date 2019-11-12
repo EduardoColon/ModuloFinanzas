@@ -4,12 +4,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using CapaDatos;
 using CapaLogicaFinanzas;
 
 namespace Finanzas
 {
     public partial class frm_conciliacionBancaria : Form
     {
+        sentencia s = new sentencia();
         string sUsuario;
         double dTotalDebe = 0.00, dTotalHaber = 0.00, dDiferencia = 0.00;
         List<string> lIdBanco = new List<string>();
@@ -98,6 +100,7 @@ namespace Finanzas
             if (fdlg.ShowDialog() == DialogResult.OK)
             {
                 pdfEstadoCuenta.src = fdlg.FileName;
+                s.insertarBitacora(sUsuario, "Cargo un estado de cuenta", "tbl_conciliacion_bancaria_encabezado");
             }
         }
 
@@ -184,6 +187,7 @@ namespace Finanzas
                     MessageBox.Show("La conciliación fue registrada correctamente");
                     this.Close();
                     logic.registrarConciliacionBancariaDetalle(lIdMovimientoSeleccionado);
+                    s.insertarBitacora(sUsuario, "Realizo una conciliacion bancara", "tbl_conciliacion_bancaria_encabezado");
                 }
             }
         }

@@ -1,29 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogicaFinanzas;
+using CapaDatos;
 
 namespace Finanzas
 {
+
     public partial class frm_CambioMoneda : Form
     {
-
+        sentencia s = new sentencia();
+        string idUsuario;
         List<string> lIDMoneda = new List<string>();
         List<string> lNombreMoneda = new List<string>();
 
-        public frm_CambioMoneda()
+        public frm_CambioMoneda(string idUsuario)
         {
             InitializeComponent();
             llenarComboBox();
             Lbl_Resultado.Text = "         ";
+            this.idUsuario = idUsuario;
         }
 
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,6 +70,8 @@ namespace Finanzas
                 lIDMoneda[Cbo_MonedaObjetivo.SelectedIndex]);
             else
                 MessageBox.Show("Debe ingresar monedas a la base de datos primeramente");
+
+            s.insertarBitacora(idUsuario, "Consulto el tipo de cambio", "tbl_divisas");
         }
 
         public string consultarTipoCambio(string sMonedaBase, string sMonedaObjetivo)

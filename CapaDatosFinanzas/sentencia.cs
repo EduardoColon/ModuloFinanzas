@@ -1189,11 +1189,6 @@ namespace CapaDatosFinanzas
         }
 
 
-
-    
-
-    
-
         //Eduardo Colon envio de polizas
         public OdbcDataAdapter consultarCuentasEnvioPolizas()
         {

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
 using CapaLogicaFinanzas;
 
 namespace Finanzas
 {
     public partial class frm_envioPolizas : Form
     {
+        sentencia s = new sentencia();
         private string sUsuario;
         List<string> lIdCuentas = new List<string>();
         logica logic = new logica();
@@ -141,6 +143,8 @@ namespace Finanzas
                         LblTotal.Text = "0.00";
                         TxtConcepto.Text = " ";
                         LbLNumeroPoliza.Text = "#";
+
+                        s.insertarBitacora(sUsuario, "Envio una poliza a contabilidad", "tbl_poliza_encabezado");
                     }
                     else
                     {
