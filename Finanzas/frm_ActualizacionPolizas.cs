@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogicaFinanzas;
+using CapaDatos;
 
 namespace Finanzas
 {
     public partial class frm_ActualizacionPolizas : Form
     {
         logica logic = new logica();
-        public frm_ActualizacionPolizas()
+        sentencia s = new sentencia();
+        string sUsuario = "";
+        public frm_ActualizacionPolizas(string sUsuario)
         {
             InitializeComponent();
+            this.sUsuario = sUsuario;
         }
 
         void limpiarForm()
@@ -28,7 +32,8 @@ namespace Finanzas
         private void button1_Click(object sender, EventArgs e)
         {
             limpiarForm();
-
+            MessageBox.Show(sUsuario);
+            
             string sFechaInicio = null;
             string sFechaFinal = null;
 
@@ -64,6 +69,8 @@ namespace Finanzas
 
                         }
 
+                        s.insertarBitacora(sUsuario, "Consulto Las Polizas Actualizadas", "tbl_poliza_encabezado");
+
                         if (dgv_polizas.Rows.Count == 0)
                         {
                             MessageBox.Show("No hay polizas en ese rango de fechas");
@@ -88,6 +95,8 @@ namespace Finanzas
 
                         }
 
+                        s.insertarBitacora(sUsuario, "Consulto Las Polizas Sin Actualizar", "tbl_poliza_encabezado");
+
                         if (dgv_polizas.Rows.Count == 0)
                         {
                             MessageBox.Show("No hay polizas en ese rango de fechas");
@@ -95,13 +104,14 @@ namespace Finanzas
                         }
                     }
 
-
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
                     return;
                 }
+
+                
             }
            
         }
@@ -169,6 +179,7 @@ namespace Finanzas
                     }
 
                     MessageBox.Show("Polizas Actualizadas Correctamente");
+                    s.insertarBitacora(sUsuario, "Actualizo Las Polizas", "tbl_poliza_encabezado");
 
                 }
                 catch (Exception ex)

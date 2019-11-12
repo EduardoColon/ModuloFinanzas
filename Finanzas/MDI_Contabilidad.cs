@@ -16,8 +16,9 @@ namespace Finanzas
     public partial class MDI_Contabilidad : Form
     {
         logica logic = new logica();
-        string sUsuario = "miusuario";
+        public string sUsuario = "";
         private int childFormNumber = 0;
+        
 
         public MDI_Contabilidad()
         {
@@ -133,6 +134,8 @@ namespace Finanzas
         {
             frm_login login = new frm_login();
             login.ShowDialog();
+            lbl_usuario.Text = login.obtenerNombreUsuario();
+            sUsuario = lbl_usuario.Text;
         }
 
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -309,7 +312,7 @@ namespace Finanzas
 
         private void actualizacionDePolizasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_ActualizacionPolizas libroDiario = new frm_ActualizacionPolizas();
+            frm_ActualizacionPolizas libroDiario = new frm_ActualizacionPolizas(sUsuario);
             libroDiario.MdiParent = this;
             libroDiario.Show();
         }
@@ -323,7 +326,7 @@ namespace Finanzas
 
         private void balanceGeneralToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             frm_BalanceGeneral BalanceGeneral = new frm_BalanceGeneral();
+             frm_BalanceGeneral BalanceGeneral = new frm_BalanceGeneral(sUsuario);
             BalanceGeneral.MdiParent = this;
             BalanceGeneral.Show();
 
@@ -331,7 +334,7 @@ namespace Finanzas
 
         private void libroMayorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_BalanceDeSaldos LibroMayor = new frm_BalanceDeSaldos();
+            frm_BalanceDeSaldos LibroMayor = new frm_BalanceDeSaldos(sUsuario);
             LibroMayor.MdiParent = this;
             LibroMayor.Show();
         }

@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogicaFinanzas;
+using CapaDatos;
 
 namespace Finanzas
 {
     public partial class frm_BalanceGeneral : Form
     {
         logica logic = new logica();
-        public frm_BalanceGeneral()
+        sentencia s = new sentencia();
+        string sUsuario = "";
+        public frm_BalanceGeneral(string sUsuario)
         {
             InitializeComponent();
+            this.sUsuario = sUsuario;
         }
 
         private void btn_consultar_Load(object sender, EventArgs e)
@@ -205,9 +209,9 @@ namespace Finanzas
                         //PasivoCapital = 0.0;
                     }
 
-
-
                 }
+
+                s.insertarBitacora(sUsuario, "Consulto un Balance General", "tbl_balanceGeneral");
             }
             catch(Exception ex)
             {
@@ -234,13 +238,15 @@ namespace Finanzas
                     {
                         row.DefaultCellStyle.BackColor = Color.LightGreen;
                         MessageBox.Show("Balance General Cuadrado");
+                       
                     }
                     else
                     {
                         row.DefaultCellStyle.BackColor = Color.Red;
                         MessageBox.Show("Balance General No Cuadrado");
                     }
-                    
+                    totalActivo = 0.0;
+                    PasivoCapital = 0.0;
                 }
             }
 
