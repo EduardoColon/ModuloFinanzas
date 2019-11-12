@@ -329,7 +329,7 @@ namespace Finanzas
 
         private void libroMayorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_libroMayor LibroMayor = new frm_libroMayor();
+            frm_BalanceDeSaldos LibroMayor = new frm_BalanceDeSaldos();
             LibroMayor.MdiParent = this;
             LibroMayor.Show();
         }

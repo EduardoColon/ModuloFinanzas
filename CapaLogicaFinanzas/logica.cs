@@ -446,6 +446,24 @@ namespace CapaLogicaFinanzas
             }
         }
 
+        public DataTable consultaLogicaBalanceDeSaldos(string sFechaInicial, string sFechaFinal)
+        {
+            try
+            {
+                OdbcDataAdapter dtBalanceDeSaldos = sen.BalanceDeSaldos(sFechaInicial, sFechaFinal);
+                DataTable tableBalanceDeSaldos = new DataTable();
+                dtBalanceDeSaldos.Fill(tableBalanceDeSaldos);
+                return tableBalanceDeSaldos;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+
+
         /*-------------------------------------------------------------Diego Gomez------------------------------------------------------------*/
 
         public DataSet consultaLogicapresupuesto()

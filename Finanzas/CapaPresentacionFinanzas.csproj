@@ -133,11 +133,11 @@
     <Compile Include="frm_ActualizacionPolizas.Designer.cs">
       <DependentUpon>frm_ActualizacionPolizas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_libroMayor.cs">
+    <Compile Include="frm_BalanceDeSaldos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_libroMayor.Designer.cs">
-      <DependentUpon>frm_libroMayor.cs</DependentUpon>
+    <Compile Include="frm_BalanceDeSaldos.Designer.cs">
+      <DependentUpon>frm_BalanceDeSaldos.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_manbancos.cs">
       <SubType>Form</SubType>
@@ -243,8 +243,8 @@
     <EmbeddedResource Include="frm_ActualizacionPolizas.resx">
       <DependentUpon>frm_ActualizacionPolizas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_libroMayor.resx">
-      <DependentUpon>frm_libroMayor.cs</DependentUpon>
+    <EmbeddedResource Include="frm_BalanceDeSaldos.resx">
+      <DependentUpon>frm_BalanceDeSaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_manbancos.resx">
       <DependentUpon>frm_manbancos.cs</DependentUpon>
