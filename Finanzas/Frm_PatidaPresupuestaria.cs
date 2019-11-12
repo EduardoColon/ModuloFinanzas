@@ -41,6 +41,7 @@ namespace Finanzas
             txt_estadoori.Clear();
             textBox2.Clear();
 
+
             dataGridView2.DataSource = null;
             dataGridView3.DataSource = null;
         }
