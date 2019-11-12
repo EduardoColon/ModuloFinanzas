@@ -32,7 +32,6 @@ namespace Finanzas
         private void button1_Click(object sender, EventArgs e)
         {
             limpiarForm();
-            MessageBox.Show(sUsuario);
             
             string sFechaInicio = null;
             string sFechaFinal = null;
