@@ -33,7 +33,7 @@
   <ItemGroup>
     <Reference Include="CapaDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Seguridad\CapaDiseno\bin\Debug\CapaDatos.dll</HintPath>
+      <HintPath>bin\Debug\CapaDatos.dll</HintPath>
     </Reference>
     <Reference Include="CapaDeDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -51,7 +51,7 @@
     </Reference>
     <Reference Include="CapaDiseno, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Seguridad\CapaDiseno\bin\Debug\CapaDiseno.dll</HintPath>
+      <HintPath>bin\Debug\CapaDiseno.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
