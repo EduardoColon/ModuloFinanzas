@@ -47,25 +47,28 @@ namespace Finanzas
                     {
                         total = debe - haber;
                         TotalGeneralDebe = TotalGeneralDebe + total;
+                        dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, total,"");
                     }
                     else if(haber>debe)
                     {
                         total = haber - debe;
                         TotalGeneralHaber = TotalGeneralHaber + total;
+                        dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, "", total);
                     }
                     else
                     {
                         total = debe - haber;
                         TotalGeneralDebe = TotalGeneralDebe + total;
+                        dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, total, total);
                     }
 
                     if(debe == 0)
                     {
-                        dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, "", haber);
+                        //dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, "", haber);
                     }
                     else if(haber == 0)
                     {
-                        dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, debe, "");
+                        //dgv_BalanceDeSaldos.Rows.Add(sCodigoCuenta, nombreCuenta, debe, "");
                     }
 
                 }

@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaLogicaFinanzas;
+using CapaDiseno;
 
 namespace Finanzas
 {
@@ -130,7 +131,8 @@ namespace Finanzas
 
         private void MDI_Finanzas_Load(object sender, EventArgs e)
         {
-
+            frm_login login = new frm_login();
+            login.ShowDialog();
         }
 
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)

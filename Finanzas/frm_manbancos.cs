@@ -21,9 +21,9 @@ namespace Finanzas
 
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
-            navegador1.asignarColorFondo(Color.White);
+            navegador1.asignarColorFondo(Color.Coral);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarAyuda("-1");
+            navegador1.asignarAyuda("506");
             navegador1.asignarTabla("tbl_bancos");
             navegador1.asignarNombreForm("Mantenimiento de Bancos");
         }

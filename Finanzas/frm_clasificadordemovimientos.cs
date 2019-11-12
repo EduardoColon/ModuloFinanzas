@@ -21,9 +21,9 @@ namespace Finanzas
 
             navegador1.asignarAlias(alias);
             navegador1.asignarSalida(this);
-            navegador1.asignarColorFondo(Color.White);
+            navegador1.asignarColorFondo(Color.Coral);
             navegador1.asignarColorFuente(Color.Black);
-            navegador1.asignarAyuda("-4");
+            navegador1.asignarAyuda("507");
             navegador1.asignarTabla("tbl_tipo_movimiento");
             navegador1.asignarNombreForm("Clasificador de movimientos");
         }

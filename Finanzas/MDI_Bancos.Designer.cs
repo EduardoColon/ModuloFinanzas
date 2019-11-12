@@ -41,6 +41,7 @@
             this.movimientosDeBancosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoDeCambioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarConciliacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.envioPolizasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.consultarConciliacionBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.envioPolizasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -157,6 +157,13 @@
             this.consultarConciliacionToolStripMenuItem.Text = "Consultar conciliacion";
             this.consultarConciliacionToolStripMenuItem.Click += new System.EventHandler(this.ConsultarConciliacionToolStripMenuItem_Click);
             // 
+            // envioPolizasToolStripMenuItem1
+            // 
+            this.envioPolizasToolStripMenuItem1.Name = "envioPolizasToolStripMenuItem1";
+            this.envioPolizasToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
+            this.envioPolizasToolStripMenuItem1.Text = "Envio Polizas";
+            this.envioPolizasToolStripMenuItem1.Click += new System.EventHandler(this.envioPolizasToolStripMenuItem1_Click);
+            // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
@@ -205,13 +212,6 @@
             this.consultarConciliacionBancariaToolStripMenuItem.Text = "Consultar Conciliacion Bancaria";
             this.consultarConciliacionBancariaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarConciliacionBancariaToolStripMenuItem_Click);
             // 
-            // envioPolizasToolStripMenuItem1
-            // 
-            this.envioPolizasToolStripMenuItem1.Name = "envioPolizasToolStripMenuItem1";
-            this.envioPolizasToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
-            this.envioPolizasToolStripMenuItem1.Text = "Envio Polizas";
-            this.envioPolizasToolStripMenuItem1.Click += new System.EventHandler(this.envioPolizasToolStripMenuItem1_Click);
-            // 
             // MDI_Bancos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,6 +227,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bancos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDI_Bancos_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
