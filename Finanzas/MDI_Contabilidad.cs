@@ -272,7 +272,7 @@ namespace Finanzas
 
         private void ConciliaciónBancariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             Help.ShowHelp(this, "C:/Ayudas/ConciliacionBancaria.chm");
+            Help.ShowHelp(this, "Ayudas/Actualizacion-Polizas.chm");
         }
 
         private void cuentasContablesToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -362,6 +362,16 @@ namespace Finanzas
         private void gestionPresupuestariaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "Ayudas/GestionPresupuestaria.chm");
+        }
+
+        private void balanceGeneralToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Balance-General.chm");
+        }
+
+        private void balanceDeSaldosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Balance-Saldos.chm");
         }
     }
 }

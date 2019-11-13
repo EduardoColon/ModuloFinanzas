@@ -51,6 +51,8 @@
             this.conciliaciónBancariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceGeneralToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.balanceDeSaldosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.revisionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionPresupuestariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -58,8 +60,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.revisionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionPresupuestariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -237,12 +237,28 @@
             this.balanceGeneralToolStripMenuItem1.Name = "balanceGeneralToolStripMenuItem1";
             this.balanceGeneralToolStripMenuItem1.Size = new System.Drawing.Size(223, 22);
             this.balanceGeneralToolStripMenuItem1.Text = "Balance General";
+            this.balanceGeneralToolStripMenuItem1.Click += new System.EventHandler(this.balanceGeneralToolStripMenuItem1_Click);
             // 
             // balanceDeSaldosToolStripMenuItem
             // 
             this.balanceDeSaldosToolStripMenuItem.Name = "balanceDeSaldosToolStripMenuItem";
             this.balanceDeSaldosToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.balanceDeSaldosToolStripMenuItem.Text = "Balance De Saldos";
+            this.balanceDeSaldosToolStripMenuItem.Click += new System.EventHandler(this.balanceDeSaldosToolStripMenuItem_Click);
+            // 
+            // revisionPresupuestoToolStripMenuItem
+            // 
+            this.revisionPresupuestoToolStripMenuItem.Name = "revisionPresupuestoToolStripMenuItem";
+            this.revisionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.revisionPresupuestoToolStripMenuItem.Text = "Revision Presupuesto";
+            this.revisionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.revisionPresupuestoToolStripMenuItem_Click);
+            // 
+            // gestionPresupuestariaToolStripMenuItem
+            // 
+            this.gestionPresupuestariaToolStripMenuItem.Name = "gestionPresupuestariaToolStripMenuItem";
+            this.gestionPresupuestariaToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.gestionPresupuestariaToolStripMenuItem.Text = "Gestion Presupuestaria";
+            this.gestionPresupuestariaToolStripMenuItem.Click += new System.EventHandler(this.gestionPresupuestariaToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -303,20 +319,6 @@
             this.label1.Size = new System.Drawing.Size(67, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
-            // 
-            // revisionPresupuestoToolStripMenuItem
-            // 
-            this.revisionPresupuestoToolStripMenuItem.Name = "revisionPresupuestoToolStripMenuItem";
-            this.revisionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.revisionPresupuestoToolStripMenuItem.Text = "Revision Presupuesto";
-            this.revisionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.revisionPresupuestoToolStripMenuItem_Click);
-            // 
-            // gestionPresupuestariaToolStripMenuItem
-            // 
-            this.gestionPresupuestariaToolStripMenuItem.Name = "gestionPresupuestariaToolStripMenuItem";
-            this.gestionPresupuestariaToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.gestionPresupuestariaToolStripMenuItem.Text = "Gestion Presupuestaria";
-            this.gestionPresupuestariaToolStripMenuItem.Click += new System.EventHandler(this.gestionPresupuestariaToolStripMenuItem_Click);
             // 
             // MDI_Contabilidad
             // 
