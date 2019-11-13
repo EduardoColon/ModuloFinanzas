@@ -629,7 +629,7 @@ namespace CapaDatosFinanzas
             try
             {
                 ds = new DataSet();
-                dat = new OdbcDataAdapter("select sum(debe) as Saldo_Ingresos, sum(haber) as Saldo_Egresos, haber-debe as Saldo from tbl_poliza_detalle"
+                dat = new OdbcDataAdapter("select sum(debe) as Saldo_Ingresos,sum(haber) as Saldo_Egresos, sum(debe)-sum(haber) as Saldo from tbl_poliza_detalle"
                 , con.conectar());
                 dat.Fill(ds);
             }

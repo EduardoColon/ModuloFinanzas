@@ -31,21 +31,21 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Total_Ingresos = new System.Windows.Forms.DataGridView();
+            this.Ingresos = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Ingresos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Egresos = new System.Windows.Forms.DataGridView();
-            this.Total_Ingresos = new System.Windows.Forms.DataGridView();
             this.Total_Egresos = new System.Windows.Forms.DataGridView();
+            this.Egresos = new System.Windows.Forms.DataGridView();
             this.Saldo = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Total_Ingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ingresos)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Egresos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Total_Ingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Total_Egresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Egresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Saldo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,26 @@
             this.panel1.Size = new System.Drawing.Size(456, 364);
             this.panel1.TabIndex = 30;
             // 
+            // Total_Ingresos
+            // 
+            this.Total_Ingresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Total_Ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Total_Ingresos.Location = new System.Drawing.Point(3, 311);
+            this.Total_Ingresos.Name = "Total_Ingresos";
+            this.Total_Ingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Total_Ingresos.Size = new System.Drawing.Size(435, 46);
+            this.Total_Ingresos.TabIndex = 32;
+            // 
+            // Ingresos
+            // 
+            this.Ingresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Ingresos.Location = new System.Drawing.Point(7, 31);
+            this.Ingresos.Name = "Ingresos";
+            this.Ingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Ingresos.Size = new System.Drawing.Size(435, 274);
+            this.Ingresos.TabIndex = 31;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -101,16 +121,6 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Detalle Egresos";
             // 
-            // Ingresos
-            // 
-            this.Ingresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Ingresos.Location = new System.Drawing.Point(7, 31);
-            this.Ingresos.Name = "Ingresos";
-            this.Ingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Ingresos.Size = new System.Drawing.Size(435, 274);
-            this.Ingresos.TabIndex = 31;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -122,26 +132,6 @@
             this.panel2.Size = new System.Drawing.Size(456, 364);
             this.panel2.TabIndex = 31;
             // 
-            // Egresos
-            // 
-            this.Egresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Egresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Egresos.Location = new System.Drawing.Point(7, 31);
-            this.Egresos.Name = "Egresos";
-            this.Egresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Egresos.Size = new System.Drawing.Size(435, 274);
-            this.Egresos.TabIndex = 31;
-            // 
-            // Total_Ingresos
-            // 
-            this.Total_Ingresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Total_Ingresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Total_Ingresos.Location = new System.Drawing.Point(3, 311);
-            this.Total_Ingresos.Name = "Total_Ingresos";
-            this.Total_Ingresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Total_Ingresos.Size = new System.Drawing.Size(435, 46);
-            this.Total_Ingresos.TabIndex = 32;
-            // 
             // Total_Egresos
             // 
             this.Total_Egresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -151,6 +141,16 @@
             this.Total_Egresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Total_Egresos.Size = new System.Drawing.Size(435, 46);
             this.Total_Egresos.TabIndex = 33;
+            // 
+            // Egresos
+            // 
+            this.Egresos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Egresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Egresos.Location = new System.Drawing.Point(7, 31);
+            this.Egresos.Name = "Egresos";
+            this.Egresos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Egresos.Size = new System.Drawing.Size(435, 274);
+            this.Egresos.TabIndex = 31;
             // 
             // Saldo
             // 
@@ -191,12 +191,12 @@
             this.Load += new System.EventHandler(this.Frm_FlujoEfectivo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Total_Ingresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ingresos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Egresos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Total_Ingresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Total_Egresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Egresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Saldo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
