@@ -197,6 +197,7 @@ namespace Finanzas
             frm_login login = new frm_login();
             login.ShowDialog();
             sUsuario = login.obtenerNombreUsuario();
+            lbl_usuario.Text = sUsuario;
         }
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
