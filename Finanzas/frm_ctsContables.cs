@@ -324,52 +324,61 @@ namespace Finanzas
         {
             string resultado = "";
 
-            string sTipoCuenta = cbo_tipoCuenta.SelectedItem.ToString();
-
-            codigoTipocuenta = logic.consultaLogicaCodigoDeTipoDeCuenta(sTipoCuenta);
-            DataTable maxCodigoCuentaContable = logic.consultaLogicaMaxCuentaContable(codigoTipocuenta);
-
-            foreach (DataRow row in maxCodigoCuentaContable.Rows)
+            try
             {
-               
+                string sTipoCuenta = cbo_tipoCuenta.SelectedItem.ToString();
+
+                codigoTipocuenta = logic.consultaLogicaCodigoDeTipoDeCuenta(sTipoCuenta);
+                DataTable maxCodigoCuentaContable = logic.consultaLogicaMaxCuentaContable(codigoTipocuenta);
+
+                foreach (DataRow row in maxCodigoCuentaContable.Rows)
+                {
+
                     string maxCodigo = row[0].ToString();
                     int identificador = Convert.ToInt32(maxCodigo);
 
-               
 
-                DataTable maxCodCuentaContable = logic.consultaLogicaMaxCuentaContable2(identificador);
 
-                foreach (DataRow row2 in maxCodCuentaContable.Rows)
-                {
-                    string max = row2[0].ToString();
-                    string maxcodigo2 = max.Substring(max.Length - 1, 1);
-                    int maximo = Convert.ToInt32(maxcodigo2);
+                    DataTable maxCodCuentaContable = logic.consultaLogicaMaxCuentaContable2(identificador);
 
-                    if (maximo == 9)
+                    foreach (DataRow row2 in maxCodCuentaContable.Rows)
                     {
-                        string penultimo = max.Substring(max.Length - 2, 1);
-                        int iPenultimo = Convert.ToInt32(penultimo);
-                        iPenultimo++;
-                        resultado = iPenultimo.ToString() + "0";
-                        max = max.Substring(0, max.Length - 2) + resultado;
-                        txt_CodigoCuenta.Text = max;
+                        string max = row2[0].ToString();
+                        string maxcodigo2 = max.Substring(max.Length - 1, 1);
+                        int maximo = Convert.ToInt32(maxcodigo2);
+
+                        if (maximo == 9)
+                        {
+                            string penultimo = max.Substring(max.Length - 2, 1);
+                            int iPenultimo = Convert.ToInt32(penultimo);
+                            iPenultimo++;
+                            resultado = iPenultimo.ToString() + "0";
+                            max = max.Substring(0, max.Length - 2) + resultado;
+                            txt_CodigoCuenta.Text = max;
+                        }
+                        else
+                        {
+                            maximo++;
+                            resultado = maximo.ToString();
+                            max = max.Substring(0, max.Length - 1) + resultado;
+                            txt_CodigoCuenta.Text = max;
+                        }
+                        maxCodigo = "";
+                        identificador = 0;
+                        max = "";
+                        maxcodigo2 = "";
+
                     }
-                    else
-                    {
-                        maximo++;
-                        resultado = maximo.ToString();
-                        max = max.Substring(0, max.Length - 1) + resultado;
-                        txt_CodigoCuenta.Text = max;
-                    }
-                    maxCodigo = "";
-                    identificador = 0;
-                    max = "";
-                    maxcodigo2 = "";
+
 
                 }
-
-
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Tipo de Cuenta No Valido");
+                Console.WriteLine(ex);
+            }
+            
         }
     }
 }
