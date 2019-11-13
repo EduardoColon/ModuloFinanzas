@@ -135,5 +135,10 @@ namespace Finanzas
         {
             dataGridView1.ClearSelection();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Revision.chm");
+        }
     }
 }

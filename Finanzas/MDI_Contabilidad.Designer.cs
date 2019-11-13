@@ -58,6 +58,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.revisionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -209,7 +210,8 @@
             this.creacionPresupuestoToolStripMenuItem,
             this.conciliaciónBancariaToolStripMenuItem,
             this.balanceGeneralToolStripMenuItem1,
-            this.balanceDeSaldosToolStripMenuItem});
+            this.balanceDeSaldosToolStripMenuItem,
+            this.revisionPresupuestoToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
@@ -300,6 +302,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
+            // revisionPresupuestoToolStripMenuItem
+            // 
+            this.revisionPresupuestoToolStripMenuItem.Name = "revisionPresupuestoToolStripMenuItem";
+            this.revisionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.revisionPresupuestoToolStripMenuItem.Text = "Revision Presupuesto";
+            this.revisionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.revisionPresupuestoToolStripMenuItem_Click);
+            // 
             // MDI_Contabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -359,6 +368,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem revisionPresupuestoToolStripMenuItem;
     }
 }
 

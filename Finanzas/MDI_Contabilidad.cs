@@ -350,5 +350,10 @@ namespace Finanzas
             flujo.MdiParent = this;
             flujo.Show();
         }
+
+        private void revisionPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Revision.chm");
+        }
     }
 }

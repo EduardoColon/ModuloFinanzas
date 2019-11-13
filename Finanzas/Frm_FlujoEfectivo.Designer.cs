@@ -40,6 +40,7 @@
             this.Egresos = new System.Windows.Forms.DataGridView();
             this.Saldo = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Total_Ingresos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ingresos)).BeginInit();
@@ -172,12 +173,24 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "Saldo Neto";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(857, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(38, 33);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "?";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Frm_FlujoEfectivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(951, 500);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Saldo);
             this.Controls.Add(this.panel2);
@@ -217,5 +230,6 @@
         private System.Windows.Forms.DataGridView Total_Egresos;
         private System.Windows.Forms.DataGridView Saldo;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }
