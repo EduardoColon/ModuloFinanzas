@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CapaDeDiseno;
 using CapaLogicaFinanzas;
 
+
+//Diego Gomez
 namespace Finanzas
 {
     public partial class Frm_FlujoEfectivo : Form
