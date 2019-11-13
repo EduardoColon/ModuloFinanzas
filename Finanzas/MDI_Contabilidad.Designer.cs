@@ -265,7 +265,7 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip.Location = new System.Drawing.Point(0, 993);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statusStrip.Size = new System.Drawing.Size(1053, 22);
@@ -295,9 +295,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(0, 943);
+            this.panel1.Location = new System.Drawing.Point(12, 939);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 47);
+            this.panel1.Size = new System.Drawing.Size(1053, 51);
             this.panel1.TabIndex = 6;
             // 
             // panel2
@@ -305,7 +305,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lbl_usuario);
-            this.panel2.Location = new System.Drawing.Point(786, 1);
+            this.panel2.Location = new System.Drawing.Point(786, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(264, 46);
             this.panel2.TabIndex = 0;
@@ -324,7 +324,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 749);
+            this.ClientSize = new System.Drawing.Size(1053, 1015);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
