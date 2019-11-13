@@ -204,5 +204,16 @@ namespace Finanzas
         {
 
         }
+
+        private void ConciliacionBancariaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/ConciliacionBancaria.chm");
+        }
+
+        private void EnvioDePolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/EnvioPolizasBancos.chm");
+
+        }
     }
 }
