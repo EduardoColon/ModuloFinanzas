@@ -218,7 +218,7 @@
             // 
             this.creacionPresupuestoToolStripMenuItem.Name = "creacionPresupuestoToolStripMenuItem";
             this.creacionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.creacionPresupuestoToolStripMenuItem.Text = "Creacion Presupuesto";
+            this.creacionPresupuestoToolStripMenuItem.Text = "Flujo Efectivo";
             this.creacionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.CreacionPresupuestoToolStripMenuItem_Click_1);
             // 
             // conciliaciónBancariaToolStripMenuItem
@@ -245,7 +245,7 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 993);
+            this.statusStrip.Location = new System.Drawing.Point(0, 727);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statusStrip.Size = new System.Drawing.Size(1053, 22);
@@ -304,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 1015);
+            this.ClientSize = new System.Drawing.Size(1053, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

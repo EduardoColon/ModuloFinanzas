@@ -132,10 +132,7 @@ namespace Finanzas
 
         private void MDI_Finanzas_Load(object sender, EventArgs e)
         {
-            frm_login login = new frm_login();
-            login.ShowDialog();
-            lbl_usuario.Text = login.obtenerNombreUsuario();
-            sUsuario = lbl_usuario.Text;
+        
         }
 
         private void polizasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -260,7 +257,7 @@ namespace Finanzas
 
         private void CreacionPresupuestoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "C:/Ayudas/CreacionPresupuesto.chm");
+            Help.ShowHelp(this, "Ayudas/Flujo-Efectivo.chm");
         }
 
         private void ConciliacionBancariaToolStripMenuItem_Click(object sender, EventArgs e)
