@@ -260,7 +260,7 @@ namespace Finanzas
 
         private void CreacionPresupuestoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Help.ShowHelp(this, "C:/Ayudas/CreacionPresupuesto.chm");
+            Help.ShowHelp(this, "Ayudas/Flujo-Efectivo.chm");
         }
 
         private void ConciliacionBancariaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -352,6 +352,16 @@ namespace Finanzas
             Frm_FlujoEfectivo flujo = new Frm_FlujoEfectivo();
             flujo.MdiParent = this;
             flujo.Show();
+        }
+
+        private void revisionPresupuestoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Revision.chm");
+        }
+
+        private void gestionPresupuestariaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/GestionPresupuestaria.chm");
         }
     }
 }

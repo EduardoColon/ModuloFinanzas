@@ -161,5 +161,10 @@ namespace Finanzas
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/GestionPresupuestaria.chm");
+        }
     }
 }

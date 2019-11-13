@@ -58,6 +58,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.revisionPresupuestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionPresupuestariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -209,7 +211,9 @@
             this.creacionPresupuestoToolStripMenuItem,
             this.conciliaciónBancariaToolStripMenuItem,
             this.balanceGeneralToolStripMenuItem1,
-            this.balanceDeSaldosToolStripMenuItem});
+            this.balanceDeSaldosToolStripMenuItem,
+            this.revisionPresupuestoToolStripMenuItem,
+            this.gestionPresupuestariaToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
@@ -218,7 +222,7 @@
             // 
             this.creacionPresupuestoToolStripMenuItem.Name = "creacionPresupuestoToolStripMenuItem";
             this.creacionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.creacionPresupuestoToolStripMenuItem.Text = "Creacion Presupuesto";
+            this.creacionPresupuestoToolStripMenuItem.Text = "Flujo Efectivo";
             this.creacionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.CreacionPresupuestoToolStripMenuItem_Click_1);
             // 
             // conciliaciónBancariaToolStripMenuItem
@@ -245,7 +249,7 @@
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 993);
+            this.statusStrip.Location = new System.Drawing.Point(0, 727);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statusStrip.Size = new System.Drawing.Size(1053, 22);
@@ -300,11 +304,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario:";
             // 
+            // revisionPresupuestoToolStripMenuItem
+            // 
+            this.revisionPresupuestoToolStripMenuItem.Name = "revisionPresupuestoToolStripMenuItem";
+            this.revisionPresupuestoToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.revisionPresupuestoToolStripMenuItem.Text = "Revision Presupuesto";
+            this.revisionPresupuestoToolStripMenuItem.Click += new System.EventHandler(this.revisionPresupuestoToolStripMenuItem_Click);
+            // 
+            // gestionPresupuestariaToolStripMenuItem
+            // 
+            this.gestionPresupuestariaToolStripMenuItem.Name = "gestionPresupuestariaToolStripMenuItem";
+            this.gestionPresupuestariaToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.gestionPresupuestariaToolStripMenuItem.Text = "Gestion Presupuestaria";
+            this.gestionPresupuestariaToolStripMenuItem.Click += new System.EventHandler(this.gestionPresupuestariaToolStripMenuItem_Click);
+            // 
             // MDI_Contabilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 1015);
+            this.ClientSize = new System.Drawing.Size(1053, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -359,6 +377,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem revisionPresupuestoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionPresupuestariaToolStripMenuItem;
     }
 }
 

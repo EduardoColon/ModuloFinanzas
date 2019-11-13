@@ -69,5 +69,10 @@ namespace Finanzas
             Ingresos.ClearSelection();
             Egresos.ClearSelection();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "Ayudas/Flujo-Efectivo.chm");
+        }
     }
 }
