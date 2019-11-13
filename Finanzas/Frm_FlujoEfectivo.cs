@@ -11,7 +11,7 @@ using CapaDeDiseno;
 using CapaLogicaFinanzas;
 
 
-//Diego Gomez
+//----------------------------------------------------------------------Diego Gomez
 namespace Finanzas
 {
     public partial class Frm_FlujoEfectivo : Form
